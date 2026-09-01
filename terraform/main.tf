@@ -89,6 +89,9 @@ module "msk" {
   storage_autoscaling_max_capacity      = var.storage_autoscaling_max_capacity
   storage_autoscaling_target_percentage = var.storage_autoscaling_target_percentage
   
+  # Configuration
+  enable_custom_configuration = var.enable_custom_configuration
+  
   environment  = var.environment
   project_name = var.project_name
   tags         = local.common_tags

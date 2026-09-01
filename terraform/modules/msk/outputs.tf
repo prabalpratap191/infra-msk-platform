@@ -45,12 +45,12 @@ output "kms_key_arn" {
 
 output "configuration_arn" {
   description = "MSK configuration ARN"
-  value       = aws_msk_configuration.main.arn
+  value       = var.enable_custom_configuration ? aws_msk_configuration.main[0].arn : null
 }
 
 output "configuration_revision" {
   description = "MSK configuration revision"
-  value       = aws_msk_configuration.main.latest_revision
+  value       = var.enable_custom_configuration ? aws_msk_configuration.main[0].latest_revision : null
 }
 
 output "client_iam_policy_arn" {

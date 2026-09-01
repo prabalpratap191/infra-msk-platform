@@ -319,6 +319,12 @@ variable "enable_configuration_server" {
   default     = false
 }
 
+variable "enable_custom_configuration" {
+  description = "Enable custom MSK configuration (requires kafka:CreateConfiguration permission)"
+  type        = bool
+  default     = false
+}
+
 # ============================================================================
 # Tags
 # ============================================================================
