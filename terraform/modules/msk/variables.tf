@@ -162,3 +162,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "enable_custom_configuration" {
+  description = "Enable custom MSK configuration (requires kafka:CreateConfiguration permission)"
+  type        = bool
+  default     = false
+}

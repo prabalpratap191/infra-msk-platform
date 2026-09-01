@@ -61,6 +61,9 @@ service_namespaces = [
   "payments-service-ns"
 ]
 
+# MSK Configuration
+enable_custom_configuration = false  # Set to false to bypass SCP restrictions on kafka:CreateConfiguration
+
 # Additional Tags
 additional_tags = {
   Terraform   = "true"

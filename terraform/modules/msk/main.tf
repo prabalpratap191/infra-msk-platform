@@ -53,8 +53,12 @@ resource "aws_cloudwatch_log_group" "msk" {
 # ============================================================================
 # MSK Configuration
 # ============================================================================
+# MSK Configuration (Optional - requires kafka:CreateConfiguration permission)
+# ============================================================================
 
 resource "aws_msk_configuration" "main" {
+  count = var.enable_custom_configuration ? 1 : 0
+  
   name              = "${var.cluster_name}-config"
   kafka_versions    = [var.kafka_version]
   server_properties = <<PROPERTIES
@@ -110,10 +114,13 @@ resource "aws_msk_cluster" "main" {
     }
   }
 
-  # Configuration
-  configuration_info {
-    arn      = aws_msk_configuration.main.arn
-    revision = aws_msk_configuration.main.latest_revision
+  # Configuration (optional)
+  dynamic "configuration_info" {
+    for_each = var.enable_custom_configuration ? [1] : []
+    content {
+      arn      = aws_msk_configuration.main[0].arn
+      revision = aws_msk_configuration.main[0].latest_revision
+    }
   }
 
   # Encryption Settings
