@@ -212,6 +212,12 @@ pipeline {
                 expression { params.ACTION == 'apply' }
             }
             steps {
+                 withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
                 script {
                     echo "🚀 Applying Terraform configuration"
                 }
@@ -232,6 +238,7 @@ pipeline {
                 // Archive outputs
                 archiveArtifacts artifacts: "${TF_DIR}/outputs.json", allowEmptyArchive: false
             }
+            }
         }
 
         stage('Terraform Destroy') {
@@ -239,6 +246,12 @@ pipeline {
                 expression { params.ACTION == 'destroy' }
             }
             steps {
+                 withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
                 script {
                     echo "🗑️  Destroying Terraform-managed infrastructure"
                 }
@@ -250,6 +263,7 @@ pipeline {
                             -var-file=terraform.tfvars
                     '''
                 }
+            }
             }
         }
 
@@ -289,6 +303,12 @@ pipeline {
                 expression { params.ACTION == 'apply' }
             }
             steps {
+                 withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
                 script {
                     echo "🔍 Verifying MSK cluster deployment"
                 }
@@ -306,6 +326,7 @@ pipeline {
                         echo "\n=== Connectivity Check ==="
                         ./verify-connectivity.sh || true
                     '''
+                }
                 }
             }
         }
