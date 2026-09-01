@@ -1,0 +1,136 @@
+{
+  "dashboard": {
+    "title": "Kafka Cluster Overview",
+    "tags": ["kafka", "meracommerce", "dev"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Active Controllers",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "kafka_controller_kafkacontroller_activecontrollercount",
+            "legendFormat": "Controllers"
+          }
+        ],
+        "gridPos": {"h": 4, "w": 6, "x": 0, "y": 0}
+      },
+      {
+        "id": 2,
+        "title": "Total Brokers",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "count(kafka_server_replicamanager_leadercount)",
+            "legendFormat": "Brokers"
+          }
+        ],
+        "gridPos": {"h": 4, "w": 6, "x": 6, "y": 0}
+      },
+      {
+        "id": 3,
+        "title": "Total Topics",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "count(count by (topic) (kafka_topic_partitions))",
+            "legendFormat": "Topics"
+          }
+        ],
+        "gridPos": {"h": 4, "w": 6, "x": 12, "y": 0}
+      },
+      {
+        "id": 4,
+        "title": "Messages In Per Second",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(rate(kafka_server_brokertopicmetrics_messagesin_total[5m]))",
+            "legendFormat": "Messages/sec"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 4}
+      },
+      {
+        "id": 5,
+        "title": "Bytes In Per Second",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(rate(kafka_server_brokertopicmetrics_bytesin_total[5m]))",
+            "legendFormat": "Bytes/sec"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 4}
+      },
+      {
+        "id": 6,
+        "title": "Consumer Lag by Group",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum by (consumergroup) (kafka_consumergroup_lag)",
+            "legendFormat": "{{consumergroup}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 12}
+      },
+      {
+        "id": 7,
+        "title": "Broker CPU Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "100 - (avg by(instance) (rate(node_cpu_seconds_total{mode='idle'}[5m])) * 100)",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 20}
+      },
+      {
+        "id": 8,
+        "title": "Broker Memory Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 20}
+      },
+      {
+        "id": 9,
+        "title": "Disk Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "(node_filesystem_size_bytes{mountpoint='/opt/kafka/data'} - node_filesystem_avail_bytes{mountpoint='/opt/kafka/data'}) / node_filesystem_size_bytes{mountpoint='/opt/kafka/data'} * 100",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 28}
+      },
+      {
+        "id": 10,
+        "title": "Network Traffic",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(node_network_receive_bytes_total[5m])",
+            "legendFormat": "RX {{instance}}"
+          },
+          {
+            "expr": "rate(node_network_transmit_bytes_total[5m])",
+            "legendFormat": "TX {{instance}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 28}
+      }
+    ]
+  }
+}

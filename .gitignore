@@ -1,0 +1,77 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# SSH Keys
+*.pem
+*.key
+*.ppk
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Docker
+docker-compose.override.yml
+
+# Backup files
+*.bak
+*.backup
+
+# Secrets
+secrets/
+*.secret
+
+# Jenkins
+.jenkins/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+ENV/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# Archives
+*.tar.gz
+*.zip
+*.tgz
+
+# OS
+Thumbs.db

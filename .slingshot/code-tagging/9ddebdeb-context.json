@@ -1,0 +1,15 @@
+{
+  "filename": "main.tf",
+  "path": "terraform\\modules\\security-group\\main.tf",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "e5ca1683": {
+      "value": "Act as a Principal DevOps Architect, AWS Expert, Kafka Expert, Terraform Expert, and Jenkins Expert.\n\nCreate a complete production-ready repository called:\n\n**infra-kafka-platform**\n\nThe repository should provision AWS infrastructure using Terraform and deploy a highly available Apache Kafka cluster on EC2 instances using Docker Compose.\n\nThe final solution should be fully automated through a Jenkins pipeline.\n\n## Objective\n\nAfter Jenkins execution:\n\n* Kafka EC2 servers should be provisioned aut"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

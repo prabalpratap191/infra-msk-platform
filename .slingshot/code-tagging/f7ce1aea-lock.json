@@ -1,0 +1,570 @@
+{
+  "terraform\\modules\\monitoring\\main.tf": {
+    "filename": "main.tf",
+    "path": "terraform\\modules\\monitoring\\main.tf",
+    "version": "1.2",
+    "contextFile": "f7ce1aea-context.json",
+    "chunks": {
+      "19097e": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788258410,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "6ec20d3a",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:56:50 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "19097e",
+        "hash": "728e40ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "19097e",
+        "hash": "be428f7e",
+        "encoded": "#%20CloudWatch%20Log%20Group",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "19097e",
+        "hash": "74045fda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "19097e",
+        "hash": "cac6de78",
+        "encoded": "resource%20%22aws_cloudwatch_log_group%22%20%22kafka%22%20%7B",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "19097e",
+        "hash": "b3af145b",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.enable_cloudwatch_monitoring%20?%201%20:%200",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "19097e",
+        "hash": "0dfc4a68",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22/aws/ec2/kafka/$%7Bvar.project_name%7D-$%7Bvar.environment%7D%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "19097e",
+        "hash": "d0871cb0",
+        "encoded": "retention_in_days%20=%20var.cloudwatch_retention_days",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "19097e",
+        "hash": "f567561d",
+        "encoded": "tags%20=%20merge(",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "19097e",
+        "hash": "352b3e7a",
+        "encoded": "var.tags,",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "19097e",
+        "hash": "6aee126d",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "19097e",
+        "hash": "32c2b6ce",
+        "encoded": "Name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-logs%22",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "19097e",
+        "hash": "e683dcf7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "19097e",
+        "hash": "ca63cd4a",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "19097e",
+        "hash": "c8f9d1c3",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "19097e",
+        "hash": "aede396c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "19097e",
+        "hash": "30bbeede",
+        "encoded": "#%20CloudWatch%20Alarms",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "19097e",
+        "hash": "628decbb",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "19097e",
+        "hash": "3be30ea7",
+        "encoded": "#%20CPU%20Utilization%20Alarm",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "19097e",
+        "hash": "e208e753",
+        "encoded": "resource%20%22aws_cloudwatch_metric_alarm%22%20%22kafka_cpu%22%20%7B",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "19097e",
+        "hash": "5cd06a7d",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.enable_cloudwatch_monitoring%20?%20length(var.kafka_instance_ids)%20:%200",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "19097e",
+        "hash": "8e345d03",
+        "encoded": "alarm_name%20%20%20%20%20%20%20%20%20%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D-high-cpu%22",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "19097e",
+        "hash": "7c9d6fd0",
+        "encoded": "comparison_operator%20=%20%22GreaterThanThreshold%22",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "19097e",
+        "hash": "f2040071",
+        "encoded": "evaluation_periods%20%20=%20%222%22",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "19097e",
+        "hash": "7431be66",
+        "encoded": "metric_name%20%20%20%20%20%20%20%20%20=%20%22CPUUtilization%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "19097e",
+        "hash": "464933a3",
+        "encoded": "namespace%20%20%20%20%20%20%20%20%20%20%20=%20%22AWS/EC2%22",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "19097e",
+        "hash": "ff165279",
+        "encoded": "period%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22300%22",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "19097e",
+        "hash": "c2bb192a",
+        "encoded": "statistic%20%20%20%20%20%20%20%20%20%20%20=%20%22Average%22",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "19097e",
+        "hash": "37fc1fba",
+        "encoded": "threshold%20%20%20%20%20%20%20%20%20%20%20=%20%2280%22",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "19097e",
+        "hash": "bd3d2a58",
+        "encoded": "alarm_description%20%20%20=%20%22This%20metric%20monitors%20Kafka%20broker%20CPU%20utilization%22",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "19097e",
+        "hash": "eafd4387",
+        "encoded": "alarm_actions%20%20%20%20%20%20%20=%20var.alarm_sns_topic_arn%20!=%20%22%22%20?%20%5Bvar.alarm_sns_topic_arn%5D%20:%20%5B%5D",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "19097e",
+        "hash": "038d9243",
+        "encoded": "dimensions%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "19097e",
+        "hash": "708773ad",
+        "encoded": "InstanceId%20=%20var.kafka_instance_ids%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "19097e",
+        "hash": "880eeeff",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "19097e",
+        "hash": "85fe2121",
+        "encoded": "tags%20=%20var.tags",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "19097e",
+        "hash": "792377b1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "19097e",
+        "hash": "e742623c",
+        "encoded": "#%20Disk%20Space%20Alarm",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "19097e",
+        "hash": "7f3b07d9",
+        "encoded": "resource%20%22aws_cloudwatch_metric_alarm%22%20%22kafka_disk%22%20%7B",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "19097e",
+        "hash": "d28691b1",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.enable_cloudwatch_monitoring%20?%20length(var.kafka_instance_ids)%20:%200",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "19097e",
+        "hash": "81f5e158",
+        "encoded": "alarm_name%20%20%20%20%20%20%20%20%20%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D-high-disk%22",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "19097e",
+        "hash": "4abd6855",
+        "encoded": "comparison_operator%20=%20%22GreaterThanThreshold%22",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "19097e",
+        "hash": "2525b9b2",
+        "encoded": "evaluation_periods%20%20=%20%221%22",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "19097e",
+        "hash": "94b273a2",
+        "encoded": "metric_name%20%20%20%20%20%20%20%20%20=%20%22disk_used_percent%22",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "19097e",
+        "hash": "5aa7bbdb",
+        "encoded": "namespace%20%20%20%20%20%20%20%20%20%20%20=%20%22CWAgent%22",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "19097e",
+        "hash": "1d2f903a",
+        "encoded": "period%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22300%22",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "19097e",
+        "hash": "e3a23344",
+        "encoded": "statistic%20%20%20%20%20%20%20%20%20%20%20=%20%22Average%22",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "19097e",
+        "hash": "779c2e8e",
+        "encoded": "threshold%20%20%20%20%20%20%20%20%20%20%20=%20%2280%22",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "19097e",
+        "hash": "37e0506d",
+        "encoded": "alarm_description%20%20%20=%20%22This%20metric%20monitors%20Kafka%20broker%20disk%20usage%22",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "19097e",
+        "hash": "b7526ba5",
+        "encoded": "alarm_actions%20%20%20%20%20%20%20=%20var.alarm_sns_topic_arn%20!=%20%22%22%20?%20%5Bvar.alarm_sns_topic_arn%5D%20:%20%5B%5D",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "19097e",
+        "hash": "9ec12efb",
+        "encoded": "dimensions%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "19097e",
+        "hash": "9b4d14ea",
+        "encoded": "InstanceId%20=%20var.kafka_instance_ids%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "19097e",
+        "hash": "6cdf7403",
+        "encoded": "path%20%20%20%20%20%20%20=%20%22/opt/kafka/data%22",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "19097e",
+        "hash": "309dd352",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "19097e",
+        "hash": "9d1b100a",
+        "encoded": "tags%20=%20var.tags",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "19097e",
+        "hash": "646a8e84",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "19097e",
+        "hash": "d3319e5f",
+        "encoded": "#%20Memory%20Utilization%20Alarm",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "19097e",
+        "hash": "8b792052",
+        "encoded": "resource%20%22aws_cloudwatch_metric_alarm%22%20%22kafka_memory%22%20%7B",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "19097e",
+        "hash": "7af7f1a2",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.enable_cloudwatch_monitoring%20?%20length(var.kafka_instance_ids)%20:%200",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "19097e",
+        "hash": "a5cf8c45",
+        "encoded": "alarm_name%20%20%20%20%20%20%20%20%20%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D-high-memory%22",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "19097e",
+        "hash": "4b621239",
+        "encoded": "comparison_operator%20=%20%22GreaterThanThreshold%22",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "19097e",
+        "hash": "f3fa766e",
+        "encoded": "evaluation_periods%20%20=%20%222%22",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "19097e",
+        "hash": "af3c7abb",
+        "encoded": "metric_name%20%20%20%20%20%20%20%20%20=%20%22mem_used_percent%22",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "19097e",
+        "hash": "a437a7cf",
+        "encoded": "namespace%20%20%20%20%20%20%20%20%20%20%20=%20%22CWAgent%22",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "19097e",
+        "hash": "3a69e911",
+        "encoded": "period%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22300%22",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "19097e",
+        "hash": "84797ddc",
+        "encoded": "statistic%20%20%20%20%20%20%20%20%20%20%20=%20%22Average%22",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "19097e",
+        "hash": "0af8663e",
+        "encoded": "threshold%20%20%20%20%20%20%20%20%20%20%20=%20%2285%22",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "19097e",
+        "hash": "6ccc9044",
+        "encoded": "alarm_description%20%20%20=%20%22This%20metric%20monitors%20Kafka%20broker%20memory%20usage%22",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "19097e",
+        "hash": "bd28ae86",
+        "encoded": "alarm_actions%20%20%20%20%20%20%20=%20var.alarm_sns_topic_arn%20!=%20%22%22%20?%20%5Bvar.alarm_sns_topic_arn%5D%20:%20%5B%5D",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "19097e",
+        "hash": "43083b26",
+        "encoded": "dimensions%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "19097e",
+        "hash": "e167dcac",
+        "encoded": "InstanceId%20=%20var.kafka_instance_ids%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "19097e",
+        "hash": "a2f26355",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "19097e",
+        "hash": "cc9b29c0",
+        "encoded": "tags%20=%20var.tags",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "19097e",
+        "hash": "e4b921c6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "19097e",
+        "hash": "197d54bf",
+        "encoded": "#%20Instance%20Status%20Check%20Alarm",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "19097e",
+        "hash": "548a399b",
+        "encoded": "resource%20%22aws_cloudwatch_metric_alarm%22%20%22kafka_status_check%22%20%7B",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "19097e",
+        "hash": "10c4088e",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.enable_cloudwatch_monitoring%20?%20length(var.kafka_instance_ids)%20:%200",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "19097e",
+        "hash": "38b9eb16",
+        "encoded": "alarm_name%20%20%20%20%20%20%20%20%20%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D-status-check-failed%22",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "19097e",
+        "hash": "3d924f0c",
+        "encoded": "comparison_operator%20=%20%22GreaterThanThreshold%22",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "19097e",
+        "hash": "aab0ead7",
+        "encoded": "evaluation_periods%20%20=%20%222%22",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "19097e",
+        "hash": "dbe47996",
+        "encoded": "metric_name%20%20%20%20%20%20%20%20%20=%20%22StatusCheckFailed%22",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "19097e",
+        "hash": "e677be65",
+        "encoded": "namespace%20%20%20%20%20%20%20%20%20%20%20=%20%22AWS/EC2%22",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "19097e",
+        "hash": "d768494b",
+        "encoded": "period%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%2260%22",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "19097e",
+        "hash": "69e3f302",
+        "encoded": "statistic%20%20%20%20%20%20%20%20%20%20%20=%20%22Maximum%22",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "19097e",
+        "hash": "6b8c851d",
+        "encoded": "threshold%20%20%20%20%20%20%20%20%20%20%20=%20%220%22",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "19097e",
+        "hash": "46066b4d",
+        "encoded": "alarm_description%20%20%20=%20%22This%20metric%20monitors%20Kafka%20broker%20instance%20status%20checks%22",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "19097e",
+        "hash": "8b3b4cfb",
+        "encoded": "alarm_actions%20%20%20%20%20%20%20=%20var.alarm_sns_topic_arn%20!=%20%22%22%20?%20%5Bvar.alarm_sns_topic_arn%5D%20:%20%5B%5D",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "19097e",
+        "hash": "08000388",
+        "encoded": "dimensions%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "19097e",
+        "hash": "89a56818",
+        "encoded": "InstanceId%20=%20var.kafka_instance_ids%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "19097e",
+        "hash": "6bf91891",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "19097e",
+        "hash": "5766f01b",
+        "encoded": "tags%20=%20var.tags",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "19097e",
+        "hash": "7a43bd29",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

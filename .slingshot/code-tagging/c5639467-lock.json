@@ -1,0 +1,234 @@
+{
+  "terraform\\modules\\route53\\outputs.tf": {
+    "filename": "outputs.tf",
+    "path": "terraform\\modules\\route53\\outputs.tf",
+    "version": "1.2",
+    "contextFile": "c5639467-context.json",
+    "chunks": {
+      "2ca17d": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256626,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "bcd221dc",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:06 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "2ca17d",
+        "hash": "3fdb5f50",
+        "encoded": "output%20%22zone_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "2ca17d",
+        "hash": "b8b4ba09",
+        "encoded": "description%20=%20%22Route53%20zone%20ID%22",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "2ca17d",
+        "hash": "95f4b4dd",
+        "encoded": "value%20%20%20%20%20%20%20=%20var.create_zone%20?%20aws_route53_zone.private%5B0%5D.zone_id%20:%20var.existing_zone_id",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "2ca17d",
+        "hash": "973e69d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "2ca17d",
+        "hash": "8cf9d594",
+        "encoded": "output%20%22zone_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "2ca17d",
+        "hash": "41ba5554",
+        "encoded": "description%20=%20%22Route53%20zone%20name%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "2ca17d",
+        "hash": "247fa6bc",
+        "encoded": "value%20%20%20%20%20%20%20=%20var.zone_name",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "2ca17d",
+        "hash": "1c082ee4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "2ca17d",
+        "hash": "a7809ac1",
+        "encoded": "output%20%22kafka_dns_records%22%20%7B",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "2ca17d",
+        "hash": "e431ca0d",
+        "encoded": "description%20=%20%22Kafka%20DNS%20records%22",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "2ca17d",
+        "hash": "76684aca",
+        "encoded": "value%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "2ca17d",
+        "hash": "b3883dc6",
+        "encoded": "brokers%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "2ca17d",
+        "hash": "372a6460",
+        "encoded": "for%20i%20in%20range(var.kafka_broker_count)%20:",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "2ca17d",
+        "hash": "b7e1e87b",
+        "encoded": "%22kafka-$%7Bi%20+%201%7D.$%7Bvar.zone_name%7D%22",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "2ca17d",
+        "hash": "e862fe02",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "2ca17d",
+        "hash": "2876f30e",
+        "encoded": "bootstrap%20=%20%22kafka-bootstrap.$%7Bvar.zone_name%7D%22",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "2ca17d",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "2ca17d",
+        "hash": "ee39c532",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "2ca17d",
+        "hash": "721698b2",
+        "encoded": "output%20%22kafka_bootstrap_servers%22%20%7B",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "2ca17d",
+        "hash": "6721f4e0",
+        "encoded": "description%20=%20%22Kafka%20bootstrap%20servers%20for%20application%20configuration%22",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "2ca17d",
+        "hash": "d0156136",
+        "encoded": "value%20%20%20%20%20%20%20=%20%22kafka-bootstrap.$%7Bvar.zone_name%7D:9092%22",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "2ca17d",
+        "hash": "71870443",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "2ca17d",
+        "hash": "03b23aa3",
+        "encoded": "output%20%22service_dns_records%22%20%7B",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "2ca17d",
+        "hash": "d66670c6",
+        "encoded": "description%20=%20%22Service-specific%20Kafka%20DNS%20records%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "2ca17d",
+        "hash": "2ad6e0ea",
+        "encoded": "value%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "2ca17d",
+        "hash": "63629562",
+        "encoded": "for%20service%20in%20%5B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "2ca17d",
+        "hash": "2ca4e5c0",
+        "encoded": "%22customer-service%22,",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "2ca17d",
+        "hash": "e34d82db",
+        "encoded": "%22order-service%22,",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "2ca17d",
+        "hash": "e57df5a6",
+        "encoded": "%22catalog-service%22,",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "2ca17d",
+        "hash": "c8e5115a",
+        "encoded": "%22payment-service%22,",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "2ca17d",
+        "hash": "d2b2c586",
+        "encoded": "%22notification-service%22",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "2ca17d",
+        "hash": "4ad06dc7",
+        "encoded": "%5D%20:%20service%20=%3E%20%22kafka.$%7Bservice%7D.$%7Bvar.zone_name%7D:9092%22",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "2ca17d",
+        "hash": "b14d68ea",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "2ca17d",
+        "hash": "880eeeff",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

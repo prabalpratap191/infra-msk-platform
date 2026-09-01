@@ -1,0 +1,103 @@
+# ============================================================================
+# Kafka ConfigMap for EKS Integration
+# ============================================================================
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: default
+data:
+  # Kafka bootstrap servers (internal DNS)
+  bootstrap.servers: "kafka-bootstrap.internal:9092"
+  
+  # Kafka topics
+  topics.customer-events: "customer-events"
+  topics.order-events: "order-events"
+  topics.catalog-events: "catalog-events"
+  topics.payment-events: "payment-events"
+  topics.notification-events: "notification-events"
+  topics.dead-letter-events: "dead-letter-events"
+  topics.audit-events: "audit-events"
+  
+  # Kafka configuration
+  kafka.properties: |
+    bootstrap.servers=kafka-bootstrap.internal:9092
+    security.protocol=PLAINTEXT
+    acks=all
+    retries=3
+    max.in.flight.requests.per.connection=5
+    compression.type=snappy
+    linger.ms=10
+    batch.size=32768
+    buffer.memory=33554432
+    
+    # Consumer settings
+    enable.auto.commit=false
+    auto.offset.reset=earliest
+    max.poll.records=500
+    session.timeout.ms=30000
+    heartbeat.interval.ms=3000
+    
+    # Producer settings
+    request.timeout.ms=30000
+    delivery.timeout.ms=120000
+
+---
+# ============================================================================
+# Namespace-specific ConfigMaps
+# ============================================================================
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: customer-service-ns
+data:
+  bootstrap.servers: "kafka.customer-service.internal:9092"
+  primary.topic: "customer-events"
+  dead.letter.topic: "dead-letter-events"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: order-service-ns
+data:
+  bootstrap.servers: "kafka.order-service.internal:9092"
+  primary.topic: "order-events"
+  dead.letter.topic: "dead-letter-events"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: catalog-service-ns
+data:
+  bootstrap.servers: "kafka.catalog-service.internal:9092"
+  primary.topic: "catalog-events"
+  dead.letter.topic: "dead-letter-events"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: payment-service-ns
+data:
+  bootstrap.servers: "kafka.payment-service.internal:9092"
+  primary.topic: "payment-events"
+  dead.letter.topic: "dead-letter-events"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: notification-service-ns
+data:
+  bootstrap.servers: "kafka.notification-service.internal:9092"
+  primary.topic: "notification-events"
+  dead.letter.topic: "dead-letter-events"

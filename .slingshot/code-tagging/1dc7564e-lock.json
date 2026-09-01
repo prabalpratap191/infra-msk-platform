@@ -1,0 +1,558 @@
+{
+  "terraform\\environments\\dev\\terraform.tfvars.example": {
+    "filename": "terraform.tfvars.example",
+    "path": "terraform\\environments\\dev\\terraform.tfvars.example",
+    "version": "1.2",
+    "contextFile": "1dc7564e-context.json",
+    "chunks": {
+      "90e7b2": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788258412,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "23658ed7",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:56:52 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "90e7b2",
+        "hash": "728e40ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "90e7b2",
+        "hash": "6d1537dc",
+        "encoded": "#%20Dev%20Environment%20Configuration",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "90e7b2",
+        "hash": "d2231dde",
+        "encoded": "#%20Copy%20this%20file%20to%20terraform.tfvars%20and%20customize%20values",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "90e7b2",
+        "hash": "a8f89b19",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "90e7b2",
+        "hash": "7b5e9965",
+        "encoded": "#%20Global%20Settings",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "90e7b2",
+        "hash": "54cdc957",
+        "encoded": "project_name%20=%20%22meracommerce%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "90e7b2",
+        "hash": "8d33ba9f",
+        "encoded": "environment%20%20=%20%22dev%22",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "90e7b2",
+        "hash": "006c4ea1",
+        "encoded": "aws_region%20%20%20=%20%22us-east-1%22",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "90e7b2",
+        "hash": "95285845",
+        "encoded": "#%20Networking",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "90e7b2",
+        "hash": "0231509b",
+        "encoded": "vpc_cidr%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%2210.0.0.0/16%22",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "90e7b2",
+        "hash": "5c5edd34",
+        "encoded": "public_subnet_cidrs%20%20=%20%5B%2210.0.1.0/24%22,%20%2210.0.2.0/24%22%5D",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "90e7b2",
+        "hash": "aab5b72f",
+        "encoded": "private_subnet_cidrs%20=%20%5B%2210.0.101.0/24%22,%20%2210.0.102.0/24%22,%20%2210.0.103.0/24%22%5D",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "90e7b2",
+        "hash": "f64a6ee0",
+        "encoded": "availability_zones%20%20%20=%20%5B%22us-east-1a%22,%20%22us-east-1b%22,%20%22us-east-1c%22%5D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "90e7b2",
+        "hash": "d122e743",
+        "encoded": "enable_nat_gateway%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "90e7b2",
+        "hash": "fca12c5f",
+        "encoded": "single_nat_gateway%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "90e7b2",
+        "hash": "9b9a059a",
+        "encoded": "#%20Kafka%20EC2%20Configuration",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "90e7b2",
+        "hash": "d9b17f81",
+        "encoded": "kafka_instance_type%20%20=%20%22t3.medium%22",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "90e7b2",
+        "hash": "7ecc243c",
+        "encoded": "kafka_instance_count%20=%203",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "90e7b2",
+        "hash": "a34d7f0b",
+        "encoded": "kafka_volume_size%20%20%20%20=%20100",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "90e7b2",
+        "hash": "9d548bba",
+        "encoded": "kafka_volume_type%20%20%20%20=%20%22gp3%22",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "90e7b2",
+        "hash": "273e5c35",
+        "encoded": "kafka_version%20%20%20%20%20%20%20%20=%20%223.6.1%22",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "90e7b2",
+        "hash": "911c3453",
+        "encoded": "kafka_private_ips%20%20%20%20=%20%5B%2210.0.101.10%22,%20%2210.0.102.10%22,%20%2210.0.103.10%22%5D",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "90e7b2",
+        "hash": "a953d0e7",
+        "encoded": "kafka_public_dns%20%20%20%20%20=%20%22kafka-public.meracommerce.dev%22",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "90e7b2",
+        "hash": "f4d919b3",
+        "encoded": "kafka_heap_opts%20%20%20%20%20%20=%20%22-Xms2G%20-Xmx2G%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "90e7b2",
+        "hash": "9be6604c",
+        "encoded": "#%20Kafka%20Topics",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "90e7b2",
+        "hash": "e6d2eb17",
+        "encoded": "kafka_topics%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "90e7b2",
+        "hash": "a508025f",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "90e7b2",
+        "hash": "0d401c1a",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22customer-events%22",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "90e7b2",
+        "hash": "a681b796",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "90e7b2",
+        "hash": "4451b3f0",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "90e7b2",
+        "hash": "963f4b0a",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "90e7b2",
+        "hash": "da1b69e9",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "90e7b2",
+        "hash": "0a549f58",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "90e7b2",
+        "hash": "c9d54339",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22order-events%22",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "90e7b2",
+        "hash": "7b2ad147",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "90e7b2",
+        "hash": "a7d7813f",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "90e7b2",
+        "hash": "0cb8531f",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "90e7b2",
+        "hash": "179b30c9",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "90e7b2",
+        "hash": "b4bd35a6",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "90e7b2",
+        "hash": "bf6c1409",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22catalog-events%22",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "90e7b2",
+        "hash": "6e692982",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "90e7b2",
+        "hash": "66ff0a6e",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "90e7b2",
+        "hash": "a7f4bad6",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "90e7b2",
+        "hash": "951483ff",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "90e7b2",
+        "hash": "1f8adaf8",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "90e7b2",
+        "hash": "e6eaa9e7",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22payment-events%22",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "90e7b2",
+        "hash": "49def462",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "90e7b2",
+        "hash": "59b49713",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "90e7b2",
+        "hash": "8a698a8b",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "90e7b2",
+        "hash": "0cbb9f72",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "90e7b2",
+        "hash": "6b13c1a7",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "90e7b2",
+        "hash": "957a98c0",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22notification-events%22",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "90e7b2",
+        "hash": "44040ff9",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "90e7b2",
+        "hash": "09386303",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "90e7b2",
+        "hash": "ad2add74",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "90e7b2",
+        "hash": "f8847b9a",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "90e7b2",
+        "hash": "112fbe68",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "90e7b2",
+        "hash": "50cb7322",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22dead-letter-events%22",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "90e7b2",
+        "hash": "97798c44",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "90e7b2",
+        "hash": "c580e7e5",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "90e7b2",
+        "hash": "6cbd229e",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "90e7b2",
+        "hash": "bc8c9bae",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "90e7b2",
+        "hash": "9a197c72",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "90e7b2",
+        "hash": "31773831",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22audit-events%22",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "90e7b2",
+        "hash": "2d3ef133",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%206",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "90e7b2",
+        "hash": "5ff46f89",
+        "encoded": "replication_factor%20%20=%203",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "90e7b2",
+        "hash": "7da30229",
+        "encoded": "min_insync_replicas%20=%202",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "90e7b2",
+        "hash": "f064f9d6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "90e7b2",
+        "hash": "3d7146e7",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "90e7b2",
+        "hash": "7b019b81",
+        "encoded": "#%20Security",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "90e7b2",
+        "hash": "d2ecc12e",
+        "encoded": "admin_cidr_blocks%20%20%20%20=%20%5B%220.0.0.0/0%22%5D%20%20#%20CHANGE%20THIS%20IN%20PRODUCTION!",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "90e7b2",
+        "hash": "da4d982c",
+        "encoded": "enable_public_access%20=%20false",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "90e7b2",
+        "hash": "e14caea0",
+        "encoded": "eks_cluster_name%20%20%20%20%20=%20%22meracommerce-dev-cluster%22",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "90e7b2",
+        "hash": "b9b9c237",
+        "encoded": "ssh_key_name%20%20%20%20%20%20%20%20%20=%20%22kafka-key%22",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "90e7b2",
+        "hash": "e5805c33",
+        "encoded": "#%20Route53",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "90e7b2",
+        "hash": "3059d461",
+        "encoded": "create_route53_zone%20=%20true",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "90e7b2",
+        "hash": "ac58a624",
+        "encoded": "route53_zone_name%20%20%20=%20%22internal%22",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "90e7b2",
+        "hash": "ed33258b",
+        "encoded": "#%20Monitoring",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "90e7b2",
+        "hash": "d2a45ed1",
+        "encoded": "enable_cloudwatch_monitoring%20=%20true",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "90e7b2",
+        "hash": "bd6d667a",
+        "encoded": "enable_prometheus%20%20%20%20%20%20%20%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "90e7b2",
+        "hash": "9f39925b",
+        "encoded": "cloudwatch_retention_days%20%20%20%20=%207",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "90e7b2",
+        "hash": "e156fe32",
+        "encoded": "#%20Additional%20Tags",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "90e7b2",
+        "hash": "512459da",
+        "encoded": "additional_tags%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "90e7b2",
+        "hash": "5bb99f39",
+        "encoded": "Team%20%20%20%20%20%20%20%20=%20%22Platform-Engineering%22",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "90e7b2",
+        "hash": "0b55d739",
+        "encoded": "CostCenter%20%20=%20%22Engineering%22",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "90e7b2",
+        "hash": "46f94e7e",
+        "encoded": "Compliance%20%20=%20%22SOC2%22",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "90e7b2",
+        "hash": "19c6019a",
+        "encoded": "DataClass%20%20%20=%20%22Internal%22",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "90e7b2",
+        "hash": "4cb4c387",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

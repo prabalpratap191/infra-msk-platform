@@ -1,0 +1,414 @@
+{
+  ".gitignore": {
+    "filename": ".gitignore",
+    "path": ".gitignore",
+    "version": "1.2",
+    "contextFile": "b6459458-context.json",
+    "chunks": {
+      "e91e48": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256620,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "31d7b07a",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:00 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "e91e48",
+        "hash": "10ee3a66",
+        "encoded": "#%20Terraform",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "e91e48",
+        "hash": "2e982240",
+        "encoded": ".terraform/",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "e91e48",
+        "hash": "81d652bd",
+        "encoded": ".terraform.lock.hcl",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "e91e48",
+        "hash": "0a329f88",
+        "encoded": "*.tfstate",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "e91e48",
+        "hash": "d41f2f3f",
+        "encoded": "*.tfstate.*",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "e91e48",
+        "hash": "b4e38e05",
+        "encoded": "*.tfvars",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "e91e48",
+        "hash": "c0dd314b",
+        "encoded": "!terraform.tfvars.example",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "e91e48",
+        "hash": "727b4c3f",
+        "encoded": "crash.log",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "e91e48",
+        "hash": "2d3e54e6",
+        "encoded": "crash.*.log",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "e91e48",
+        "hash": "711c8130",
+        "encoded": "override.tf",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "e91e48",
+        "hash": "8a796d22",
+        "encoded": "override.tf.json",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "e91e48",
+        "hash": "79082b80",
+        "encoded": "*_override.tf",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "e91e48",
+        "hash": "021f7d0c",
+        "encoded": "*_override.tf.json",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "e91e48",
+        "hash": "f84e3a9e",
+        "encoded": ".terraformrc",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "e91e48",
+        "hash": "bbcb9e91",
+        "encoded": "terraform.rc",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "e91e48",
+        "hash": "3780d1fe",
+        "encoded": "#%20SSH%20Keys",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "e91e48",
+        "hash": "45ad5ee9",
+        "encoded": "*.pem",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "e91e48",
+        "hash": "c215ee91",
+        "encoded": "*.key",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "e91e48",
+        "hash": "ddc6beb0",
+        "encoded": "*.ppk",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "e91e48",
+        "hash": "ccc52a23",
+        "encoded": "#%20Environment",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "e91e48",
+        "hash": "29916cd1",
+        "encoded": ".env",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "e91e48",
+        "hash": "205c63b3",
+        "encoded": ".env.*",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "e91e48",
+        "hash": "2bacea82",
+        "encoded": "!.env.example",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "e91e48",
+        "hash": "764e480f",
+        "encoded": "#%20IDE",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "e91e48",
+        "hash": "d749bae7",
+        "encoded": ".vscode/",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "e91e48",
+        "hash": "880d9285",
+        "encoded": ".idea/",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "e91e48",
+        "hash": "db8f8ccc",
+        "encoded": "*.swp",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "e91e48",
+        "hash": "b21ad3f9",
+        "encoded": "*.swo",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "e91e48",
+        "hash": "ec1d76c7",
+        "encoded": "*~",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "e91e48",
+        "hash": "3e887f4a",
+        "encoded": ".DS_Store",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "e91e48",
+        "hash": "3a29ca0b",
+        "encoded": "#%20Logs",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "e91e48",
+        "hash": "66d547e8",
+        "encoded": "*.log",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "e91e48",
+        "hash": "eadcfe01",
+        "encoded": "logs/",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "e91e48",
+        "hash": "3b45b258",
+        "encoded": "#%20Temporary%20files",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "e91e48",
+        "hash": "a2c12cb5",
+        "encoded": "*.tmp",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "e91e48",
+        "hash": "686ba73a",
+        "encoded": "*.temp",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "e91e48",
+        "hash": "c99a0bf4",
+        "encoded": ".cache/",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "e91e48",
+        "hash": "3bac4cf8",
+        "encoded": "#%20Docker",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "e91e48",
+        "hash": "6e5a57af",
+        "encoded": "docker-compose.override.yml",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "e91e48",
+        "hash": "c681a1ef",
+        "encoded": "#%20Backup%20files",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "e91e48",
+        "hash": "a34cb7f0",
+        "encoded": "*.bak",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "e91e48",
+        "hash": "dfb84efe",
+        "encoded": "*.backup",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "e91e48",
+        "hash": "6d7f9f67",
+        "encoded": "#%20Secrets",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "e91e48",
+        "hash": "0d7e25db",
+        "encoded": "secrets/",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "e91e48",
+        "hash": "1bf18bb8",
+        "encoded": "*.secret",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "e91e48",
+        "hash": "5db62d34",
+        "encoded": "#%20Jenkins",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "e91e48",
+        "hash": "400befea",
+        "encoded": ".jenkins/",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "e91e48",
+        "hash": "e1c415b3",
+        "encoded": "#%20Python",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "e91e48",
+        "hash": "0aa07f05",
+        "encoded": "__pycache__/",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "e91e48",
+        "hash": "f4332afd",
+        "encoded": "*.py%5Bcod%5D",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "e91e48",
+        "hash": "e80875f2",
+        "encoded": "*.so",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "e91e48",
+        "hash": "0606bad2",
+        "encoded": ".Python",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "e91e48",
+        "hash": "454880f6",
+        "encoded": "venv/",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "e91e48",
+        "hash": "264a1c53",
+        "encoded": "ENV/",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "e91e48",
+        "hash": "9841b90a",
+        "encoded": "#%20Node",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "e91e48",
+        "hash": "afdce9b8",
+        "encoded": "node_modules/",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "e91e48",
+        "hash": "e93f11be",
+        "encoded": "package-lock.json",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "e91e48",
+        "hash": "3d187e57",
+        "encoded": "yarn.lock",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "e91e48",
+        "hash": "6dcbe850",
+        "encoded": "#%20Archives",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "e91e48",
+        "hash": "59dc0f96",
+        "encoded": "*.tar.gz",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "e91e48",
+        "hash": "dc88ff3f",
+        "encoded": "*.zip",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "e91e48",
+        "hash": "778796b8",
+        "encoded": "*.tgz",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "e91e48",
+        "hash": "83888192",
+        "encoded": "#%20OS",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "e91e48",
+        "hash": "b557f0e6",
+        "encoded": "Thumbs.db",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

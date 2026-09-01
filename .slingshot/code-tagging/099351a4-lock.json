@@ -1,0 +1,1056 @@
+{
+  "terraform\\modules\\kafka-ec2\\main.tf": {
+    "filename": "main.tf",
+    "path": "terraform\\modules\\kafka-ec2\\main.tf",
+    "version": "1.2",
+    "contextFile": "099351a4-context.json",
+    "chunks": {
+      "74d281": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256624,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "07072f44",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:04 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "74d281",
+        "hash": "728e40ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "74d281",
+        "hash": "6158cc57",
+        "encoded": "#%20Data%20Sources",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "74d281",
+        "hash": "74045fda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "74d281",
+        "hash": "d414a873",
+        "encoded": "#%20Get%20latest%20Amazon%20Linux%202023%20AMI",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "74d281",
+        "hash": "6cf81760",
+        "encoded": "data%20%22aws_ami%22%20%22amazon_linux_2023%22%20%7B",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "74d281",
+        "hash": "05e663f1",
+        "encoded": "most_recent%20=%20true",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "74d281",
+        "hash": "47756395",
+        "encoded": "owners%20%20%20%20%20%20=%20%5B%22amazon%22%5D",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "74d281",
+        "hash": "b0be804a",
+        "encoded": "filter%20%7B",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "74d281",
+        "hash": "853d22b3",
+        "encoded": "name%20%20%20=%20%22name%22",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "74d281",
+        "hash": "4f7ad48e",
+        "encoded": "values%20=%20%5B%22al2023-ami-*-x86_64%22%5D",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "74d281",
+        "hash": "6a3f2143",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "74d281",
+        "hash": "c6bbaf63",
+        "encoded": "filter%20%7B",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "74d281",
+        "hash": "237224e6",
+        "encoded": "name%20%20%20=%20%22virtualization-type%22",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "74d281",
+        "hash": "e3d4f946",
+        "encoded": "values%20=%20%5B%22hvm%22%5D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "74d281",
+        "hash": "76477189",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "74d281",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "74d281",
+        "hash": "8b1e7724",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "74d281",
+        "hash": "732aedf7",
+        "encoded": "#%20IAM%20Role%20for%20Kafka%20EC2%20Instances",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "74d281",
+        "hash": "11627c63",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "74d281",
+        "hash": "68cddfb6",
+        "encoded": "resource%20%22aws_iam_role%22%20%22kafka_ec2%22%20%7B",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "74d281",
+        "hash": "29d6b5b1",
+        "encoded": "name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-ec2-role%22",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "74d281",
+        "hash": "9f79d9af",
+        "encoded": "assume_role_policy%20=%20jsonencode(%7B",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "74d281",
+        "hash": "b8c4e40b",
+        "encoded": "Version%20=%20%222012-10-17%22",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "74d281",
+        "hash": "c4e62ab6",
+        "encoded": "Statement%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "74d281",
+        "hash": "a508025f",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "74d281",
+        "hash": "7b12f1fa",
+        "encoded": "Action%20=%20%22sts:AssumeRole%22",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "74d281",
+        "hash": "3264d6b7",
+        "encoded": "Effect%20=%20%22Allow%22",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "74d281",
+        "hash": "2ff8f2ba",
+        "encoded": "Principal%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "74d281",
+        "hash": "f02dc861",
+        "encoded": "Service%20=%20%22ec2.amazonaws.com%22",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "74d281",
+        "hash": "dfad4947",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "74d281",
+        "hash": "b14d68ea",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "74d281",
+        "hash": "4d38790d",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "74d281",
+        "hash": "410641e8",
+        "encoded": "%7D)",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "74d281",
+        "hash": "60288bb6",
+        "encoded": "tags%20=%20var.tags",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "74d281",
+        "hash": "98f83ab6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "74d281",
+        "hash": "97a3289c",
+        "encoded": "resource%20%22aws_iam_role_policy%22%20%22kafka_ec2%22%20%7B",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "74d281",
+        "hash": "016fd0ed",
+        "encoded": "name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-ec2-policy%22",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "74d281",
+        "hash": "41a4f414",
+        "encoded": "role%20=%20aws_iam_role.kafka_ec2.id",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "74d281",
+        "hash": "95644537",
+        "encoded": "policy%20=%20jsonencode(%7B",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "74d281",
+        "hash": "7cdbf973",
+        "encoded": "Version%20=%20%222012-10-17%22",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "74d281",
+        "hash": "f0121a96",
+        "encoded": "Statement%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "74d281",
+        "hash": "39b366ef",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "74d281",
+        "hash": "c973d083",
+        "encoded": "Effect%20=%20%22Allow%22",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "74d281",
+        "hash": "209d9ff3",
+        "encoded": "Action%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "74d281",
+        "hash": "3e37ffad",
+        "encoded": "%22cloudwatch:PutMetricData%22,",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "74d281",
+        "hash": "84be8252",
+        "encoded": "%22cloudwatch:GetMetricStatistics%22,",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "74d281",
+        "hash": "f7bcbb0f",
+        "encoded": "%22cloudwatch:ListMetrics%22,",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "74d281",
+        "hash": "2bc6d090",
+        "encoded": "%22ec2:DescribeTags%22,",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "74d281",
+        "hash": "aa7e8e31",
+        "encoded": "%22logs:CreateLogGroup%22,",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "74d281",
+        "hash": "ebe84b0c",
+        "encoded": "%22logs:CreateLogStream%22,",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "74d281",
+        "hash": "3b525479",
+        "encoded": "%22logs:PutLogEvents%22,",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "74d281",
+        "hash": "62db4e33",
+        "encoded": "%22logs:DescribeLogStreams%22",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "74d281",
+        "hash": "411ffce5",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "74d281",
+        "hash": "ef164ee4",
+        "encoded": "Resource%20=%20%22*%22",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "74d281",
+        "hash": "a7917065",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "74d281",
+        "hash": "667f8f94",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "74d281",
+        "hash": "c5d22a62",
+        "encoded": "Effect%20=%20%22Allow%22",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "74d281",
+        "hash": "2f9a8d48",
+        "encoded": "Action%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "74d281",
+        "hash": "6aa5a712",
+        "encoded": "%22s3:GetObject%22,",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "74d281",
+        "hash": "84121f28",
+        "encoded": "%22s3:PutObject%22,",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "74d281",
+        "hash": "999a1f82",
+        "encoded": "%22s3:ListBucket%22",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "74d281",
+        "hash": "3ad57366",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "74d281",
+        "hash": "b3ef4e32",
+        "encoded": "Resource%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "74d281",
+        "hash": "910124f7",
+        "encoded": "%22arn:aws:s3:::$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-backups%22,",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "74d281",
+        "hash": "cc8c81c8",
+        "encoded": "%22arn:aws:s3:::$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-backups/*%22",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "74d281",
+        "hash": "47153f86",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "74d281",
+        "hash": "3002cc9e",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "74d281",
+        "hash": "836ab946",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "74d281",
+        "hash": "ef0cb1be",
+        "encoded": "Effect%20=%20%22Allow%22",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "74d281",
+        "hash": "ad1bd1c2",
+        "encoded": "Action%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "74d281",
+        "hash": "98f415de",
+        "encoded": "%22ssm:GetParameter%22,",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "74d281",
+        "hash": "f302d565",
+        "encoded": "%22ssm:GetParameters%22,",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "74d281",
+        "hash": "11b3ed53",
+        "encoded": "%22ssm:GetParameterHistory%22",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "74d281",
+        "hash": "f238aed4",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "74d281",
+        "hash": "84524ac9",
+        "encoded": "Resource%20=%20%22*%22",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "74d281",
+        "hash": "d7cd7257",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "74d281",
+        "hash": "5970c6d4",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "74d281",
+        "hash": "a406fb02",
+        "encoded": "%7D)",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "74d281",
+        "hash": "f4ff50cd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "74d281",
+        "hash": "1a818cc3",
+        "encoded": "resource%20%22aws_iam_instance_profile%22%20%22kafka_ec2%22%20%7B",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "74d281",
+        "hash": "b90a919b",
+        "encoded": "name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-ec2-profile%22",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "74d281",
+        "hash": "21e8f93d",
+        "encoded": "role%20=%20aws_iam_role.kafka_ec2.name",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "74d281",
+        "hash": "06a855c2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "74d281",
+        "hash": "5c890bda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "74d281",
+        "hash": "1838fe72",
+        "encoded": "#%20User%20Data%20Template",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "74d281",
+        "hash": "8c0015a4",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "74d281",
+        "hash": "ac62777e",
+        "encoded": "locals%20%7B",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "74d281",
+        "hash": "2de88913",
+        "encoded": "user_data_template%20=%20templatefile(%22$%7Bpath.module%7D/user-data.sh%22,%20%7B",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "74d281",
+        "hash": "c1d31803",
+        "encoded": "broker_id%20%20%20%20%20%20%20%20%20%20=%20%22BROKER_ID%22",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "74d281",
+        "hash": "fe758a9c",
+        "encoded": "kafka_version%20%20%20%20%20%20=%20var.kafka_version",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "74d281",
+        "hash": "40d49431",
+        "encoded": "cluster_id%20%20%20%20%20%20%20%20%20=%20%22CLUSTER_ID%22",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "74d281",
+        "hash": "42a3a9c5",
+        "encoded": "kafka_heap_opts%20%20%20%20=%20var.kafka_heap_opts",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "74d281",
+        "hash": "64cce563",
+        "encoded": "project_name%20%20%20%20%20%20%20=%20var.project_name",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "74d281",
+        "hash": "d19f5782",
+        "encoded": "environment%20%20%20%20%20%20%20%20=%20var.environment",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "74d281",
+        "hash": "592bac09",
+        "encoded": "kafka_public_dns%20%20%20=%20var.kafka_public_dns",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "74d281",
+        "hash": "513f924f",
+        "encoded": "broker_private_ip%20%20=%20%22BROKER_PRIVATE_IP%22",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "74d281",
+        "hash": "5332b010",
+        "encoded": "kafka_private_ips%20%20=%20jsonencode(var.kafka_private_ips)",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "74d281",
+        "hash": "c9c831ac",
+        "encoded": "%7D)",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "74d281",
+        "hash": "a4ba47af",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "74d281",
+        "hash": "f404e35c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "74d281",
+        "hash": "7b717082",
+        "encoded": "#%20Kafka%20Cluster%20ID%20(shared%20across%20all%20brokers)",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "74d281",
+        "hash": "d4e0492b",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "74d281",
+        "hash": "c6d47494",
+        "encoded": "resource%20%22random_uuid%22%20%22kafka_cluster%22%20%7B",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "74d281",
+        "hash": "056477bc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "74d281",
+        "hash": "e0cf2eff",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "74d281",
+        "hash": "c838d41a",
+        "encoded": "#%20Kafka%20EC2%20Instances",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "74d281",
+        "hash": "38e61011",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "74d281",
+        "hash": "73599319",
+        "encoded": "resource%20%22aws_instance%22%20%22kafka%22%20%7B",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "74d281",
+        "hash": "e9ee8dcb",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.kafka_instance_count",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "74d281",
+        "hash": "b1dfeea2",
+        "encoded": "ami%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20data.aws_ami.amazon_linux_2023.id",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "74d281",
+        "hash": "2ee9edc3",
+        "encoded": "instance_type%20%20%20%20%20%20%20%20%20%20=%20var.kafka_instance_type",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "74d281",
+        "hash": "b3757f80",
+        "encoded": "subnet_id%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.private_subnet_ids%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "74d281",
+        "hash": "87703ebe",
+        "encoded": "vpc_security_group_ids%20=%20%5Bvar.kafka_security_group_id%5D",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "74d281",
+        "hash": "7d1c2d26",
+        "encoded": "key_name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.key_name",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "74d281",
+        "hash": "ed539560",
+        "encoded": "iam_instance_profile%20%20%20=%20aws_iam_instance_profile.kafka_ec2.name",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "74d281",
+        "hash": "d56c93b1",
+        "encoded": "private_ip%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.kafka_private_ips%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "74d281",
+        "hash": "53a9c044",
+        "encoded": "user_data%20=%20replace(",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "74d281",
+        "hash": "e8a9d2ac",
+        "encoded": "replace(",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "74d281",
+        "hash": "5dc067d8",
+        "encoded": "replace(",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "74d281",
+        "hash": "31aee0e4",
+        "encoded": "local.user_data_template,",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "74d281",
+        "hash": "934c5114",
+        "encoded": "%22BROKER_ID%22,%20tostring(count.index%20+%201)",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "74d281",
+        "hash": "e9b562d7",
+        "encoded": "),",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "74d281",
+        "hash": "89cf44b2",
+        "encoded": "%22CLUSTER_ID%22,%20random_uuid.kafka_cluster.result",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "74d281",
+        "hash": "0604910b",
+        "encoded": "),",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "74d281",
+        "hash": "d6ff47e4",
+        "encoded": "%22BROKER_PRIVATE_IP%22,%20var.kafka_private_ips%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "74d281",
+        "hash": "a578af76",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "74d281",
+        "hash": "92d292ea",
+        "encoded": "root_block_device%20%7B",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "74d281",
+        "hash": "0ca9302e",
+        "encoded": "volume_type%20%20%20%20%20%20%20%20%20%20%20=%20var.kafka_volume_type",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "74d281",
+        "hash": "6bfc6608",
+        "encoded": "volume_size%20%20%20%20%20%20%20%20%20%20%20=%20var.kafka_volume_size",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "74d281",
+        "hash": "8fb1cbb7",
+        "encoded": "delete_on_termination%20=%20true",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "74d281",
+        "hash": "2e27a0a1",
+        "encoded": "encrypted%20%20%20%20%20%20%20%20%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "74d281",
+        "hash": "5a96434f",
+        "encoded": "tags%20=%20merge(",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "74d281",
+        "hash": "99807e3b",
+        "encoded": "var.tags,",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "74d281",
+        "hash": "7e9f1110",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "74d281",
+        "hash": "df73c1be",
+        "encoded": "Name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D-root%22",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "74d281",
+        "hash": "dbb55d46",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "74d281",
+        "hash": "5b3ab2ba",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "74d281",
+        "hash": "c2938672",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "74d281",
+        "hash": "83dcce0a",
+        "encoded": "monitoring%20=%20true",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "74d281",
+        "hash": "b093cd87",
+        "encoded": "metadata_options%20%7B",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "74d281",
+        "hash": "b671df55",
+        "encoded": "http_endpoint%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22enabled%22",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "74d281",
+        "hash": "819cfa38",
+        "encoded": "http_tokens%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22required%22",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "74d281",
+        "hash": "d6ab0011",
+        "encoded": "http_put_response_hop_limit%20=%201",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "74d281",
+        "hash": "b4b044d8",
+        "encoded": "instance_metadata_tags%20%20%20%20%20%20=%20%22enabled%22",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "74d281",
+        "hash": "a4485fa2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "74d281",
+        "hash": "6aafed91",
+        "encoded": "tags%20=%20merge(",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "74d281",
+        "hash": "36f890ad",
+        "encoded": "var.tags,",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "74d281",
+        "hash": "7b837728",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "74d281",
+        "hash": "a238929b",
+        "encoded": "Name%20%20%20%20%20%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D%22",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "74d281",
+        "hash": "be3f0bcd",
+        "encoded": "BrokerId%20%20=%20count.index%20+%201",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "74d281",
+        "hash": "521bd5d1",
+        "encoded": "Component%20=%20%22Kafka-Broker%22",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "74d281",
+        "hash": "2107d871",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "74d281",
+        "hash": "75986571",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "74d281",
+        "hash": "960bd35a",
+        "encoded": "lifecycle%20%7B",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "74d281",
+        "hash": "19bd52d9",
+        "encoded": "ignore_changes%20=%20%5Bami%5D",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "74d281",
+        "hash": "e0563286",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "74d281",
+        "hash": "dee02b44",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "74d281",
+        "hash": "8b308049",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "74d281",
+        "hash": "a46d991e",
+        "encoded": "#%20Elastic%20IPs%20(optional%20for%20public%20access)",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "74d281",
+        "hash": "ecd8f242",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "74d281",
+        "hash": "402a7670",
+        "encoded": "resource%20%22aws_eip%22%20%22kafka%22%20%7B",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "74d281",
+        "hash": "2e0de386",
+        "encoded": "count%20%20%20%20=%20var.enable_public_ips%20?%20var.kafka_instance_count%20:%200",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "74d281",
+        "hash": "8bc2ba45",
+        "encoded": "instance%20=%20aws_instance.kafka%5Bcount.index%5D.id",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "74d281",
+        "hash": "3d3db24e",
+        "encoded": "domain%20%20%20=%20%22vpc%22",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "74d281",
+        "hash": "14349dd1",
+        "encoded": "tags%20=%20merge(",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "74d281",
+        "hash": "7a44ce51",
+        "encoded": "var.tags,",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "74d281",
+        "hash": "6a041539",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "74d281",
+        "hash": "ace7c46f",
+        "encoded": "Name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-$%7Bcount.index%20+%201%7D-eip%22",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "74d281",
+        "hash": "c7ef80cf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "74d281",
+        "hash": "cfb24311",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "74d281",
+        "hash": "990329ab",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "terraform\\modules\\route53\\variables.tf": {
+    "filename": "variables.tf",
+    "path": "terraform\\modules\\route53\\variables.tf",
+    "version": "1.2",
+    "contextFile": "54885ed9-context.json",
+    "chunks": {
+      "527f5e": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256626,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "01cac7ea",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:06 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "527f5e",
+        "hash": "918869eb",
+        "encoded": "variable%20%22project_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "527f5e",
+        "hash": "2abb7202",
+        "encoded": "description%20=%20%22Project%20name%22",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "527f5e",
+        "hash": "41e4354c",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "527f5e",
+        "hash": "973e69d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "527f5e",
+        "hash": "89c282b4",
+        "encoded": "variable%20%22environment%22%20%7B",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "527f5e",
+        "hash": "8270e289",
+        "encoded": "description%20=%20%22Environment%20name%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "527f5e",
+        "hash": "fb592583",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "527f5e",
+        "hash": "1c082ee4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "527f5e",
+        "hash": "d6e79adb",
+        "encoded": "variable%20%22vpc_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "527f5e",
+        "hash": "02b1333c",
+        "encoded": "description%20=%20%22VPC%20ID%22",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "527f5e",
+        "hash": "12451da1",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "527f5e",
+        "hash": "e683dcf7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "527f5e",
+        "hash": "c0c2e536",
+        "encoded": "variable%20%22create_zone%22%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "527f5e",
+        "hash": "3d499a8f",
+        "encoded": "description%20=%20%22Create%20a%20new%20Route53%20private%20hosted%20zone%22",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "527f5e",
+        "hash": "64e97277",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20bool",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "527f5e",
+        "hash": "260a0aef",
+        "encoded": "default%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "527f5e",
+        "hash": "ee39c532",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "527f5e",
+        "hash": "c066ea9e",
+        "encoded": "variable%20%22zone_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "527f5e",
+        "hash": "112569cb",
+        "encoded": "description%20=%20%22Route53%20zone%20name%22",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "527f5e",
+        "hash": "b9fd9186",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "527f5e",
+        "hash": "71870443",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "527f5e",
+        "hash": "d2543569",
+        "encoded": "variable%20%22existing_zone_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "527f5e",
+        "hash": "60d7e34c",
+        "encoded": "description%20=%20%22Existing%20Route53%20zone%20ID%20(if%20not%20creating%20new)%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "527f5e",
+        "hash": "ca2fe4c3",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "527f5e",
+        "hash": "ec7fafbe",
+        "encoded": "default%20%20%20%20%20=%20%22%22",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "527f5e",
+        "hash": "cfdac52c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "527f5e",
+        "hash": "07b5ad83",
+        "encoded": "variable%20%22kafka_broker_ips%22%20%7B",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "527f5e",
+        "hash": "ebeaf5f0",
+        "encoded": "description%20=%20%22List%20of%20Kafka%20broker%20private%20IPs%22",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "527f5e",
+        "hash": "04a434aa",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "527f5e",
+        "hash": "dfad4947",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "527f5e",
+        "hash": "e4837a3d",
+        "encoded": "variable%20%22kafka_broker_count%22%20%7B",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "527f5e",
+        "hash": "ea0deea0",
+        "encoded": "description%20=%20%22Number%20of%20Kafka%20brokers%22",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "527f5e",
+        "hash": "a1792c4f",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20number",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "527f5e",
+        "hash": "792377b1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "527f5e",
+        "hash": "54ee3d5a",
+        "encoded": "variable%20%22tags%22%20%7B",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "527f5e",
+        "hash": "454c3c4c",
+        "encoded": "description%20=%20%22Tags%20to%20apply%20to%20resources%22",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "527f5e",
+        "hash": "65b15bb9",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20map(string)",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "527f5e",
+        "hash": "f0743e13",
+        "encoded": "default%20%20%20%20%20=%20%7B%7D",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "527f5e",
+        "hash": "f9b2449c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

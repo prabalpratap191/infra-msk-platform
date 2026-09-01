@@ -1,0 +1,216 @@
+{
+  "terraform\\modules\\security-group\\variables.tf": {
+    "filename": "variables.tf",
+    "path": "terraform\\modules\\security-group\\variables.tf",
+    "version": "1.2",
+    "contextFile": "4b739d5a-context.json",
+    "chunks": {
+      "bd8383": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256623,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "1e475d7d",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:03 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "bd8383",
+        "hash": "918869eb",
+        "encoded": "variable%20%22project_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "bd8383",
+        "hash": "2abb7202",
+        "encoded": "description%20=%20%22Project%20name%22",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "bd8383",
+        "hash": "41e4354c",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "bd8383",
+        "hash": "973e69d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "bd8383",
+        "hash": "89c282b4",
+        "encoded": "variable%20%22environment%22%20%7B",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "bd8383",
+        "hash": "8270e289",
+        "encoded": "description%20=%20%22Environment%20name%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "bd8383",
+        "hash": "fb592583",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "bd8383",
+        "hash": "1c082ee4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "bd8383",
+        "hash": "d6e79adb",
+        "encoded": "variable%20%22vpc_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "bd8383",
+        "hash": "02b1333c",
+        "encoded": "description%20=%20%22VPC%20ID%22",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "bd8383",
+        "hash": "12451da1",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "bd8383",
+        "hash": "e683dcf7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "bd8383",
+        "hash": "fee75746",
+        "encoded": "variable%20%22admin_cidr_blocks%22%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "bd8383",
+        "hash": "484d2d46",
+        "encoded": "description%20=%20%22CIDR%20blocks%20allowed%20for%20admin%20access%22",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "bd8383",
+        "hash": "a8b69861",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "bd8383",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "bd8383",
+        "hash": "535c647d",
+        "encoded": "variable%20%22enable_public_access%22%20%7B",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "bd8383",
+        "hash": "9a08dc48",
+        "encoded": "description%20=%20%22Enable%20public%20access%20to%20Kafka%22",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "bd8383",
+        "hash": "a92f925d",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20bool",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "bd8383",
+        "hash": "8396ccad",
+        "encoded": "default%20%20%20%20%20=%20false",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "bd8383",
+        "hash": "71870443",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "bd8383",
+        "hash": "721cc4aa",
+        "encoded": "variable%20%22eks_node_sg_ids%22%20%7B",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "bd8383",
+        "hash": "632d6f99",
+        "encoded": "description%20=%20%22EKS%20node%20security%20group%20IDs%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "bd8383",
+        "hash": "6b8d2bf0",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "bd8383",
+        "hash": "b6832301",
+        "encoded": "default%20%20%20%20%20=%20%5B%5D",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "bd8383",
+        "hash": "cfdac52c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "bd8383",
+        "hash": "dbf795d0",
+        "encoded": "variable%20%22tags%22%20%7B",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "bd8383",
+        "hash": "e3ea69d5",
+        "encoded": "description%20=%20%22Tags%20to%20apply%20to%20resources%22",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "bd8383",
+        "hash": "e13fc8a6",
+        "encoded": "type%20%20%20%20%20%20%20%20=%20map(string)",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "bd8383",
+        "hash": "734714cc",
+        "encoded": "default%20%20%20%20%20=%20%7B%7D",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "bd8383",
+        "hash": "b14d68ea",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+# ============================================================================
+# Dev Environment Configuration
+# Copy this file to terraform.tfvars and customize values
+# ============================================================================
+
+# Global Settings
+project_name = "meracommerce"
+environment  = "dev"
+aws_region   = "us-east-1"
+
+# Networking
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+availability_zones   = ["us-east-1a", "us-east-1b", "us-east-1c"]
+enable_nat_gateway   = true
+single_nat_gateway   = true
+
+# Kafka EC2 Configuration
+kafka_instance_type  = "t3.medium"
+kafka_instance_count = 3
+kafka_volume_size    = 100
+kafka_volume_type    = "gp3"
+kafka_version        = "3.6.1"
+kafka_private_ips    = ["10.0.101.10", "10.0.102.10", "10.0.103.10"]
+kafka_public_dns     = "kafka-public.meracommerce.dev"
+kafka_heap_opts      = "-Xms2G -Xmx2G"
+
+# Kafka Topics
+kafka_topics = [
+  {
+    name                = "customer-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  },
+  {
+    name                = "order-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  },
+  {
+    name                = "catalog-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  },
+  {
+    name                = "payment-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  },
+  {
+    name                = "notification-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  },
+  {
+    name                = "dead-letter-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  },
+  {
+    name                = "audit-events"
+    partitions          = 6
+    replication_factor  = 3
+    min_insync_replicas = 2
+  }
+]
+
+# Security
+admin_cidr_blocks    = ["0.0.0.0/0"]  # CHANGE THIS IN PRODUCTION!
+enable_public_access = false
+eks_cluster_name     = "meracommerce-dev-cluster"
+ssh_key_name         = "kafka-key"
+
+# Route53
+create_route53_zone = true
+route53_zone_name   = "internal"
+
+# Monitoring
+enable_cloudwatch_monitoring = true
+enable_prometheus            = true
+cloudwatch_retention_days    = 7
+
+# Additional Tags
+additional_tags = {
+  Team        = "Platform-Engineering"
+  CostCenter  = "Engineering"
+  Compliance  = "SOC2"
+  DataClass   = "Internal"
+}

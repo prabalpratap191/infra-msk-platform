@@ -1,0 +1,1698 @@
+{
+  "README.md": {
+    "filename": "README.md",
+    "path": "README.md",
+    "version": "1.2",
+    "contextFile": "7d7ba11e-context.json",
+    "chunks": {
+      "f39c67": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256620,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "9ee9ad74",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:00 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "f39c67",
+        "hash": "ca9382ce",
+        "encoded": "#%20infra-kafka-platform",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "f39c67",
+        "hash": "6346186b",
+        "encoded": "**Production-Ready%20Apache%20Kafka%20Infrastructure%20on%20AWS%20EC2**",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "f39c67",
+        "hash": "e50604de",
+        "encoded": "%5B!%5BTerraform%5D(https://img.shields.io/badge/Terraform-1.5+-623CE4?logo=terraform)%5D(https://www.terraform.io/)",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "f39c67",
+        "hash": "22a04bbf",
+        "encoded": "%5B!%5BAWS%5D(https://img.shields.io/badge/AWS-EC2%2520%257C%2520VPC-FF9900?logo=amazon-aws)%5D(https://aws.amazon.com/)",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "f39c67",
+        "hash": "a51caad5",
+        "encoded": "%5B!%5BKafka%5D(https://img.shields.io/badge/Kafka-KRaft%2520Mode-231F20?logo=apache-kafka)%5D(https://kafka.apache.org/)",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "f39c67",
+        "hash": "82c11613",
+        "encoded": "%5B!%5BJenkins%5D(https://img.shields.io/badge/Jenkins-CI%252FCD-D24939?logo=jenkins)%5D(https://www.jenkins.io/)",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "f39c67",
+        "hash": "dc46cf7c",
+        "encoded": "##%20Overview",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "f39c67",
+        "hash": "76af9a62",
+        "encoded": "This%20repository%20provisions%20a%20highly%20available%20Apache%20Kafka%20cluster%20on%20AWS%20EC2%20instances%20using%20Terraform%20and%20deploys%20Kafka%20using%20Docker%20Compose.%20The%20entire%20infrastructure%20is%20automated%20through%20Jenkins%20CI/CD%20pipelines.",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "f39c67",
+        "hash": "00cf983f",
+        "encoded": "##%20Architecture",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "f39c67",
+        "hash": "79694f27",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "f39c67",
+        "hash": "ad97ccc8",
+        "encoded": "%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%90",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "f39c67",
+        "hash": "6c0c75a6",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20AWS%20VPC%20(10.0.0.0/16)%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "f39c67",
+        "hash": "83ac9eec",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "f39c67",
+        "hash": "5c518bec",
+        "encoded": "%E2%94%82%20%20%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%90%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%90%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "f39c67",
+        "hash": "90efa222",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%20Public%20Subnet%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20Private%20Subnet%20%20%E2%94%82%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "f39c67",
+        "hash": "29223080",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%2010.0.1.0/24%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%2010.0.101.0/24%20%20%20%E2%94%82%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "f39c67",
+        "hash": "615b4390",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "f39c67",
+        "hash": "56f49956",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%20-%20NAT%20Gateway%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20-%20Kafka-1%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "f39c67",
+        "hash": "27885b19",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%20-%20IGW%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20-%20Kafka-2%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "f39c67",
+        "hash": "c91db03c",
+        "encoded": "%E2%94%82%20%20%E2%94%94%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%98%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20-%20Kafka-3%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "f39c67",
+        "hash": "49242393",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%98%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "f39c67",
+        "hash": "95b62ba4",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "f39c67",
+        "hash": "6dd804b3",
+        "encoded": "%E2%94%82%20%20%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%90%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "f39c67",
+        "hash": "1f7c70ca",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20EKS%20Cluster%20(meracommerce-dev-cluster)%20%20%20%20%20%20%20%20%20%E2%94%82%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "f39c67",
+        "hash": "3beae4fe",
+        "encoded": "%E2%94%82%20%20%E2%94%82%20%20%20%20%20%20Connects%20to%20Kafka%20via%20Private%20DNS%20(9092)%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "f39c67",
+        "hash": "46a70e82",
+        "encoded": "%E2%94%82%20%20%E2%94%94%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%98%20%E2%94%82",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "f39c67",
+        "hash": "280419fc",
+        "encoded": "%E2%94%94%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%98",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "f39c67",
+        "hash": "4a4d690f",
+        "encoded": "External%20Access%20(Optional)",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "f39c67",
+        "hash": "3792daba",
+        "encoded": "%E2%86%93%20:9094",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "f39c67",
+        "hash": "f90a9188",
+        "encoded": "Public%20DNS%20(Route53)",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "f39c67",
+        "hash": "465274ea",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "f39c67",
+        "hash": "d5129c0d",
+        "encoded": "##%20Features",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "f39c67",
+        "hash": "05c56c69",
+        "encoded": "%E2%9C%85%20**Automated%20Infrastructure%20Provisioning**%20-%20Complete%20AWS%20infrastructure%20via%20Terraform",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "f39c67",
+        "hash": "bcc1645f",
+        "encoded": "%E2%9C%85%20**High%20Availability**%20-%203-broker%20Kafka%20cluster%20with%20replication%20factor%203",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "f39c67",
+        "hash": "ec91b424",
+        "encoded": "%E2%9C%85%20**KRaft%20Mode**%20-%20No%20Zookeeper%20dependency",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "f39c67",
+        "hash": "f2ba4e24",
+        "encoded": "%E2%9C%85%20**EKS%20Integration**%20-%20Seamless%20connectivity%20from%20Kubernetes%20workloads",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "f39c67",
+        "hash": "929a0f0d",
+        "encoded": "%E2%9C%85%20**Auto-Scaling%20Ready**%20-%20Configurable%20instance%20types%20and%20storage",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "f39c67",
+        "hash": "dee91517",
+        "encoded": "%E2%9C%85%20**Monitoring%20&%20Observability**%20-%20Prometheus,%20Grafana,%20CloudWatch%20integration",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "f39c67",
+        "hash": "cfe33a52",
+        "encoded": "%E2%9C%85%20**Security%20Hardened**%20-%20Security%20groups,%20private%20subnets,%20IAM%20roles",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "f39c67",
+        "hash": "c779060f",
+        "encoded": "%E2%9C%85%20**CI/CD%20Automated**%20-%20Jenkins%20pipeline%20for%20end-to-end%20deployment",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "f39c67",
+        "hash": "4babd150",
+        "encoded": "%E2%9C%85%20**DNS%20Management**%20-%20Route53%20private%20hosted%20zones",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "f39c67",
+        "hash": "ccb77349",
+        "encoded": "%E2%9C%85%20**Docker-based%20Deployment**%20-%20Consistent%20runtime%20environment",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "f39c67",
+        "hash": "b0285d7d",
+        "encoded": "##%20Quick%20Start",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "f39c67",
+        "hash": "256044e8",
+        "encoded": "###%20Prerequisites",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "f39c67",
+        "hash": "d9641bd1",
+        "encoded": "-%20AWS%20Account%20with%20appropriate%20permissions",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "f39c67",
+        "hash": "82423760",
+        "encoded": "-%20Terraform%20%3E=%201.5.0",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "f39c67",
+        "hash": "5fa822fa",
+        "encoded": "-%20Jenkins%20with%20AWS%20credentials%20configured",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "f39c67",
+        "hash": "64624c88",
+        "encoded": "-%20Existing%20EKS%20cluster:%20%60meracommerce-dev-cluster%60",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "f39c67",
+        "hash": "59ec1bd7",
+        "encoded": "-%20AWS%20CLI%20configured",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "f39c67",
+        "hash": "44501f8e",
+        "encoded": "###%201.%20Clone%20Repository",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "f39c67",
+        "hash": "648898ab",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "f39c67",
+        "hash": "1bfd71da",
+        "encoded": "git%20clone%20https://github.com/your-org/infra-kafka-platform.git",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "f39c67",
+        "hash": "d399feb8",
+        "encoded": "cd%20infra-kafka-platform",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "f39c67",
+        "hash": "dfb5484c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "f39c67",
+        "hash": "bf4c4492",
+        "encoded": "###%202.%20Configure%20Variables",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "f39c67",
+        "hash": "ccf760ed",
+        "encoded": "Edit%20%60terraform/environments/dev/terraform.tfvars%60:",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "f39c67",
+        "hash": "e6bc6b57",
+        "encoded": "%60%60%60hcl",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "f39c67",
+        "hash": "d3268ae2",
+        "encoded": "project_name%20%20%20%20%20=%20%22meracommerce%22",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "f39c67",
+        "hash": "9149e33e",
+        "encoded": "environment%20%20%20%20%20%20=%20%22dev%22",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "f39c67",
+        "hash": "5f6cf545",
+        "encoded": "aws_region%20%20%20%20%20%20%20=%20%22us-east-1%22",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "f39c67",
+        "hash": "d31aa929",
+        "encoded": "kafka_version%20%20%20%20=%20%223.6.1%22",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "f39c67",
+        "hash": "ceef72c6",
+        "encoded": "instance_type%20%20%20%20=%20%22t3.medium%22",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "f39c67",
+        "hash": "3b0706cd",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "f39c67",
+        "hash": "4235a5ba",
+        "encoded": "###%203.%20Deploy%20via%20Jenkins",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "f39c67",
+        "hash": "351f919d",
+        "encoded": "1.%20Create%20a%20new%20Jenkins%20pipeline%20job",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "f39c67",
+        "hash": "f75c6bed",
+        "encoded": "2.%20Point%20to%20this%20repository",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "f39c67",
+        "hash": "e77f9e78",
+        "encoded": "3.%20Run%20the%20pipeline",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "f39c67",
+        "hash": "b5369f22",
+        "encoded": "4.%20Approve%20the%20Terraform%20plan",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "f39c67",
+        "hash": "f6ddbd7b",
+        "encoded": "5.%20Wait%20for%20automated%20deployment",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "f39c67",
+        "hash": "fa9709f1",
+        "encoded": "###%204.%20Verify%20Deployment",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "f39c67",
+        "hash": "23bcb065",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "f39c67",
+        "hash": "56398319",
+        "encoded": "#%20SSH%20to%20Kafka%20broker",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "f39c67",
+        "hash": "0865a7c6",
+        "encoded": "ssh%20-i%20your-key.pem%20ec2-user@%3Cbroker-ip%3E",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "f39c67",
+        "hash": "412cf15f",
+        "encoded": "#%20Check%20Kafka%20containers",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "f39c67",
+        "hash": "198dc80d",
+        "encoded": "docker%20ps",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "f39c67",
+        "hash": "43afe1cf",
+        "encoded": "#%20List%20topics",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "f39c67",
+        "hash": "cfa922c1",
+        "encoded": "docker%20exec%20kafka-1%20kafka-topics.sh%20--bootstrap-server%20localhost:9092%20--list",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "f39c67",
+        "hash": "3468b825",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "f39c67",
+        "hash": "0dc854e9",
+        "encoded": "##%20Repository%20Structure",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "f39c67",
+        "hash": "062ff69e",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "f39c67",
+        "hash": "d38b0055",
+        "encoded": "infra-kafka-platform/",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "f39c67",
+        "hash": "eb82995a",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20terraform/",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "f39c67",
+        "hash": "45b1c2b5",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20modules/",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "f39c67",
+        "hash": "91a12ee8",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20networking/%20%20%20%20%20%20%20%20%20%20#%20VPC,%20Subnets,%20IGW,%20NAT,%20Routes",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "f39c67",
+        "hash": "23efabb1",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20kafka-ec2/%20%20%20%20%20%20%20%20%20%20%20#%20EC2%20instances%20for%20Kafka%20brokers",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "f39c67",
+        "hash": "eb8539e8",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20security-group/%20%20%20%20%20%20#%20Security%20groups%20and%20rules",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "f39c67",
+        "hash": "12a6fc50",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20monitoring/%20%20%20%20%20%20%20%20%20%20#%20CloudWatch,%20Prometheus,%20Grafana",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "f39c67",
+        "hash": "c32106c8",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20route53/%20%20%20%20%20%20%20%20%20%20%20%20%20#%20DNS%20private%20hosted%20zones",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "f39c67",
+        "hash": "de3e48db",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20environments/",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "f39c67",
+        "hash": "99995dc5",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20dev/",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "f39c67",
+        "hash": "bc2da82b",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20main.tf",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "f39c67",
+        "hash": "66907fbe",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20variables.tf",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "f39c67",
+        "hash": "b0714d91",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20outputs.tf",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "f39c67",
+        "hash": "7742f253",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20terraform.tfvars",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "f39c67",
+        "hash": "301f3401",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20main.tf",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "f39c67",
+        "hash": "5c943317",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20variables.tf",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "f39c67",
+        "hash": "1b27b1dc",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20outputs.tf",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "f39c67",
+        "hash": "939ef3b3",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20providers.tf",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "f39c67",
+        "hash": "23b5659c",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20docker/",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "f39c67",
+        "hash": "7b30ecd8",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20kafka/",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "f39c67",
+        "hash": "de69a0e7",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20docker-compose.yml%20%20%20#%20Kafka%20cluster%20Docker%20Compose",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "f39c67",
+        "hash": "a427bcda",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20monitoring/",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "f39c67",
+        "hash": "f1a819a8",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20docker-compose.yml%20%20%20#%20Prometheus,%20Grafana,%20Exporters",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "f39c67",
+        "hash": "f94b7686",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20scripts/",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "f39c67",
+        "hash": "7376510b",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20install-docker.sh%20%20%20%20%20%20%20%20#%20Docker%20installation%20automation",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "f39c67",
+        "hash": "315c509f",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20deploy-kafka.sh%20%20%20%20%20%20%20%20%20%20#%20Kafka%20deployment%20automation",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "f39c67",
+        "hash": "e9d06b28",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20create-topics.sh%20%20%20%20%20%20%20%20%20#%20Topic%20creation%20automation",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "f39c67",
+        "hash": "74ece6a2",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20validate-kafka.sh%20%20%20%20%20%20%20%20#%20Health%20check%20validation",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "f39c67",
+        "hash": "dcdd664f",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20rollback.sh%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Disaster%20recovery%20rollback",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "f39c67",
+        "hash": "8d21439d",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20jenkins/",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "f39c67",
+        "hash": "eba2c0d7",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20Jenkinsfile%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Complete%20CI/CD%20pipeline",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "f39c67",
+        "hash": "627876ff",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20kubernetes/",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "f39c67",
+        "hash": "9b3d1df8",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20configmap.yaml%20%20%20%20%20%20%20%20%20%20%20#%20Kafka%20bootstrap%20servers",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "f39c67",
+        "hash": "15a7cf32",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20secret.yaml%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Kafka%20credentials",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "f39c67",
+        "hash": "cb05e7a0",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20spring-boot-example/",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "f39c67",
+        "hash": "1f5ee1a2",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20values.yaml",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "f39c67",
+        "hash": "15f0509b",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20application.yml",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "f39c67",
+        "hash": "115162eb",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20monitoring/",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "f39c67",
+        "hash": "9c556629",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20prometheus/",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "f39c67",
+        "hash": "7d74d501",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20prometheus.yml",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "f39c67",
+        "hash": "c7f99e29",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20grafana/",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "f39c67",
+        "hash": "20750de1",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20dashboards/",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "f39c67",
+        "hash": "f10f53ee",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20kafka-overview.json",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "f39c67",
+        "hash": "e5b82d05",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20broker-metrics.json",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "f39c67",
+        "hash": "f9f1acfa",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20consumer-lag.json",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "f39c67",
+        "hash": "c5f143f0",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20cloudwatch/",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "f39c67",
+        "hash": "7aef88e6",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20alarms.tf",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "f39c67",
+        "hash": "33b0c78e",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20docs/",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "f39c67",
+        "hash": "16740145",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20DEPLOYMENT.md%20%20%20%20%20%20%20%20%20%20%20%20#%20Detailed%20deployment%20guide",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "f39c67",
+        "hash": "f28f3888",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20SPRING_BOOT_INTEGRATION.md",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "f39c67",
+        "hash": "ce65d493",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20ROLLBACK_STRATEGY.md",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "f39c67",
+        "hash": "dc74a485",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20COST_ESTIMATION.md",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "f39c67",
+        "hash": "079c3a3f",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20TROUBLESHOOTING.md",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "f39c67",
+        "hash": "c7836e26",
+        "encoded": "%E2%94%94%E2%94%80%E2%94%80%20README.md",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "f39c67",
+        "hash": "753e92c7",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "f39c67",
+        "hash": "1b410437",
+        "encoded": "##%20Infrastructure%20Components",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "f39c67",
+        "hash": "61cf931e",
+        "encoded": "###%20Networking",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "f39c67",
+        "hash": "f94b0922",
+        "encoded": "%7C%20Component%20%7C%20CIDR/Config%20%7C%20Purpose%20%7C",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "f39c67",
+        "hash": "9d003b71",
+        "encoded": "%7C-----------%7C-------------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "f39c67",
+        "hash": "ed93415e",
+        "encoded": "%7C%20VPC%20%7C%2010.0.0.0/16%20%7C%20Isolated%20network%20%7C",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "f39c67",
+        "hash": "21f0ca0e",
+        "encoded": "%7C%20Public%20Subnet%201%20%7C%2010.0.1.0/24%20%7C%20NAT%20Gateway,%20Bastion%20%7C",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "f39c67",
+        "hash": "cbae3810",
+        "encoded": "%7C%20Public%20Subnet%202%20%7C%2010.0.2.0/24%20%7C%20High%20availability%20%7C",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "f39c67",
+        "hash": "05843734",
+        "encoded": "%7C%20Private%20Subnet%201%20%7C%2010.0.101.0/24%20%7C%20Kafka%20Broker%201%20%7C",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "f39c67",
+        "hash": "dc839027",
+        "encoded": "%7C%20Private%20Subnet%202%20%7C%2010.0.102.0/24%20%7C%20Kafka%20Broker%202%20%7C",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "f39c67",
+        "hash": "83c2d8c4",
+        "encoded": "%7C%20Private%20Subnet%203%20%7C%2010.0.103.0/24%20%7C%20Kafka%20Broker%203%20%7C",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "f39c67",
+        "hash": "e35cedec",
+        "encoded": "###%20Kafka%20Cluster",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "f39c67",
+        "hash": "283ecb0b",
+        "encoded": "%7C%20Broker%20%7C%20Private%20IP%20%7C%20DNS%20%7C%20Port%20%7C",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "f39c67",
+        "hash": "c71d2773",
+        "encoded": "%7C--------%7C-----------%7C-----%7C------%7C",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "f39c67",
+        "hash": "5e77ba78",
+        "encoded": "%7C%20Kafka-1%20%7C%2010.0.101.10%20%7C%20kafka-1.internal%20%7C%209092%20%7C",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "f39c67",
+        "hash": "d0b866dd",
+        "encoded": "%7C%20Kafka-2%20%7C%2010.0.102.10%20%7C%20kafka-2.internal%20%7C%209092%20%7C",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "f39c67",
+        "hash": "3c6d89de",
+        "encoded": "%7C%20Kafka-3%20%7C%2010.0.103.10%20%7C%20kafka-3.internal%20%7C%209092%20%7C",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "f39c67",
+        "hash": "ea35fd09",
+        "encoded": "%7C%20Bootstrap%20%7C%20-%20%7C%20kafka-bootstrap.internal%20%7C%209092%20%7C",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "f39c67",
+        "hash": "d841ea02",
+        "encoded": "###%20Topics",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "f39c67",
+        "hash": "5bbf94c4",
+        "encoded": "%7C%20Topic%20%7C%20Partitions%20%7C%20Replication%20%7C%20Min%20ISR%20%7C",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "f39c67",
+        "hash": "0293dadf",
+        "encoded": "%7C-------%7C-----------%7C-------------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "f39c67",
+        "hash": "86b03483",
+        "encoded": "%7C%20customer-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "f39c67",
+        "hash": "e3c5fc35",
+        "encoded": "%7C%20order-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "f39c67",
+        "hash": "a5b5b3a0",
+        "encoded": "%7C%20catalog-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "f39c67",
+        "hash": "9167fa24",
+        "encoded": "%7C%20payment-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "f39c67",
+        "hash": "18716938",
+        "encoded": "%7C%20notification-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "f39c67",
+        "hash": "575a19cd",
+        "encoded": "%7C%20dead-letter-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "f39c67",
+        "hash": "101ecc2a",
+        "encoded": "%7C%20audit-events%20%7C%206%20%7C%203%20%7C%202%20%7C",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "f39c67",
+        "hash": "8816bc0f",
+        "encoded": "##%20Spring%20Boot%20Integration",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "f39c67",
+        "hash": "71f13548",
+        "encoded": "###%20Add%20to%20%60application.yml%60:",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "f39c67",
+        "hash": "f16415ee",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "f39c67",
+        "hash": "ace55a0a",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "f39c67",
+        "hash": "70241ce5",
+        "encoded": "kafka:",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "f39c67",
+        "hash": "3449e29c",
+        "encoded": "bootstrap-servers:%20kafka-bootstrap.internal:9092",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "f39c67",
+        "hash": "e9877674",
+        "encoded": "producer:",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "f39c67",
+        "hash": "bd6579f7",
+        "encoded": "key-serializer:%20org.apache.kafka.common.serialization.StringSerializer",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "f39c67",
+        "hash": "01375ef5",
+        "encoded": "value-serializer:%20org.springframework.kafka.support.serializer.JsonSerializer",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "f39c67",
+        "hash": "4ce0bb96",
+        "encoded": "acks:%20all",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "f39c67",
+        "hash": "bd3ac1cd",
+        "encoded": "retries:%203",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "f39c67",
+        "hash": "041bf8f2",
+        "encoded": "consumer:",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "f39c67",
+        "hash": "0870ae5c",
+        "encoded": "key-deserializer:%20org.apache.kafka.common.serialization.StringDeserializer",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "f39c67",
+        "hash": "f5889425",
+        "encoded": "value-deserializer:%20org.springframework.kafka.support.serializer.JsonDeserializer",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "f39c67",
+        "hash": "9bf4df16",
+        "encoded": "group-id:%20$%7Bspring.application.name%7D",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "f39c67",
+        "hash": "b4fb6252",
+        "encoded": "auto-offset-reset:%20earliest",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "f39c67",
+        "hash": "1f885bb6",
+        "encoded": "enable-auto-commit:%20false",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "f39c67",
+        "hash": "52646376",
+        "encoded": "properties:",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "f39c67",
+        "hash": "fea28d3d",
+        "encoded": "security.protocol:%20PLAINTEXT",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "f39c67",
+        "hash": "2cb8aded",
+        "encoded": "max.poll.records:%20500",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "f39c67",
+        "hash": "9d6f60f6",
+        "encoded": "session.timeout.ms:%2030000",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "f39c67",
+        "hash": "918a6196",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "f39c67",
+        "hash": "abdc5400",
+        "encoded": "###%20Add%20to%20%60pom.xml%60:",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "f39c67",
+        "hash": "c29a190b",
+        "encoded": "%60%60%60xml",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "f39c67",
+        "hash": "cd652315",
+        "encoded": "%3Cdependency%3E",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "f39c67",
+        "hash": "b6470aa0",
+        "encoded": "%3CgroupId%3Eorg.springframework.kafka%3C/groupId%3E",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "f39c67",
+        "hash": "855c9a3c",
+        "encoded": "%3CartifactId%3Espring-kafka%3C/artifactId%3E",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "f39c67",
+        "hash": "dc89af14",
+        "encoded": "%3C/dependency%3E",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "f39c67",
+        "hash": "5e86e250",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "f39c67",
+        "hash": "0318539f",
+        "encoded": "##%20Monitoring",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "f39c67",
+        "hash": "05b01e37",
+        "encoded": "###%20Access%20Grafana",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "f39c67",
+        "hash": "9d0801aa",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "f39c67",
+        "hash": "43b97532",
+        "encoded": "http://%3Ckafka-broker-public-ip%3E:3000",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "f39c67",
+        "hash": "6dc8e007",
+        "encoded": "Username:%20admin",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "f39c67",
+        "hash": "e18ad9ad",
+        "encoded": "Password:%20%3Cfrom%20terraform%20output%3E",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "f39c67",
+        "hash": "0a9adfca",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "f39c67",
+        "hash": "19941dab",
+        "encoded": "###%20Pre-configured%20Dashboards",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "f39c67",
+        "hash": "3442ecbf",
+        "encoded": "1.%20**Kafka%20Overview**%20-%20Cluster%20health,%20throughput,%20active%20controllers",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "f39c67",
+        "hash": "4bdf6e5c",
+        "encoded": "2.%20**Broker%20Metrics**%20-%20CPU,%20memory,%20disk%20I/O%20per%20broker",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "f39c67",
+        "hash": "970bca25",
+        "encoded": "3.%20**Consumer%20Lag**%20-%20Consumer%20group%20lag%20monitoring",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "f39c67",
+        "hash": "b5291f95",
+        "encoded": "4.%20**Topic%20Throughput**%20-%20Messages/sec%20per%20topic",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "f39c67",
+        "hash": "64b2976d",
+        "encoded": "5.%20**Network%20Traffic**%20-%20Bytes%20in/out%20per%20broker",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "f39c67",
+        "hash": "0bf2ea80",
+        "encoded": "##%20Security",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "f39c67",
+        "hash": "c86b7fd4",
+        "encoded": "###%20Security%20Groups",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "f39c67",
+        "hash": "50ffea86",
+        "encoded": "**kafka-sg**:",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "f39c67",
+        "hash": "c0b95991",
+        "encoded": "-%20Port%209092:%20EKS%20Node%20Security%20Group",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "f39c67",
+        "hash": "d5ce5d05",
+        "encoded": "-%20Port%209093:%20Kafka%20Broker%20Communication",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "f39c67",
+        "hash": "f8f43674",
+        "encoded": "-%20Port%2022:%20Admin%20CIDR%20only",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "f39c67",
+        "hash": "f95afef9",
+        "encoded": "-%20Port%209094:%20Internet%20(optional,%20for%20external%20access)",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "f39c67",
+        "hash": "67ba2184",
+        "encoded": "###%20IAM%20Roles",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "f39c67",
+        "hash": "b43d08dd",
+        "encoded": "-%20**kafka-ec2-role**:%20CloudWatch%20logs,%20SSM%20access,%20S3%20backups",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "f39c67",
+        "hash": "35d2afea",
+        "encoded": "-%20**eks-kafka-access-role**:%20EKS%20pods%20accessing%20Kafka",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "f39c67",
+        "hash": "68b75aec",
+        "encoded": "##%20Cost%20Estimation",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "f39c67",
+        "hash": "822e66c1",
+        "encoded": "###%20Monthly%20Costs%20(us-east-1)",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "f39c67",
+        "hash": "0605f3fd",
+        "encoded": "%7C%20Resource%20%7C%20Quantity%20%7C%20Unit%20Cost%20%7C%20Total%20%7C",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "f39c67",
+        "hash": "b37289ef",
+        "encoded": "%7C----------%7C----------%7C-----------%7C-------%7C",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "f39c67",
+        "hash": "8ed17f0d",
+        "encoded": "%7C%20EC2%20t3.medium%20%7C%203%20%7C%20$30.37%20%7C%20$91.11%20%7C",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "f39c67",
+        "hash": "612a1520",
+        "encoded": "%7C%20EBS%20gp3%20100GB%20%7C%203%20%7C%20$8.00%20%7C%20$24.00%20%7C",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "f39c67",
+        "hash": "46721519",
+        "encoded": "%7C%20NAT%20Gateway%20%7C%201%20%7C%20$32.85%20%7C%20$32.85%20%7C",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "f39c67",
+        "hash": "c6e805e0",
+        "encoded": "%7C%20Data%20Transfer%20%7C%20~500GB%20%7C%20$0.09/GB%20%7C%20$45.00%20%7C",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "f39c67",
+        "hash": "bb0b58a7",
+        "encoded": "%7C%20Route53%20Hosted%20Zone%20%7C%201%20%7C%20$0.50%20%7C%20$0.50%20%7C",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "f39c67",
+        "hash": "283259b9",
+        "encoded": "%7C%20CloudWatch%20Logs%20%7C%20~50GB%20%7C%20$0.50/GB%20%7C%20$25.00%20%7C",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "f39c67",
+        "hash": "e6ec60e9",
+        "encoded": "%7C%20**Total**%20%7C%20%7C%20%7C%20**~$218.46/month**%20%7C",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "f39c67",
+        "hash": "e4a671bf",
+        "encoded": "*Costs%20may%20vary%20based%20on%20actual%20usage%20and%20data%20transfer*",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "f39c67",
+        "hash": "88b94e55",
+        "encoded": "##%20Troubleshooting",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "f39c67",
+        "hash": "d4491ccd",
+        "encoded": "###%20Kafka%20Broker%20Not%20Starting",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "f39c67",
+        "hash": "45c4ff94",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "f39c67",
+        "hash": "9e6d25eb",
+        "encoded": "#%20Check%20Docker%20logs",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "f39c67",
+        "hash": "033edf04",
+        "encoded": "docker%20logs%20kafka-1%20--tail%20100",
+        "prevChunkIds": []
+      },
+      "286": {
+        "chunkId": "f39c67",
+        "hash": "c42437ce",
+        "encoded": "#%20Verify%20cluster%20ID",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "f39c67",
+        "hash": "6cf623e3",
+        "encoded": "docker%20exec%20kafka-1%20cat%20/bitnami/kafka/data/meta.properties",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "f39c67",
+        "hash": "40235e5f",
+        "encoded": "#%20Check%20disk%20space",
+        "prevChunkIds": []
+      },
+      "290": {
+        "chunkId": "f39c67",
+        "hash": "52201402",
+        "encoded": "df%20-h",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "f39c67",
+        "hash": "b0361828",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "f39c67",
+        "hash": "b8d1e766",
+        "encoded": "###%20EKS%20Cannot%20Connect%20to%20Kafka",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "f39c67",
+        "hash": "48f27d47",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "f39c67",
+        "hash": "4773fd2f",
+        "encoded": "#%20Test%20DNS%20resolution%20from%20EKS%20pod",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "f39c67",
+        "hash": "3aebd7b2",
+        "encoded": "kubectl%20run%20-it%20--rm%20debug%20--image=busybox%20--restart=Never%20--%20nslookup%20kafka-bootstrap.internal",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "f39c67",
+        "hash": "c944560d",
+        "encoded": "#%20Test%20connectivity",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "f39c67",
+        "hash": "b9ad8307",
+        "encoded": "kubectl%20run%20-it%20--rm%20debug%20--image=confluentinc/cp-kafka:latest%20--restart=Never%20--%20kafka-broker-api-versions%20--bootstrap-server%20kafka-bootstrap.internal:9092",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "f39c67",
+        "hash": "71510c29",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "f39c67",
+        "hash": "50499942",
+        "encoded": "###%20Topic%20Creation%20Failed",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "f39c67",
+        "hash": "84a68916",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "f39c67",
+        "hash": "c58422a5",
+        "encoded": "#%20Manually%20create%20topic",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "f39c67",
+        "hash": "7c754306",
+        "encoded": "docker%20exec%20kafka-1%20kafka-topics.sh%20%5C",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "f39c67",
+        "hash": "a24e13ac",
+        "encoded": "--bootstrap-server%20localhost:9092%20%5C",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "f39c67",
+        "hash": "2577e803",
+        "encoded": "--create%20%5C",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "f39c67",
+        "hash": "b29e4cde",
+        "encoded": "--topic%20test-topic%20%5C",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "f39c67",
+        "hash": "f0a221bb",
+        "encoded": "--partitions%206%20%5C",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "f39c67",
+        "hash": "fdbb1c83",
+        "encoded": "--replication-factor%203%20%5C",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "f39c67",
+        "hash": "99c19164",
+        "encoded": "--config%20min.insync.replicas=2",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "f39c67",
+        "hash": "e26614c7",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "f39c67",
+        "hash": "e297f5bd",
+        "encoded": "##%20Rollback%20Strategy",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "f39c67",
+        "hash": "7e3249b4",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "f39c67",
+        "hash": "7100843d",
+        "encoded": "#%20Quick%20rollback",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "f39c67",
+        "hash": "e2b12357",
+        "encoded": "cd%20terraform/environments/dev",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "f39c67",
+        "hash": "b4f8a1e8",
+        "encoded": "terraform%20destroy%20-auto-approve",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "f39c67",
+        "hash": "61c84993",
+        "encoded": "#%20Or%20use%20rollback%20script",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "f39c67",
+        "hash": "deb59642",
+        "encoded": "bash%20scripts/rollback.sh%20--environment%20dev",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "f39c67",
+        "hash": "c3feee25",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "f39c67",
+        "hash": "c527f3b7",
+        "encoded": "##%20Contributing",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "f39c67",
+        "hash": "d9caa83d",
+        "encoded": "1.%20Fork%20the%20repository",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "f39c67",
+        "hash": "9a69198a",
+        "encoded": "2.%20Create%20a%20feature%20branch:%20%60git%20checkout%20-b%20feature/new-feature%60",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "f39c67",
+        "hash": "35afe340",
+        "encoded": "3.%20Commit%20changes:%20%60git%20commit%20-am%20'Add%20new%20feature'%60",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "f39c67",
+        "hash": "ddde1e73",
+        "encoded": "4.%20Push%20to%20branch:%20%60git%20push%20origin%20feature/new-feature%60",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "f39c67",
+        "hash": "531e4a0c",
+        "encoded": "5.%20Submit%20a%20pull%20request",
+        "prevChunkIds": []
+      },
+      "335": {
+        "chunkId": "f39c67",
+        "hash": "9f067b2a",
+        "encoded": "##%20Support",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "f39c67",
+        "hash": "4168b74d",
+        "encoded": "For%20issues%20and%20questions:",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "f39c67",
+        "hash": "d3295375",
+        "encoded": "-%20Create%20an%20issue%20in%20this%20repository",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "f39c67",
+        "hash": "43efcdf3",
+        "encoded": "-%20Contact%20DevOps%20team:%20devops@meracommerce.com",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "f39c67",
+        "hash": "dbed6e6f",
+        "encoded": "##%20License",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "f39c67",
+        "hash": "2dd4fb62",
+        "encoded": "MIT%20License%20-%20see%20LICENSE%20file%20for%20details",
+        "prevChunkIds": []
+      },
+      "345": {
+        "chunkId": "f39c67",
+        "hash": "150b7607",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "347": {
+        "chunkId": "f39c67",
+        "hash": "7c9275f2",
+        "encoded": "**Maintained%20by**:%20DevOps%20Team%20@%20MeraCommerce",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "f39c67",
+        "hash": "e8f0a2f0",
+        "encoded": "**Last%20Updated**:%202026-09-01",
+        "prevChunkIds": []
+      },
+      "349": {
+        "chunkId": "f39c67",
+        "hash": "50445661",
+        "encoded": "**Version**:%201.0.0",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

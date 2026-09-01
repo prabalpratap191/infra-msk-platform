@@ -1,0 +1,75 @@
+# ============================================================================
+# Prometheus Configuration for Kafka Monitoring
+# ============================================================================
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'kafka-cluster'
+    environment: 'dev'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+          # - 'alertmanager:9093'
+
+rule_files:
+  # - "alerts/*.yml"
+
+scrape_configs:
+  # ============================================================================
+  # Kafka Brokers Monitoring
+  # ============================================================================
+  - job_name: 'kafka-broker-1'
+    static_configs:
+      - targets: ['10.0.101.10:9308']
+        labels:
+          broker_id: '1'
+          environment: 'dev'
+  
+  - job_name: 'kafka-broker-2'
+    static_configs:
+      - targets: ['10.0.102.10:9308']
+        labels:
+          broker_id: '2'
+          environment: 'dev'
+  
+  - job_name: 'kafka-broker-3'
+    static_configs:
+      - targets: ['10.0.103.10:9308']
+        labels:
+          broker_id: '3'
+          environment: 'dev'
+  
+  # ============================================================================
+  # Node Exporters (System Metrics)
+  # ============================================================================
+  - job_name: 'node-exporter-1'
+    static_configs:
+      - targets: ['10.0.101.10:9100']
+        labels:
+          instance: 'kafka-1'
+          environment: 'dev'
+  
+  - job_name: 'node-exporter-2'
+    static_configs:
+      - targets: ['10.0.102.10:9100']
+        labels:
+          instance: 'kafka-2'
+          environment: 'dev'
+  
+  - job_name: 'node-exporter-3'
+    static_configs:
+      - targets: ['10.0.103.10:9100']
+        labels:
+          instance: 'kafka-3'
+          environment: 'dev'
+  
+  # ============================================================================
+  # Prometheus Self-monitoring
+  # ============================================================================
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

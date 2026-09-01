@@ -1,0 +1,1650 @@
+{
+  "terraform\\modules\\kafka-ec2\\user-data.sh": {
+    "filename": "user-data.sh",
+    "path": "terraform\\modules\\kafka-ec2\\user-data.sh",
+    "version": "1.2",
+    "contextFile": "e6df4ff4-context.json",
+    "chunks": {
+      "460382": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256625,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "21c776e3",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:05 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "460382",
+        "hash": "acb0f876",
+        "encoded": "#!/bin/bash",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "460382",
+        "hash": "74045fda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "460382",
+        "hash": "5450773b",
+        "encoded": "#%20Kafka%20EC2%20User%20Data%20Script",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "460382",
+        "hash": "6f097ae6",
+        "encoded": "#%20Automated%20installation%20of%20Docker,%20Docker%20Compose,%20and%20Kafka",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "460382",
+        "hash": "91afc6df",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "460382",
+        "hash": "6ae36d9f",
+        "encoded": "set%20-e",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "460382",
+        "hash": "ba13ca6f",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "460382",
+        "hash": "bd7efdd3",
+        "encoded": "#%20Variables",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "460382",
+        "hash": "d134e3a6",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "460382",
+        "hash": "d0200233",
+        "encoded": "BROKER_ID=%22$%7Bbroker_id%7D%22",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "460382",
+        "hash": "ac85caf8",
+        "encoded": "KAFKA_VERSION=%22$%7Bkafka_version%7D%22",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "460382",
+        "hash": "395d67dd",
+        "encoded": "CLUSTER_ID=%22$%7Bcluster_id%7D%22",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "460382",
+        "hash": "9a6b3c3e",
+        "encoded": "KAFKA_HEAP_OPTS=%22$%7Bkafka_heap_opts%7D%22",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "460382",
+        "hash": "5e7c1e24",
+        "encoded": "PROJECT_NAME=%22$%7Bproject_name%7D%22",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "460382",
+        "hash": "62f46eda",
+        "encoded": "ENVIRONMENT=%22$%7Benvironment%7D%22",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "460382",
+        "hash": "feebac54",
+        "encoded": "KAFKA_PUBLIC_DNS=%22$%7Bkafka_public_dns%7D%22",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "460382",
+        "hash": "0ac39b80",
+        "encoded": "BROKER_PRIVATE_IP=%22$%7Bbroker_private_ip%7D%22",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "460382",
+        "hash": "f443eba6",
+        "encoded": "KAFKA_PRIVATE_IPS='$%7Bkafka_private_ips%7D'",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "460382",
+        "hash": "1fefaa73",
+        "encoded": "LOG_FILE=%22/var/log/kafka-setup.log%22",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "460382",
+        "hash": "4e4c2867",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "460382",
+        "hash": "7a1d13c3",
+        "encoded": "#%20Logging%20Function",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "460382",
+        "hash": "ef9866b0",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "460382",
+        "hash": "30751afc",
+        "encoded": "log()%20%7B",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "460382",
+        "hash": "de82e696",
+        "encoded": "echo%20%22$(date%20'+%25Y-%25m-%25d%20%25H:%25M:%25S')%20-%20$1%22%20%7C%20tee%20-a%20%22$LOG_FILE%22",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "460382",
+        "hash": "43353d17",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "460382",
+        "hash": "aeaf78f5",
+        "encoded": "log%20%22========================================%22",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "460382",
+        "hash": "07775cdc",
+        "encoded": "log%20%22Starting%20Kafka%20Broker%20Setup%22",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "460382",
+        "hash": "84e545d0",
+        "encoded": "log%20%22Broker%20ID:%20$BROKER_ID%22",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "460382",
+        "hash": "c6d5a0d8",
+        "encoded": "log%20%22Cluster%20ID:%20$CLUSTER_ID%22",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "460382",
+        "hash": "9d725f2c",
+        "encoded": "log%20%22========================================%22",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "460382",
+        "hash": "7e7fa43b",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "460382",
+        "hash": "3f156ad8",
+        "encoded": "#%20System%20Updates",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "460382",
+        "hash": "f4d55c43",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "460382",
+        "hash": "57ddb48d",
+        "encoded": "log%20%22Updating%20system%20packages...%22",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "460382",
+        "hash": "30237578",
+        "encoded": "yum%20update%20-y%20%3E%3E%20%22$LOG_FILE%22%202%3E&1",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "460382",
+        "hash": "d5d8d87f",
+        "encoded": "log%20%22Installing%20essential%20packages...%22",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "460382",
+        "hash": "0823818b",
+        "encoded": "yum%20install%20-y%20%5C",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "460382",
+        "hash": "38e23def",
+        "encoded": "ca-certificates%20%5C",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "460382",
+        "hash": "eb40d752",
+        "encoded": "curl%20%5C",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "460382",
+        "hash": "494f076c",
+        "encoded": "gnupg%20%5C",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "460382",
+        "hash": "399c7525",
+        "encoded": "lsb-release%20%5C",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "460382",
+        "hash": "15631199",
+        "encoded": "jq%20%5C",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "460382",
+        "hash": "22025ccd",
+        "encoded": "vim%20%5C",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "460382",
+        "hash": "63161aaa",
+        "encoded": "htop%20%5C",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "460382",
+        "hash": "d000cbbf",
+        "encoded": "nc%20%5C",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "460382",
+        "hash": "e943700b",
+        "encoded": "telnet%20%3E%3E%20%22$LOG_FILE%22%202%3E&1",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "460382",
+        "hash": "b0a51e7d",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "460382",
+        "hash": "ad171872",
+        "encoded": "#%20Docker%20Installation",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "460382",
+        "hash": "54c587e1",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "460382",
+        "hash": "02ef0e0d",
+        "encoded": "log%20%22Installing%20Docker...%22",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "460382",
+        "hash": "5018d9b6",
+        "encoded": "yum%20install%20-y%20docker%20%3E%3E%20%22$LOG_FILE%22%202%3E&1",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "460382",
+        "hash": "55393ea4",
+        "encoded": "log%20%22Starting%20Docker%20service...%22",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "460382",
+        "hash": "38b17f5d",
+        "encoded": "systemctl%20start%20docker",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "460382",
+        "hash": "8970c50e",
+        "encoded": "systemctl%20enable%20docker",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "460382",
+        "hash": "69e7eb8a",
+        "encoded": "log%20%22Adding%20ec2-user%20to%20docker%20group...%22",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "460382",
+        "hash": "e8567799",
+        "encoded": "usermod%20-aG%20docker%20ec2-user",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "460382",
+        "hash": "d4d98832",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "460382",
+        "hash": "d4e1477a",
+        "encoded": "#%20Docker%20Compose%20Installation",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "460382",
+        "hash": "9925b7ad",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "460382",
+        "hash": "d20096c1",
+        "encoded": "log%20%22Installing%20Docker%20Compose...%22",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "460382",
+        "hash": "673a06d2",
+        "encoded": "DOCKER_COMPOSE_VERSION=%222.24.5%22",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "460382",
+        "hash": "89c13904",
+        "encoded": "curl%20-L%20%22https://github.com/docker/compose/releases/download/v$DOCKER_COMPOSE_VERSION/docker-compose-$(uname%20-s)-$(uname%20-m)%22%20%5C",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "460382",
+        "hash": "b25ad921",
+        "encoded": "-o%20/usr/local/bin/docker-compose%20%3E%3E%20%22$LOG_FILE%22%202%3E&1",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "460382",
+        "hash": "93d4a218",
+        "encoded": "chmod%20+x%20/usr/local/bin/docker-compose",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "460382",
+        "hash": "f36c5cf8",
+        "encoded": "ln%20-sf%20/usr/local/bin/docker-compose%20/usr/bin/docker-compose",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "460382",
+        "hash": "deb95020",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "460382",
+        "hash": "c832d000",
+        "encoded": "#%20CloudWatch%20Agent%20Installation",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "460382",
+        "hash": "362896ef",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "460382",
+        "hash": "ccc33112",
+        "encoded": "log%20%22Installing%20CloudWatch%20Agent...%22",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "460382",
+        "hash": "aa5c4bb7",
+        "encoded": "wget%20-q%20https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "460382",
+        "hash": "443c5644",
+        "encoded": "rpm%20-U%20./amazon-cloudwatch-agent.rpm",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "460382",
+        "hash": "dd40d9cb",
+        "encoded": "rm%20-f%20./amazon-cloudwatch-agent.rpm",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "460382",
+        "hash": "4443fb14",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "460382",
+        "hash": "df2654d4",
+        "encoded": "#%20Create%20Kafka%20Directories",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "460382",
+        "hash": "5c890bda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "460382",
+        "hash": "64a32370",
+        "encoded": "log%20%22Creating%20Kafka%20directories...%22",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "460382",
+        "hash": "cd009083",
+        "encoded": "mkdir%20-p%20/opt/kafka",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "460382",
+        "hash": "a2a72a7e",
+        "encoded": "mkdir%20-p%20/opt/kafka/data",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "460382",
+        "hash": "2ef93fba",
+        "encoded": "mkdir%20-p%20/opt/kafka/logs",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "460382",
+        "hash": "dda7e5b2",
+        "encoded": "mkdir%20-p%20/opt/kafka/config",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "460382",
+        "hash": "e793cec1",
+        "encoded": "mkdir%20-p%20/opt/monitoring",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "460382",
+        "hash": "90b44335",
+        "encoded": "chown%20-R%20ec2-user:ec2-user%20/opt/kafka",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "460382",
+        "hash": "bde11a5b",
+        "encoded": "chown%20-R%20ec2-user:ec2-user%20/opt/monitoring",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "460382",
+        "hash": "653caead",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "460382",
+        "hash": "5e2c324f",
+        "encoded": "#%20Generate%20Kafka%20Docker%20Compose",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "460382",
+        "hash": "e314b5ab",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "460382",
+        "hash": "3d27b589",
+        "encoded": "log%20%22Generating%20Kafka%20Docker%20Compose%20configuration...%22",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "460382",
+        "hash": "086a41df",
+        "encoded": "cat%20%3E%20/opt/kafka/docker-compose.yml%20%3C%3C'COMPOSE_EOF'",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "460382",
+        "hash": "f90cea56",
+        "encoded": "version:%20'3.8'",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "460382",
+        "hash": "7c23ff3f",
+        "encoded": "services:",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "460382",
+        "hash": "377a4f10",
+        "encoded": "kafka:",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "460382",
+        "hash": "13572530",
+        "encoded": "image:%20bitnami/kafka:$%7BKAFKA_VERSION%7D",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "460382",
+        "hash": "be72cb92",
+        "encoded": "container_name:%20kafka-$%7BBROKER_ID%7D",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "460382",
+        "hash": "3b145b67",
+        "encoded": "hostname:%20kafka-$%7BBROKER_ID%7D",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "460382",
+        "hash": "692b99da",
+        "encoded": "restart:%20unless-stopped",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "460382",
+        "hash": "90819a3b",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "460382",
+        "hash": "e7ee8b6b",
+        "encoded": "-%20%229092:9092%22",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "460382",
+        "hash": "63c55037",
+        "encoded": "-%20%229093:9093%22",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "460382",
+        "hash": "45ac924e",
+        "encoded": "-%20%229094:9094%22",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "460382",
+        "hash": "f31787c1",
+        "encoded": "environment:",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "460382",
+        "hash": "09986521",
+        "encoded": "#%20KRaft%20settings",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "460382",
+        "hash": "579b81e0",
+        "encoded": "KAFKA_ENABLE_KRAFT:%20%22yes%22",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "460382",
+        "hash": "9ecb94c2",
+        "encoded": "KAFKA_CFG_PROCESS_ROLES:%20%22broker,controller%22",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "460382",
+        "hash": "ec23f23d",
+        "encoded": "KAFKA_CFG_NODE_ID:%20%22$%7BBROKER_ID%7D%22",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "460382",
+        "hash": "8adc5a1a",
+        "encoded": "KAFKA_KRAFT_CLUSTER_ID:%20%22$%7BCLUSTER_ID%7D%22",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "460382",
+        "hash": "b92ac8b6",
+        "encoded": "KAFKA_CFG_CONTROLLER_QUORUM_VOTERS:%20%221@KAFKA_IP_1:9093,2@KAFKA_IP_2:9093,3@KAFKA_IP_3:9093%22",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "460382",
+        "hash": "ac9f199b",
+        "encoded": "#%20Listeners",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "460382",
+        "hash": "1bfb00fa",
+        "encoded": "KAFKA_CFG_LISTENERS:%20%22PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094%22",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "460382",
+        "hash": "30997bce",
+        "encoded": "KAFKA_CFG_ADVERTISED_LISTENERS:%20%22PLAINTEXT://$%7BBROKER_PRIVATE_IP%7D:9092,EXTERNAL://$%7BKAFKA_PUBLIC_DNS%7D:9094%22",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "460382",
+        "hash": "ca8e4806",
+        "encoded": "KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP:%20%22CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT%22",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "460382",
+        "hash": "0ca4cfc3",
+        "encoded": "KAFKA_CFG_CONTROLLER_LISTENER_NAMES:%20%22CONTROLLER%22",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "460382",
+        "hash": "ef9cd67a",
+        "encoded": "KAFKA_CFG_INTER_BROKER_LISTENER_NAME:%20%22PLAINTEXT%22",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "460382",
+        "hash": "4377d127",
+        "encoded": "#%20Replication%20settings",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "460382",
+        "hash": "c91206a0",
+        "encoded": "KAFKA_CFG_DEFAULT_REPLICATION_FACTOR:%20%223%22",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "460382",
+        "hash": "18e09d46",
+        "encoded": "KAFKA_CFG_MIN_INSYNC_REPLICAS:%20%222%22",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "460382",
+        "hash": "81d521ed",
+        "encoded": "KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR:%20%223%22",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "460382",
+        "hash": "5b0d785d",
+        "encoded": "KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR:%20%223%22",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "460382",
+        "hash": "759153d0",
+        "encoded": "KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR:%20%222%22",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "460382",
+        "hash": "5da84c51",
+        "encoded": "#%20Performance%20settings",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "460382",
+        "hash": "dc5456ef",
+        "encoded": "KAFKA_CFG_NUM_NETWORK_THREADS:%20%228%22",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "460382",
+        "hash": "03694799",
+        "encoded": "KAFKA_CFG_NUM_IO_THREADS:%20%228%22",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "460382",
+        "hash": "fef85a3d",
+        "encoded": "KAFKA_CFG_SOCKET_SEND_BUFFER_BYTES:%20%22102400%22",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "460382",
+        "hash": "2be3194a",
+        "encoded": "KAFKA_CFG_SOCKET_RECEIVE_BUFFER_BYTES:%20%22102400%22",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "460382",
+        "hash": "6b312473",
+        "encoded": "KAFKA_CFG_SOCKET_REQUEST_MAX_BYTES:%20%22104857600%22",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "460382",
+        "hash": "3221fdd7",
+        "encoded": "KAFKA_CFG_NUM_PARTITIONS:%20%226%22",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "460382",
+        "hash": "2940afc8",
+        "encoded": "KAFKA_CFG_LOG_RETENTION_HOURS:%20%22168%22",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "460382",
+        "hash": "5e1a3a28",
+        "encoded": "KAFKA_CFG_LOG_SEGMENT_BYTES:%20%221073741824%22",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "460382",
+        "hash": "201ed9b1",
+        "encoded": "KAFKA_CFG_LOG_RETENTION_CHECK_INTERVAL_MS:%20%22300000%22",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "460382",
+        "hash": "9482b87e",
+        "encoded": "#%20Auto%20topic%20creation",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "460382",
+        "hash": "b9e03727",
+        "encoded": "KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE:%20%22false%22",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "460382",
+        "hash": "e3d6afdf",
+        "encoded": "#%20JVM%20settings",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "460382",
+        "hash": "c38f01f3",
+        "encoded": "KAFKA_HEAP_OPTS:%20%22$%7BKAFKA_HEAP_OPTS%7D%22",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "460382",
+        "hash": "28ce0a88",
+        "encoded": "KAFKA_JVM_PERFORMANCE_OPTS:%20%22-XX:+UseG1GC%20-XX:MaxGCPauseMillis=20%20-XX:InitiatingHeapOccupancyPercent=35%20-XX:G1HeapRegionSize=16M%20-XX:MinMetaspaceFreeRatio=50%20-XX:MaxMetaspaceFreeRatio=80%22",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "460382",
+        "hash": "d49e9b63",
+        "encoded": "#%20Logging",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "460382",
+        "hash": "ab97dba9",
+        "encoded": "KAFKA_CFG_LOG4J_ROOT_LOGLEVEL:%20%22INFO%22",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "460382",
+        "hash": "20d62da0",
+        "encoded": "#%20Monitoring",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "460382",
+        "hash": "fd70b74c",
+        "encoded": "KAFKA_JMX_PORT:%20%229999%22",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "460382",
+        "hash": "27ef798e",
+        "encoded": "KAFKA_JMX_OPTS:%20%22-Dcom.sun.management.jmxremote%20-Dcom.sun.management.jmxremote.authenticate=false%20-Dcom.sun.management.jmxremote.ssl=false%20-Djava.rmi.server.hostname=$%7BBROKER_PRIVATE_IP%7D%22",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "460382",
+        "hash": "5615c932",
+        "encoded": "volumes:",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "460382",
+        "hash": "b63fb926",
+        "encoded": "-%20/opt/kafka/data:/bitnami/kafka/data",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "460382",
+        "hash": "8b754d5e",
+        "encoded": "-%20/opt/kafka/logs:/opt/bitnami/kafka/logs",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "460382",
+        "hash": "385bb13b",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "460382",
+        "hash": "6e25b53d",
+        "encoded": "-%20kafka-network",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "460382",
+        "hash": "f9f12f51",
+        "encoded": "healthcheck:",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "460382",
+        "hash": "94131fe9",
+        "encoded": "test:%20%5B%22CMD-SHELL%22,%20%22kafka-broker-api-versions.sh%20--bootstrap-server%20localhost:9092%20%7C%7C%20exit%201%22%5D",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "460382",
+        "hash": "c9ab2ca6",
+        "encoded": "interval:%2030s",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "460382",
+        "hash": "40216192",
+        "encoded": "timeout:%2010s",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "460382",
+        "hash": "2872379b",
+        "encoded": "retries:%205",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "460382",
+        "hash": "6bf4bfab",
+        "encoded": "start_period:%2060s",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "460382",
+        "hash": "4134356d",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "460382",
+        "hash": "c8463a5e",
+        "encoded": "kafka-network:",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "460382",
+        "hash": "4da0ebaa",
+        "encoded": "driver:%20bridge",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "460382",
+        "hash": "bd22f118",
+        "encoded": "COMPOSE_EOF",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "460382",
+        "hash": "61b4de7f",
+        "encoded": "#%20Replace%20IP%20placeholders",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "460382",
+        "hash": "82ccdd03",
+        "encoded": "KAFKA_IPS=$(echo%20%22$KAFKA_PRIVATE_IPS%22%20%7C%20jq%20-r%20'.%5B%5D')",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "460382",
+        "hash": "4ce27321",
+        "encoded": "KAFKA_IP_ARRAY=($KAFKA_IPS)",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "460382",
+        "hash": "46efca31",
+        "encoded": "sed%20-i%20%22s/KAFKA_IP_1/$%7BKAFKA_IP_ARRAY%5B0%5D%7D/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "460382",
+        "hash": "7de5b560",
+        "encoded": "sed%20-i%20%22s/KAFKA_IP_2/$%7BKAFKA_IP_ARRAY%5B1%5D%7D/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "460382",
+        "hash": "2984bf96",
+        "encoded": "sed%20-i%20%22s/KAFKA_IP_3/$%7BKAFKA_IP_ARRAY%5B2%5D%7D/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "460382",
+        "hash": "108dce30",
+        "encoded": "sed%20-i%20%22s/%5C$%7BBROKER_ID%7D/$BROKER_ID/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "460382",
+        "hash": "de70c893",
+        "encoded": "sed%20-i%20%22s/%5C$%7BCLUSTER_ID%7D/$CLUSTER_ID/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "460382",
+        "hash": "f9383b5c",
+        "encoded": "sed%20-i%20%22s/%5C$%7BBROKER_PRIVATE_IP%7D/$BROKER_PRIVATE_IP/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "460382",
+        "hash": "cf5ab7e0",
+        "encoded": "sed%20-i%20%22s/%5C$%7BKAFKA_PUBLIC_DNS%7D/$KAFKA_PUBLIC_DNS/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "460382",
+        "hash": "d722353a",
+        "encoded": "sed%20-i%20%22s/%5C$%7BKAFKA_HEAP_OPTS%7D/$KAFKA_HEAP_OPTS/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "460382",
+        "hash": "6f933a75",
+        "encoded": "sed%20-i%20%22s/%5C$%7BKAFKA_VERSION%7D/$KAFKA_VERSION/g%22%20/opt/kafka/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "460382",
+        "hash": "8a81f0e1",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "460382",
+        "hash": "3f94f07d",
+        "encoded": "#%20Start%20Kafka",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "460382",
+        "hash": "0eb2fcd1",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "460382",
+        "hash": "018df6d9",
+        "encoded": "log%20%22Starting%20Kafka%20broker...%22",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "460382",
+        "hash": "d06adb84",
+        "encoded": "cd%20/opt/kafka",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "460382",
+        "hash": "08d56ee6",
+        "encoded": "docker-compose%20up%20-d%20%3E%3E%20%22$LOG_FILE%22%202%3E&1",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "460382",
+        "hash": "62810d4e",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "460382",
+        "hash": "bdefa35a",
+        "encoded": "#%20Wait%20for%20Kafka%20to%20be%20ready",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "460382",
+        "hash": "fc60fc3d",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "460382",
+        "hash": "0be26825",
+        "encoded": "log%20%22Waiting%20for%20Kafka%20to%20be%20ready...%22",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "460382",
+        "hash": "660e3c05",
+        "encoded": "sleep%2030",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "460382",
+        "hash": "2cf539d2",
+        "encoded": "for%20i%20in%20%7B1..30%7D;%20do",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "460382",
+        "hash": "70b9262b",
+        "encoded": "if%20docker%20exec%20kafka-$BROKER_ID%20kafka-broker-api-versions.sh%20--bootstrap-server%20localhost:9092%20%3E%20/dev/null%202%3E&1;%20then",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "460382",
+        "hash": "67a64872",
+        "encoded": "log%20%22Kafka%20broker%20is%20ready!%22",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "460382",
+        "hash": "02d57bf9",
+        "encoded": "break",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "460382",
+        "hash": "215edd3c",
+        "encoded": "fi",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "460382",
+        "hash": "93beaa82",
+        "encoded": "log%20%22Waiting%20for%20Kafka...%20(attempt%20$i/30)%22",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "460382",
+        "hash": "e67269b5",
+        "encoded": "sleep%2010",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "460382",
+        "hash": "1d0c987e",
+        "encoded": "done",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "460382",
+        "hash": "9803fa8c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "460382",
+        "hash": "88bddbd5",
+        "encoded": "#%20Install%20Monitoring%20(Prometheus%20Exporters)",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "460382",
+        "hash": "b2576bfd",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "460382",
+        "hash": "10055cbb",
+        "encoded": "log%20%22Setting%20up%20monitoring%20exporters...%22",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "460382",
+        "hash": "f63fb913",
+        "encoded": "cat%20%3E%20/opt/monitoring/docker-compose.yml%20%3C%3C'MONITORING_EOF'",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "460382",
+        "hash": "666fea48",
+        "encoded": "version:%20'3.8'",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "460382",
+        "hash": "31066f28",
+        "encoded": "services:",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "460382",
+        "hash": "86ba01a5",
+        "encoded": "node-exporter:",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "460382",
+        "hash": "96ab4799",
+        "encoded": "image:%20prom/node-exporter:latest",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "460382",
+        "hash": "db7e9f66",
+        "encoded": "container_name:%20node-exporter",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "460382",
+        "hash": "5b76860c",
+        "encoded": "restart:%20unless-stopped",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "460382",
+        "hash": "26c035c9",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "460382",
+        "hash": "b190f79b",
+        "encoded": "-%20%229100:9100%22",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "460382",
+        "hash": "e581a568",
+        "encoded": "command:",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "460382",
+        "hash": "5a750f91",
+        "encoded": "-%20'--path.rootfs=/host'",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "460382",
+        "hash": "f40e5f15",
+        "encoded": "volumes:",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "460382",
+        "hash": "237309fb",
+        "encoded": "-%20'/:/host:ro,rslave'",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "460382",
+        "hash": "dde46447",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "460382",
+        "hash": "61a6a495",
+        "encoded": "-%20monitoring",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "460382",
+        "hash": "4ae63d25",
+        "encoded": "kafka-exporter:",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "460382",
+        "hash": "2a809e53",
+        "encoded": "image:%20danielqsj/kafka-exporter:latest",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "460382",
+        "hash": "148c676f",
+        "encoded": "container_name:%20kafka-exporter",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "460382",
+        "hash": "ab195000",
+        "encoded": "restart:%20unless-stopped",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "460382",
+        "hash": "8845a3d3",
+        "encoded": "ports:",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "460382",
+        "hash": "2e21e9b9",
+        "encoded": "-%20%229308:9308%22",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "460382",
+        "hash": "ef699e71",
+        "encoded": "command:",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "460382",
+        "hash": "939d7561",
+        "encoded": "-%20'--kafka.server=BROKER_PRIVATE_IP:9092'",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "460382",
+        "hash": "d3aee543",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "460382",
+        "hash": "c22ff529",
+        "encoded": "-%20monitoring",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "460382",
+        "hash": "6b6ee7f1",
+        "encoded": "networks:",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "460382",
+        "hash": "14867e85",
+        "encoded": "monitoring:",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "460382",
+        "hash": "8ce3019d",
+        "encoded": "driver:%20bridge",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "460382",
+        "hash": "f0bf523a",
+        "encoded": "MONITORING_EOF",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "460382",
+        "hash": "d9682817",
+        "encoded": "sed%20-i%20%22s/BROKER_PRIVATE_IP/$BROKER_PRIVATE_IP/g%22%20/opt/monitoring/docker-compose.yml",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "460382",
+        "hash": "50c097fd",
+        "encoded": "cd%20/opt/monitoring",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "460382",
+        "hash": "a3d03b1a",
+        "encoded": "docker-compose%20up%20-d%20%3E%3E%20%22$LOG_FILE%22%202%3E&1",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "460382",
+        "hash": "69915cb9",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "460382",
+        "hash": "1ff04c30",
+        "encoded": "#%20Create%20Systemd%20Service%20for%20Auto-restart",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "460382",
+        "hash": "dd01f02c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "460382",
+        "hash": "18c6f3a0",
+        "encoded": "log%20%22Creating%20systemd%20service%20for%20Kafka%20auto-restart...%22",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "460382",
+        "hash": "fe4b0a04",
+        "encoded": "cat%20%3E%20/etc/systemd/system/kafka.service%20%3C%3C'SERVICE_EOF'",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "460382",
+        "hash": "2a9b6e5e",
+        "encoded": "%5BUnit%5D",
+        "prevChunkIds": []
+      },
+      "279": {
+        "chunkId": "460382",
+        "hash": "0baa3aff",
+        "encoded": "Description=Kafka%20Docker%20Compose%20Service",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "460382",
+        "hash": "08c4d9d6",
+        "encoded": "Requires=docker.service",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "460382",
+        "hash": "22b7baeb",
+        "encoded": "After=docker.service",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "460382",
+        "hash": "054f75b9",
+        "encoded": "%5BService%5D",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "460382",
+        "hash": "b3e226a5",
+        "encoded": "Type=oneshot",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "460382",
+        "hash": "0ae67be3",
+        "encoded": "RemainAfterExit=yes",
+        "prevChunkIds": []
+      },
+      "286": {
+        "chunkId": "460382",
+        "hash": "db3202d3",
+        "encoded": "WorkingDirectory=/opt/kafka",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "460382",
+        "hash": "62f8c690",
+        "encoded": "ExecStart=/usr/local/bin/docker-compose%20up%20-d",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "460382",
+        "hash": "362a618c",
+        "encoded": "ExecStop=/usr/local/bin/docker-compose%20down",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "460382",
+        "hash": "605ee3b8",
+        "encoded": "TimeoutStartSec=0",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "460382",
+        "hash": "fdafcf33",
+        "encoded": "%5BInstall%5D",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "460382",
+        "hash": "256d9bf1",
+        "encoded": "WantedBy=multi-user.target",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "460382",
+        "hash": "afd163ab",
+        "encoded": "SERVICE_EOF",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "460382",
+        "hash": "58fea4f9",
+        "encoded": "systemctl%20daemon-reload",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "460382",
+        "hash": "a74ffc01",
+        "encoded": "systemctl%20enable%20kafka.service",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "460382",
+        "hash": "c0504b87",
+        "encoded": "log%20%22Creating%20systemd%20service%20for%20monitoring%20auto-restart...%22",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "460382",
+        "hash": "63e2329b",
+        "encoded": "cat%20%3E%20/etc/systemd/system/kafka-monitoring.service%20%3C%3C'SERVICE_EOF'",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "460382",
+        "hash": "e4f63fdf",
+        "encoded": "%5BUnit%5D",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "460382",
+        "hash": "b2f7128e",
+        "encoded": "Description=Kafka%20Monitoring%20Docker%20Compose%20Service",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "460382",
+        "hash": "de3f463e",
+        "encoded": "Requires=docker.service",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "460382",
+        "hash": "eb7568a9",
+        "encoded": "After=docker.service",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "460382",
+        "hash": "3a72c3ab",
+        "encoded": "%5BService%5D",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "460382",
+        "hash": "1c2231c8",
+        "encoded": "Type=oneshot",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "460382",
+        "hash": "c5fdae62",
+        "encoded": "RemainAfterExit=yes",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "460382",
+        "hash": "f618131e",
+        "encoded": "WorkingDirectory=/opt/monitoring",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "460382",
+        "hash": "3d183625",
+        "encoded": "ExecStart=/usr/local/bin/docker-compose%20up%20-d",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "460382",
+        "hash": "2bf0209b",
+        "encoded": "ExecStop=/usr/local/bin/docker-compose%20down",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "460382",
+        "hash": "d089479a",
+        "encoded": "TimeoutStartSec=0",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "460382",
+        "hash": "87eba6b5",
+        "encoded": "%5BInstall%5D",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "460382",
+        "hash": "845e5144",
+        "encoded": "WantedBy=multi-user.target",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "460382",
+        "hash": "2963b8e4",
+        "encoded": "SERVICE_EOF",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "460382",
+        "hash": "1ebea85d",
+        "encoded": "systemctl%20daemon-reload",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "460382",
+        "hash": "3b083a44",
+        "encoded": "systemctl%20enable%20kafka-monitoring.service",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "460382",
+        "hash": "8dcef3d7",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "460382",
+        "hash": "2241cfad",
+        "encoded": "#%20Setup%20Complete",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "460382",
+        "hash": "d8ae1d7d",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "460382",
+        "hash": "2ad48326",
+        "encoded": "log%20%22========================================%22",
+        "prevChunkIds": []
+      },
+      "326": {
+        "chunkId": "460382",
+        "hash": "1861add4",
+        "encoded": "log%20%22Kafka%20Broker%20Setup%20Complete!%22",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "460382",
+        "hash": "c83549e8",
+        "encoded": "log%20%22Broker%20ID:%20$BROKER_ID%22",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "460382",
+        "hash": "1e53eea0",
+        "encoded": "log%20%22Private%20IP:%20$BROKER_PRIVATE_IP%22",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "460382",
+        "hash": "3f764707",
+        "encoded": "log%20%22Cluster%20ID:%20$CLUSTER_ID%22",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "460382",
+        "hash": "19f5910e",
+        "encoded": "log%20%22========================================%22",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "460382",
+        "hash": "e06f2700",
+        "encoded": "#%20Create%20completion%20marker",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "460382",
+        "hash": "657ebf91",
+        "encoded": "touch%20/var/log/kafka-setup-complete",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

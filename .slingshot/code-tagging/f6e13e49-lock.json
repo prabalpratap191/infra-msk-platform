@@ -1,0 +1,246 @@
+{
+  "terraform\\modules\\networking\\outputs.tf": {
+    "filename": "outputs.tf",
+    "path": "terraform\\modules\\networking\\outputs.tf",
+    "version": "1.2",
+    "contextFile": "f6e13e49-context.json",
+    "chunks": {
+      "e10f2d": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256622,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "e64e579e",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:02 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "e10f2d",
+        "hash": "c0d4ae86",
+        "encoded": "output%20%22vpc_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "e10f2d",
+        "hash": "6fe6853c",
+        "encoded": "description%20=%20%22ID%20of%20the%20VPC%22",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "e10f2d",
+        "hash": "2e9ace5b",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_vpc.main.id",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "e10f2d",
+        "hash": "973e69d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "e10f2d",
+        "hash": "17466fed",
+        "encoded": "output%20%22vpc_cidr%22%20%7B",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "e10f2d",
+        "hash": "a76a64c8",
+        "encoded": "description%20=%20%22CIDR%20block%20of%20the%20VPC%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "e10f2d",
+        "hash": "94409109",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_vpc.main.cidr_block",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "e10f2d",
+        "hash": "1c082ee4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "e10f2d",
+        "hash": "041a63fa",
+        "encoded": "output%20%22public_subnet_ids%22%20%7B",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "e10f2d",
+        "hash": "97f26768",
+        "encoded": "description%20=%20%22List%20of%20public%20subnet%20IDs%22",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "e10f2d",
+        "hash": "bd62f5d7",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_subnet.public%5B*%5D.id",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "e10f2d",
+        "hash": "e683dcf7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "e10f2d",
+        "hash": "1af269b5",
+        "encoded": "output%20%22private_subnet_ids%22%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "e10f2d",
+        "hash": "72953a56",
+        "encoded": "description%20=%20%22List%20of%20private%20subnet%20IDs%22",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "e10f2d",
+        "hash": "6d086fbc",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_subnet.private%5B*%5D.id",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "e10f2d",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "e10f2d",
+        "hash": "89e10f83",
+        "encoded": "output%20%22internet_gateway_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "e10f2d",
+        "hash": "7b461f68",
+        "encoded": "description%20=%20%22ID%20of%20the%20Internet%20Gateway%22",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "e10f2d",
+        "hash": "bf98a55c",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_internet_gateway.main.id",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "e10f2d",
+        "hash": "7b3531ab",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "e10f2d",
+        "hash": "93b184bb",
+        "encoded": "output%20%22nat_gateway_ids%22%20%7B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "e10f2d",
+        "hash": "5b68c726",
+        "encoded": "description%20=%20%22List%20of%20NAT%20Gateway%20IDs%22",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "e10f2d",
+        "hash": "c70389af",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_nat_gateway.main%5B*%5D.id",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "e10f2d",
+        "hash": "46b23985",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "e10f2d",
+        "hash": "1616d72f",
+        "encoded": "output%20%22nat_gateway_ips%22%20%7B",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "e10f2d",
+        "hash": "89776e50",
+        "encoded": "description%20=%20%22List%20of%20NAT%20Gateway%20Elastic%20IPs%22",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "e10f2d",
+        "hash": "d5da9245",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_eip.nat%5B*%5D.public_ip",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "e10f2d",
+        "hash": "0e2c0edc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "e10f2d",
+        "hash": "d6a99eb5",
+        "encoded": "output%20%22public_route_table_id%22%20%7B",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "e10f2d",
+        "hash": "3a625c16",
+        "encoded": "description%20=%20%22ID%20of%20the%20public%20route%20table%22",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "e10f2d",
+        "hash": "61206eec",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_route_table.public.id",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "e10f2d",
+        "hash": "1b754c76",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "e10f2d",
+        "hash": "706eb722",
+        "encoded": "output%20%22private_route_table_ids%22%20%7B",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "e10f2d",
+        "hash": "69249bf1",
+        "encoded": "description%20=%20%22List%20of%20private%20route%20table%20IDs%22",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "e10f2d",
+        "hash": "2224519d",
+        "encoded": "value%20%20%20%20%20%20%20=%20aws_route_table.private%5B*%5D.id",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "e10f2d",
+        "hash": "d6071ac7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

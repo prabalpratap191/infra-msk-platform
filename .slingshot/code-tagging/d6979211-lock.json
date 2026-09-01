@@ -1,0 +1,582 @@
+{
+  "terraform\\environments\\dev\\variables.tf": {
+    "filename": "variables.tf",
+    "path": "terraform\\environments\\dev\\variables.tf",
+    "version": "1.2",
+    "contextFile": "d6979211-context.json",
+    "chunks": {
+      "2af968": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788258411,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "a9fda338",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:56:51 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "2af968",
+        "hash": "6a814eeb",
+        "encoded": "#%20This%20file%20inherits%20all%20variable%20definitions%20from%20root%20module",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "2af968",
+        "hash": "dc606a74",
+        "encoded": "#%20You%20can%20override%20defaults%20in%20terraform.tfvars",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "2af968",
+        "hash": "d7450f34",
+        "encoded": "variable%20%22project_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "2af968",
+        "hash": "0d9925c3",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "2af968",
+        "hash": "c189436e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "2af968",
+        "hash": "6c8bd02e",
+        "encoded": "variable%20%22environment%22%20%7B",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "2af968",
+        "hash": "10e9250a",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "2af968",
+        "hash": "2ce165fa",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "2af968",
+        "hash": "6ed114c8",
+        "encoded": "variable%20%22aws_region%22%20%7B",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "2af968",
+        "hash": "1360da2f",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "2af968",
+        "hash": "e683dcf7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "2af968",
+        "hash": "53a75f4e",
+        "encoded": "variable%20%22vpc_cidr%22%20%7B",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "2af968",
+        "hash": "0d389aac",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "2af968",
+        "hash": "76477189",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "2af968",
+        "hash": "a0c76ba7",
+        "encoded": "variable%20%22public_subnet_cidrs%22%20%7B",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "2af968",
+        "hash": "8b73e761",
+        "encoded": "type%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "2af968",
+        "hash": "4b5cc20d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "2af968",
+        "hash": "790b6707",
+        "encoded": "variable%20%22private_subnet_cidrs%22%20%7B",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "2af968",
+        "hash": "6b00c933",
+        "encoded": "type%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "2af968",
+        "hash": "840004ae",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "2af968",
+        "hash": "06459db2",
+        "encoded": "variable%20%22availability_zones%22%20%7B",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "2af968",
+        "hash": "5e4d5600",
+        "encoded": "type%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "2af968",
+        "hash": "7721e417",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "2af968",
+        "hash": "8fe976a9",
+        "encoded": "variable%20%22enable_nat_gateway%22%20%7B",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "2af968",
+        "hash": "967c2eec",
+        "encoded": "type%20=%20bool",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "2af968",
+        "hash": "0e2c0edc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "2af968",
+        "hash": "9182fbc6",
+        "encoded": "variable%20%22single_nat_gateway%22%20%7B",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "2af968",
+        "hash": "4a5f3b33",
+        "encoded": "type%20=%20bool",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "2af968",
+        "hash": "880eeeff",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "2af968",
+        "hash": "356baa68",
+        "encoded": "variable%20%22kafka_instance_type%22%20%7B",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "2af968",
+        "hash": "d212f720",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "2af968",
+        "hash": "98f83ab6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "2af968",
+        "hash": "38710f8a",
+        "encoded": "variable%20%22kafka_instance_count%22%20%7B",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "2af968",
+        "hash": "a5091989",
+        "encoded": "type%20=%20number",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "2af968",
+        "hash": "8b687a61",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "2af968",
+        "hash": "e9e2b640",
+        "encoded": "variable%20%22kafka_volume_size%22%20%7B",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "2af968",
+        "hash": "87a99107",
+        "encoded": "type%20=%20number",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "2af968",
+        "hash": "0b4804f7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "2af968",
+        "hash": "d6cd9e9e",
+        "encoded": "variable%20%22kafka_volume_type%22%20%7B",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "2af968",
+        "hash": "68dfe6f3",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "2af968",
+        "hash": "e392f376",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "2af968",
+        "hash": "e9247c03",
+        "encoded": "variable%20%22kafka_version%22%20%7B",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "2af968",
+        "hash": "9434737d",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "2af968",
+        "hash": "17837346",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "2af968",
+        "hash": "a9911a2e",
+        "encoded": "variable%20%22kafka_private_ips%22%20%7B",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "2af968",
+        "hash": "4ff9feac",
+        "encoded": "type%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "2af968",
+        "hash": "92368879",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "2af968",
+        "hash": "fd0dbc92",
+        "encoded": "variable%20%22kafka_public_dns%22%20%7B",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "2af968",
+        "hash": "7f258ac8",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "2af968",
+        "hash": "912d88e4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "2af968",
+        "hash": "75fe8edc",
+        "encoded": "variable%20%22kafka_heap_opts%22%20%7B",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "2af968",
+        "hash": "a5ca7b54",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "2af968",
+        "hash": "9b4a30da",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "2af968",
+        "hash": "5dc2c984",
+        "encoded": "variable%20%22kafka_topics%22%20%7B",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "2af968",
+        "hash": "bd6ce8d2",
+        "encoded": "type%20=%20list(object(%7B",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "2af968",
+        "hash": "b84dba62",
+        "encoded": "name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20string",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "2af968",
+        "hash": "8534192d",
+        "encoded": "partitions%20%20%20%20%20%20%20%20%20%20=%20number",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "2af968",
+        "hash": "02024925",
+        "encoded": "replication_factor%20%20=%20number",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "2af968",
+        "hash": "f609aa11",
+        "encoded": "min_insync_replicas%20=%20number",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "2af968",
+        "hash": "324c13d6",
+        "encoded": "%7D))",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "2af968",
+        "hash": "c46ffadb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "2af968",
+        "hash": "943ae978",
+        "encoded": "variable%20%22admin_cidr_blocks%22%20%7B",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "2af968",
+        "hash": "bc4e9235",
+        "encoded": "type%20=%20list(string)",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "2af968",
+        "hash": "74977a35",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "2af968",
+        "hash": "2ac03769",
+        "encoded": "variable%20%22enable_public_access%22%20%7B",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "2af968",
+        "hash": "00758e2e",
+        "encoded": "type%20=%20bool",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "2af968",
+        "hash": "9c0e6ebc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "2af968",
+        "hash": "1fc0dca5",
+        "encoded": "variable%20%22eks_cluster_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "2af968",
+        "hash": "a2d7381f",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "2af968",
+        "hash": "1a9d363f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "2af968",
+        "hash": "4a14187c",
+        "encoded": "variable%20%22ssh_key_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "2af968",
+        "hash": "d5777818",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "2af968",
+        "hash": "db89230b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "2af968",
+        "hash": "815c4b33",
+        "encoded": "variable%20%22create_route53_zone%22%20%7B",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "2af968",
+        "hash": "7130327a",
+        "encoded": "type%20=%20bool",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "2af968",
+        "hash": "998d938c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "2af968",
+        "hash": "f9002e3b",
+        "encoded": "variable%20%22route53_zone_name%22%20%7B",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "2af968",
+        "hash": "3a61b0c7",
+        "encoded": "type%20=%20string",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "2af968",
+        "hash": "79409de0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "2af968",
+        "hash": "a80d800a",
+        "encoded": "variable%20%22enable_cloudwatch_monitoring%22%20%7B",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "2af968",
+        "hash": "a900d118",
+        "encoded": "type%20=%20bool",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "2af968",
+        "hash": "5a59cee7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "2af968",
+        "hash": "de19b7c0",
+        "encoded": "variable%20%22enable_prometheus%22%20%7B",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "2af968",
+        "hash": "f3ad43fb",
+        "encoded": "type%20=%20bool",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "2af968",
+        "hash": "a4ba47af",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "2af968",
+        "hash": "0fce62d1",
+        "encoded": "variable%20%22cloudwatch_retention_days%22%20%7B",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "2af968",
+        "hash": "0ee71101",
+        "encoded": "type%20=%20number",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "2af968",
+        "hash": "d750d26f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "2af968",
+        "hash": "8b1cbbb3",
+        "encoded": "variable%20%22additional_tags%22%20%7B",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "2af968",
+        "hash": "150f435c",
+        "encoded": "type%20%20%20%20=%20map(string)",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "2af968",
+        "hash": "dc0cd3d4",
+        "encoded": "default%20=%20%7B%7D",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "2af968",
+        "hash": "beea77ea",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -1,0 +1,702 @@
+{
+  "terraform\\modules\\security-group\\main.tf": {
+    "filename": "main.tf",
+    "path": "terraform\\modules\\security-group\\main.tf",
+    "version": "1.2",
+    "contextFile": "9ddebdeb-context.json",
+    "chunks": {
+      "53250d": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256623,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "ee63e6ef",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:03 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "53250d",
+        "hash": "728e40ac",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "53250d",
+        "hash": "c74d60b6",
+        "encoded": "#%20Kafka%20Security%20Group",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "53250d",
+        "hash": "74045fda",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "53250d",
+        "hash": "9363820d",
+        "encoded": "resource%20%22aws_security_group%22%20%22kafka%22%20%7B",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "53250d",
+        "hash": "828ed146",
+        "encoded": "name%20%20%20%20%20%20%20%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-sg%22",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "53250d",
+        "hash": "fd96c74d",
+        "encoded": "description%20=%20%22Security%20group%20for%20Kafka%20brokers%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "53250d",
+        "hash": "42298e61",
+        "encoded": "vpc_id%20%20%20%20%20%20=%20var.vpc_id",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "53250d",
+        "hash": "f567561d",
+        "encoded": "tags%20=%20merge(",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "53250d",
+        "hash": "352b3e7a",
+        "encoded": "var.tags,",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "53250d",
+        "hash": "6aee126d",
+        "encoded": "%7B",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "53250d",
+        "hash": "2e676a99",
+        "encoded": "Name%20=%20%22$%7Bvar.project_name%7D-$%7Bvar.environment%7D-kafka-sg%22",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "53250d",
+        "hash": "e683dcf7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "53250d",
+        "hash": "ca63cd4a",
+        "encoded": ")",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "53250d",
+        "hash": "c8f9d1c3",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "53250d",
+        "hash": "aede396c",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "53250d",
+        "hash": "bac5aba6",
+        "encoded": "#%20Ingress%20Rules",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "53250d",
+        "hash": "628decbb",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "53250d",
+        "hash": "9f931e51",
+        "encoded": "#%20Port%209092%20-%20Internal%20Kafka%20Communication%20(from%20EKS)",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "53250d",
+        "hash": "819af3c1",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22kafka_internal%22%20%7B",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "53250d",
+        "hash": "6a7df18c",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20length(var.eks_node_sg_ids)",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "53250d",
+        "hash": "98c95d04",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "53250d",
+        "hash": "2423fc52",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%209092",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "53250d",
+        "hash": "8d5d65e5",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%209092",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "53250d",
+        "hash": "4827b146",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "53250d",
+        "hash": "b2109e0c",
+        "encoded": "source_security_group_id%20=%20var.eks_node_sg_ids%5Bcount.index%5D",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "53250d",
+        "hash": "e6226b62",
+        "encoded": "security_group_id%20%20%20%20%20%20%20%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "53250d",
+        "hash": "ee4a72c2",
+        "encoded": "description%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22Allow%20Kafka%20internal%20traffic%20from%20EKS%20nodes%22",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "53250d",
+        "hash": "43353d17",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "53250d",
+        "hash": "3ca97093",
+        "encoded": "#%20Port%209093%20-%20Inter-broker%20Communication",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "53250d",
+        "hash": "5099ecfa",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22kafka_inter_broker%22%20%7B",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "53250d",
+        "hash": "db27c3fd",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "53250d",
+        "hash": "c3b6f4f6",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%209093",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "53250d",
+        "hash": "bcffdaf3",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%209093",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "53250d",
+        "hash": "163eb19c",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "53250d",
+        "hash": "c956f505",
+        "encoded": "self%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "53250d",
+        "hash": "39610a94",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "53250d",
+        "hash": "1f5e7e11",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20inter-broker%20communication%22",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "53250d",
+        "hash": "5663967b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "53250d",
+        "hash": "e3aa0a72",
+        "encoded": "#%20Port%209094%20-%20External%20Access%20(optional)",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "53250d",
+        "hash": "bfa8e8bc",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22kafka_external%22%20%7B",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "53250d",
+        "hash": "eadd7ece",
+        "encoded": "count%20%20%20%20%20%20%20%20%20%20%20%20%20=%20var.enable_public_access%20?%201%20:%200",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "53250d",
+        "hash": "554b424e",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "53250d",
+        "hash": "97710e87",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%209094",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "53250d",
+        "hash": "70a3e97e",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%209094",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "53250d",
+        "hash": "7cfd6ec0",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "53250d",
+        "hash": "065a73f6",
+        "encoded": "cidr_blocks%20%20%20%20%20%20%20=%20%5B%220.0.0.0/0%22%5D",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "53250d",
+        "hash": "e851ac98",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "53250d",
+        "hash": "df4c9d71",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20external%20Kafka%20access%22",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "53250d",
+        "hash": "5c9d24d4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "53250d",
+        "hash": "2549880d",
+        "encoded": "#%20Port%2022%20-%20SSH%20Access",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "53250d",
+        "hash": "2be4efe4",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22ssh%22%20%7B",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "53250d",
+        "hash": "a51249d1",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "53250d",
+        "hash": "9aa4edf4",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%2022",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "53250d",
+        "hash": "ae1d2c04",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%2022",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "53250d",
+        "hash": "4a44860c",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "53250d",
+        "hash": "95dc8493",
+        "encoded": "cidr_blocks%20%20%20%20%20%20%20=%20var.admin_cidr_blocks",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "53250d",
+        "hash": "10f09f9f",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "53250d",
+        "hash": "2d240f2e",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20SSH%20access%20from%20admin%20CIDR%22",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "53250d",
+        "hash": "912d88e4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "53250d",
+        "hash": "55e8d1e2",
+        "encoded": "#%20Port%209308%20-%20Kafka%20Exporter%20for%20Prometheus",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "53250d",
+        "hash": "d934a0fe",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22kafka_exporter%22%20%7B",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "53250d",
+        "hash": "0eb1b186",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "53250d",
+        "hash": "a6cbc38f",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%209308",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "53250d",
+        "hash": "7c378a6c",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%209308",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "53250d",
+        "hash": "255d6fb7",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "53250d",
+        "hash": "15acdd1b",
+        "encoded": "self%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "53250d",
+        "hash": "6af81b98",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "53250d",
+        "hash": "1e1e34d8",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20Kafka%20Exporter%20access%22",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "53250d",
+        "hash": "88f18366",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "53250d",
+        "hash": "6d1e9ae5",
+        "encoded": "#%20Port%209100%20-%20Node%20Exporter%20for%20Prometheus",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "53250d",
+        "hash": "db4b5348",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22node_exporter%22%20%7B",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "53250d",
+        "hash": "23561720",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "53250d",
+        "hash": "aca7c426",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%209100",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "53250d",
+        "hash": "d03eb9b4",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%209100",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "53250d",
+        "hash": "af733d22",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "53250d",
+        "hash": "e1c133f7",
+        "encoded": "self%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "53250d",
+        "hash": "2fb306a4",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "53250d",
+        "hash": "ee928a1f",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20Node%20Exporter%20access%22",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "53250d",
+        "hash": "f4ff50cd",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "53250d",
+        "hash": "a0e4e5a6",
+        "encoded": "#%20Port%209090%20-%20Prometheus",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "53250d",
+        "hash": "b335799c",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22prometheus%22%20%7B",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "53250d",
+        "hash": "5d80b857",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "53250d",
+        "hash": "f93edb61",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%209090",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "53250d",
+        "hash": "a8f72858",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%209090",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "53250d",
+        "hash": "e00a34ed",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "53250d",
+        "hash": "2ca99dff",
+        "encoded": "cidr_blocks%20%20%20%20%20%20%20=%20var.admin_cidr_blocks",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "53250d",
+        "hash": "4f55ee56",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "53250d",
+        "hash": "722725cb",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20Prometheus%20access%22",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "53250d",
+        "hash": "998d938c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "53250d",
+        "hash": "90f53347",
+        "encoded": "#%20Port%203000%20-%20Grafana",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "53250d",
+        "hash": "f16613f5",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22grafana%22%20%7B",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "53250d",
+        "hash": "568a29fa",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22ingress%22",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "53250d",
+        "hash": "2e980dfe",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%203000",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "53250d",
+        "hash": "6ee7028b",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%203000",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "53250d",
+        "hash": "5eee28fa",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22tcp%22",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "53250d",
+        "hash": "2bab4b3d",
+        "encoded": "cidr_blocks%20%20%20%20%20%20%20=%20var.admin_cidr_blocks",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "53250d",
+        "hash": "a75c5a3e",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "53250d",
+        "hash": "ac919fb3",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20Grafana%20dashboard%20access%22",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "53250d",
+        "hash": "7e03f6ac",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "53250d",
+        "hash": "70e0aca6",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "53250d",
+        "hash": "3216c90f",
+        "encoded": "#%20Egress%20Rules",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "53250d",
+        "hash": "1cd40d13",
+        "encoded": "#%20============================================================================",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "53250d",
+        "hash": "d44177dc",
+        "encoded": "#%20Allow%20all%20outbound%20traffic",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "53250d",
+        "hash": "72a0d77a",
+        "encoded": "resource%20%22aws_security_group_rule%22%20%22egress_all%22%20%7B",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "53250d",
+        "hash": "42f533f5",
+        "encoded": "type%20%20%20%20%20%20%20%20%20%20%20%20%20%20=%20%22egress%22",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "53250d",
+        "hash": "e5a40b92",
+        "encoded": "from_port%20%20%20%20%20%20%20%20%20=%200",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "53250d",
+        "hash": "895133e3",
+        "encoded": "to_port%20%20%20%20%20%20%20%20%20%20%20=%200",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "53250d",
+        "hash": "3a6f0988",
+        "encoded": "protocol%20%20%20%20%20%20%20%20%20%20=%20%22-1%22",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "53250d",
+        "hash": "2ff84fce",
+        "encoded": "cidr_blocks%20%20%20%20%20%20%20=%20%5B%220.0.0.0/0%22%5D",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "53250d",
+        "hash": "c93fec7b",
+        "encoded": "security_group_id%20=%20aws_security_group.kafka.id",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "53250d",
+        "hash": "61d4d4d1",
+        "encoded": "description%20%20%20%20%20%20%20=%20%22Allow%20all%20outbound%20traffic%22",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "53250d",
+        "hash": "331ddc52",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

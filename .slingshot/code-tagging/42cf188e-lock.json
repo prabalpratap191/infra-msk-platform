@@ -1,0 +1,252 @@
+{
+  "terraform\\providers.tf": {
+    "filename": "providers.tf",
+    "path": "terraform\\providers.tf",
+    "version": "1.2",
+    "contextFile": "42cf188e-context.json",
+    "chunks": {
+      "ccd8b7": {
+        "user": "Prabal Singh",
+        "model": "gpt-4.1",
+        "timestamp": 1788256620,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "e5ca1683"
+        },
+        "hash": "14559aa6",
+        "messageId": "system_b337e0b0-a5ea-11f1-9e08-859ddac89c5c",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: gpt-4.1\n- **timestamp**: 9/1/2026, 3:27:00 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "ccd8b7",
+        "hash": "dd37ba15",
+        "encoded": "terraform%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "ccd8b7",
+        "hash": "ad0c9c49",
+        "encoded": "required_version%20=%20%22%3E=%201.5.0%22",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "ccd8b7",
+        "hash": "0c2ddb7d",
+        "encoded": "required_providers%20%7B",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "ccd8b7",
+        "hash": "cbcf7b45",
+        "encoded": "aws%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "ccd8b7",
+        "hash": "eb8b4db3",
+        "encoded": "source%20%20=%20%22hashicorp/aws%22",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "ccd8b7",
+        "hash": "25e59c9b",
+        "encoded": "version%20=%20%22~%3E%205.0%22",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "ccd8b7",
+        "hash": "102658a5",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "ccd8b7",
+        "hash": "8fa61bcf",
+        "encoded": "random%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "ccd8b7",
+        "hash": "46020a65",
+        "encoded": "source%20%20=%20%22hashicorp/random%22",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "ccd8b7",
+        "hash": "ba1605b5",
+        "encoded": "version%20=%20%22~%3E%203.5%22",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "ccd8b7",
+        "hash": "e9a9f96c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "ccd8b7",
+        "hash": "d476bb55",
+        "encoded": "tls%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "ccd8b7",
+        "hash": "4f667772",
+        "encoded": "source%20%20=%20%22hashicorp/tls%22",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "ccd8b7",
+        "hash": "a8abb355",
+        "encoded": "version%20=%20%22~%3E%204.0%22",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "ccd8b7",
+        "hash": "c8f9d1c3",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "ccd8b7",
+        "hash": "0a373349",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "ccd8b7",
+        "hash": "d7fbaf0b",
+        "encoded": "backend%20%22s3%22%20%7B",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "ccd8b7",
+        "hash": "87a7709f",
+        "encoded": "bucket%20%20%20%20%20%20%20%20%20=%20%22meracommerce-terraform-state%22",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "ccd8b7",
+        "hash": "89bf11a2",
+        "encoded": "key%20%20%20%20%20%20%20%20%20%20%20%20=%20%22kafka/dev/terraform.tfstate%22",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "ccd8b7",
+        "hash": "dc383ae2",
+        "encoded": "region%20%20%20%20%20%20%20%20%20=%20%22us-east-1%22",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "ccd8b7",
+        "hash": "88d26dda",
+        "encoded": "encrypt%20%20%20%20%20%20%20%20=%20true",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "ccd8b7",
+        "hash": "d7a5582b",
+        "encoded": "dynamodb_table%20=%20%22meracommerce-terraform-locks%22",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "ccd8b7",
+        "hash": "71870443",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "ccd8b7",
+        "hash": "840004ae",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "ccd8b7",
+        "hash": "3c021b93",
+        "encoded": "provider%20%22aws%22%20%7B",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "ccd8b7",
+        "hash": "35d46014",
+        "encoded": "region%20=%20var.aws_region",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "ccd8b7",
+        "hash": "4a42c7be",
+        "encoded": "default_tags%20%7B",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "ccd8b7",
+        "hash": "5e10a58b",
+        "encoded": "tags%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "ccd8b7",
+        "hash": "e7363261",
+        "encoded": "Project%20%20%20%20%20=%20var.project_name",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "ccd8b7",
+        "hash": "0342f53c",
+        "encoded": "Environment%20=%20var.environment",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "ccd8b7",
+        "hash": "18249ec4",
+        "encoded": "ManagedBy%20%20%20=%20%22Terraform%22",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "ccd8b7",
+        "hash": "c259f0a6",
+        "encoded": "Component%20%20%20=%20%22Kafka-Infrastructure%22",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "ccd8b7",
+        "hash": "1acd729b",
+        "encoded": "CostCenter%20%20=%20%22Engineering%22",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "ccd8b7",
+        "hash": "ab8bd706",
+        "encoded": "Owner%20%20%20%20%20%20%20=%20%22DevOps-Team%22",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "ccd8b7",
+        "hash": "1b754c76",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "ccd8b7",
+        "hash": "4771cdac",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "ccd8b7",
+        "hash": "792377b1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}
