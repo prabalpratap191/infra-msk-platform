@@ -34,7 +34,7 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         TF_VERSION = '1.6.0'
-        TF_DIR = "terraform/environments/${params.ENVIRONMENT}"
+        TF_DIR = "terraform"
         TF_LOG = 'INFO'
         SCRIPTS_DIR = 'scripts'
     }
