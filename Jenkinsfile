@@ -6,9 +6,7 @@
  */
 
 pipeline {
-    agent {
-        label 'terraform-agent'
-    }
+    agent any
 
     parameters {
         choice(
