@@ -158,9 +158,8 @@ pipeline {
                 
                 dir("${TF_DIR}") {
                     sh '''
-                        terraform plan \
-                            -out=tfplan \
-                            -var-file=terraform.tfvars \
+                    
+                        terraform plan  -out=tfplan -var-file=./environments/${params.ENVIRONMENT}/terraform.tfvars \
                             -detailed-exitcode || exit_code=$?
                         
                         # Store plan for apply stage
