@@ -67,46 +67,66 @@ pipeline {
 
         stage('Setup') {
             steps {
-                script {
-                    echo "🔧 Setting up Terraform and AWS credentials"
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    script {
+                        echo "🔧 Setting up Terraform and AWS credentials"
+                    }
+                    
+                    sh '''
+                        # Verify Terraform installation
+                        terraform version
+                        
+                        # Verify AWS credentials
+                        aws sts get-caller-identity
+                        
+                        # Display environment
+                        echo "Environment: ${ENVIRONMENT}"
+                        echo "Action: ${ACTION}"
+                        echo "Working Directory: ${TF_DIR}"
+                    '''
                 }
-                
-                sh '''
-                    # Verify Terraform installation
-                    terraform version
-                    
-                    # Verify AWS credentials
-                    aws sts get-caller-identity
-                    
-                    # Display environment
-                    echo "Environment: ${ENVIRONMENT}"
-                    echo "Action: ${ACTION}"
-                    echo "Working Directory: ${TF_DIR}"
-                '''
             }
         }
 
         stage('Terraform Init') {
             steps {
-                script {
-                    echo "📦 Initializing Terraform"
-                }
-                
-                dir("${TF_DIR}") {
-                    sh '''
-                        terraform init \
-                            -backend-config="bucket=terraform-state-msk-platform-${ENVIRONMENT}" \
-                            -backend-config="key=msk/${ENVIRONMENT}/terraform.tfstate" \
-                            -backend-config="region=${AWS_DEFAULT_REGION}" \
-                            -backend-config="dynamodb_table=terraform-state-lock-msk-platform" \
-                            -reconfigure
-                    '''
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    script {
+                        echo "📦 Initializing Terraform"
+                    }
+                    
+                    dir("${TF_DIR}") {
+                        sh '''
+                            terraform init \
+                                -backend-config="bucket=terraform-state-msk-platform-${ENVIRONMENT}" \
+                                -backend-config="key=msk/${ENVIRONMENT}/terraform.tfstate" \
+                                -backend-config="region=${AWS_DEFAULT_REGION}" \
+                                -backend-config="dynamodb_table=terraform-state-lock-msk-platform" \
+                                -reconfigure
+                        '''
+                    }
                 }
             }
         }
 
         stage('Terraform Validate') {
             steps {
+                 withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
                 script {
                     echo "✅ Validating Terraform configuration"
                 }
@@ -118,6 +138,7 @@ pipeline {
                     '''
                 }
             }
+            }
         }
 
         stage('Terraform Plan') {
@@ -125,6 +146,12 @@ pipeline {
                 expression { params.ACTION == 'plan' || params.ACTION == 'apply' }
             }
             steps {
+                 withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'jenkins-user',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
                 script {
                     echo "📋 Generating Terraform execution plan"
                 }
@@ -146,6 +173,7 @@ pipeline {
                 // Archive the plan
                 archiveArtifacts artifacts: "${TF_DIR}/tfplan", allowEmptyArchive: false
             }
+            }
         }
 
         stage('Approval Gate') {
@@ -156,6 +184,7 @@ pipeline {
                 }
             }
             steps {
+                
                 script {
                     echo "⏸️  Waiting for manual approval"
                     
@@ -299,16 +328,16 @@ pipeline {
                         
                         # Create summary file
                         cat > deployment-summary.txt <<EOF
-========================================
-MSK Platform Deployment Summary
-========================================
-Environment: ${ENVIRONMENT}
-Deployment Time: $(date)
-Cluster ARN: ${CLUSTER_ARN}
-Bootstrap Servers: ${BOOTSTRAP_SERVERS}
-VPC ID: ${VPC_ID}
-========================================
-EOF
+                        ========================================
+                        MSK Platform Deployment Summary
+                        ========================================
+                        Environment: ${ENVIRONMENT}
+                        Deployment Time: $(date)
+                        Cluster ARN: ${CLUSTER_ARN}
+                        Bootstrap Servers: ${BOOTSTRAP_SERVERS}
+                        VPC ID: ${VPC_ID}
+                        ========================================
+                        EOF
                         
                         cat deployment-summary.txt
                     '''
