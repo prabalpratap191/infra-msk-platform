@@ -234,8 +234,9 @@ resource "aws_vpc_endpoint" "cloudwatch_logs" {
 
 # Security Group for VPC Endpoints
 resource "aws_security_group" "vpc_endpoints" {
-  name_description = "Security group for VPC endpoints"
-  vpc_id          = aws_vpc.main.id
+  name        = "${local.name_prefix}-vpc-endpoints-sg"
+  description = "Security group for VPC endpoints"
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port   = 443
