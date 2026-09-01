@@ -1,0 +1,83 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: customer-service-ns
+data:
+  KAFKA_BOOTSTRAP_SERVERS: "<BOOTSTRAP_SERVERS_PLACEHOLDER>"
+  KAFKA_SECURITY_PROTOCOL: "SASL_SSL"
+  KAFKA_SASL_MECHANISM: "AWS_MSK_IAM"
+  KAFKA_SASL_JAAS_CONFIG: "software.amazon.msk.auth.iam.IAMLoginModule required;"
+  KAFKA_SASL_CLIENT_CALLBACK_HANDLER_CLASS: "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+  KAFKA_TOPIC_CUSTOMER_ORDERSTATUS: "customer-orderstatus-events"
+  KAFKA_TOPIC_ORDER_CREATE: "order-create-events"
+  KAFKA_CONSUMER_GROUP_ID: "customer-service-group"
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: order-service-ns
+data:
+  KAFKA_BOOTSTRAP_SERVERS: "<BOOTSTRAP_SERVERS_PLACEHOLDER>"
+  KAFKA_SECURITY_PROTOCOL: "SASL_SSL"
+  KAFKA_SASL_MECHANISM: "AWS_MSK_IAM"
+  KAFKA_SASL_JAAS_CONFIG: "software.amazon.msk.auth.iam.IAMLoginModule required;"
+  KAFKA_SASL_CLIENT_CALLBACK_HANDLER_CLASS: "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+  KAFKA_TOPIC_ORDER_CREATE: "order-create-events"
+  KAFKA_TOPIC_PAYMENT_CONFIRM: "payment-confirm-events"
+  KAFKA_TOPIC_NOTIFICATION: "notification-events"
+  KAFKA_CONSUMER_GROUP_ID: "order-service-group"
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: catalog-service-ns
+data:
+  KAFKA_BOOTSTRAP_SERVERS: "<BOOTSTRAP_SERVERS_PLACEHOLDER>"
+  KAFKA_SECURITY_PROTOCOL: "SASL_SSL"
+  KAFKA_SASL_MECHANISM: "AWS_MSK_IAM"
+  KAFKA_SASL_JAAS_CONFIG: "software.amazon.msk.auth.iam.IAMLoginModule required;"
+  KAFKA_SASL_CLIENT_CALLBACK_HANDLER_CLASS: "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+  KAFKA_TOPIC_CATALOG_UPDATION: "catalog-updation-events"
+  KAFKA_CONSUMER_GROUP_ID: "catalog-service-group"
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: notification-service-ns
+data:
+  KAFKA_BOOTSTRAP_SERVERS: "<BOOTSTRAP_SERVERS_PLACEHOLDER>"
+  KAFKA_SECURITY_PROTOCOL: "SASL_SSL"
+  KAFKA_SASL_MECHANISM: "AWS_MSK_IAM"
+  KAFKA_SASL_JAAS_CONFIG: "software.amazon.msk.auth.iam.IAMLoginModule required;"
+  KAFKA_SASL_CLIENT_CALLBACK_HANDLER_CLASS: "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+  KAFKA_TOPIC_NOTIFICATION: "notification-events"
+  KAFKA_CONSUMER_GROUP_ID: "notification-service-group"
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: payments-service-ns
+data:
+  KAFKA_BOOTSTRAP_SERVERS: "<BOOTSTRAP_SERVERS_PLACEHOLDER>"
+  KAFKA_SECURITY_PROTOCOL: "SASL_SSL"
+  KAFKA_SASL_MECHANISM: "AWS_MSK_IAM"
+  KAFKA_SASL_JAAS_CONFIG: "software.amazon.msk.auth.iam.IAMLoginModule required;"
+  KAFKA_SASL_CLIENT_CALLBACK_HANDLER_CLASS: "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+  KAFKA_TOPIC_PAYMENT_CONFIRM: "payment-confirm-events"
+  KAFKA_CONSUMER_GROUP_ID: "payments-service-group"
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
