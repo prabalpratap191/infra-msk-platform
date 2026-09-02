@@ -6,7 +6,7 @@ resource "tls_private_key" "kafka_ssh_key" {
 
 # Create AWS Key Pair using the generated public key
 resource "aws_key_pair" "kafka_key_pair" {
-  key_name   = "kafka-ec2-key-${formatdate("YYYYMMDDhhmmss", timestamp())}"
+  key_name   = "kafka-ec2-key"
   public_key = tls_private_key.kafka_ssh_key.public_key_openssh
 
   tags = {
