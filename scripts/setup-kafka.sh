@@ -22,12 +22,14 @@ echo "Broker ID: $KAFKA_BROKER_ID" | tee -a $LOG_FILE
 echo "Cluster Name: $KAFKA_CLUSTER_NAME" | tee -a $LOG_FILE
 echo "====================================" | tee -a $LOG_FILE
 
-echo "[1/4] Creating Kafka directories..." | tee -a $LOG_FILE
+
+
+echo "[1/5] Creating Kafka directories..." | tee -a $LOG_FILE
 
 sudo mkdir -p /opt/kafka/data
 sudo chown -R ec2-user:ec2-user /opt/kafka
 
-echo "[2/4] Creating docker-compose.yml..." | tee -a $LOG_FILE
+echo "[2/5] Creating docker-compose.yml..." | tee -a $LOG_FILE
 
 cat > /opt/kafka/docker-compose.yml <<EOF
 services:
@@ -62,7 +64,14 @@ services:
       - /opt/kafka/data:/var/lib/kafka/data
 EOF
 
-echo "[3/4] Starting Kafka..." | tee -a $LOG_FILE
+
+echo "[3/5] Kafka already running. Skipping installation..." | tee -a $LOG_FILE
+if docker ps --format '{{.Names}}' | grep -q '^kafka-server$'; then
+    echo "Kafka already running. Skipping installation."
+    exit 0
+fi
+
+echo "[4/5] Starting Kafka..." | tee -a $LOG_FILE
 
 cd /opt/kafka
 
@@ -74,7 +83,7 @@ echo "Waiting for Kafka startup..." | tee -a $LOG_FILE
 
 sleep 60
 
-echo "[4/4] Verifying Kafka..." | tee -a $LOG_FILE
+echo "[5/5] Verifying Kafka..." | tee -a $LOG_FILE
 
 sudo docker ps
 

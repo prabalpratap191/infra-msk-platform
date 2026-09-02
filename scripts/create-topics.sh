@@ -13,11 +13,12 @@ PARTITIONS=3
 REPLICATION_FACTOR=1
 
 TOPICS=(
-  "customer-order-events"
+  "customer-events"
   "order-events"
-  "order-status-events"
   "catalog-events"
   "payment-events"
+  "inventory-events"
+  "notification-events"
   "dead-letter-events"
 )
 
@@ -26,16 +27,17 @@ echo "Waiting for Kafka broker..."
 
 for i in {1..30}
 do
-  if docker exec ${CONTAINER_NAME} kafka-topics.sh \
-      --bootstrap-server ${BOOTSTRAP_SERVER} \
-      --list >/dev/null 2>&1
-  then
-      echo "✓ Kafka is ready"
-      break
-  fi
+    if sudo docker exec ${CONTAINER_NAME} \
+       /opt/kafka/bin/kafka-topics.sh \
+       --bootstrap-server ${BOOTSTRAP_SERVER} \
+       --list >/dev/null 2>&1
+    then
+        echo "✓ Kafka is ready"
+        break
+    fi
 
-  echo "Attempt $i/30 - Kafka not ready yet..."
-  sleep 10
+    echo "Attempt $i/30 - Kafka not ready yet..."
+    sleep 10
 done
 
 echo ""
@@ -46,24 +48,26 @@ echo "=================================="
 for TOPIC in "${TOPICS[@]}"
 do
 
-  if docker exec ${CONTAINER_NAME} kafka-topics.sh \
-      --bootstrap-server ${BOOTSTRAP_SERVER} \
-      --list | grep -w "${TOPIC}" >/dev/null
-  then
-      echo "✓ Topic already exists: ${TOPIC}"
-      continue
-  fi
+    if sudo docker exec ${CONTAINER_NAME} \
+       /opt/kafka/bin/kafka-topics.sh \
+       --bootstrap-server ${BOOTSTRAP_SERVER} \
+       --list | grep -w "${TOPIC}" >/dev/null
+    then
+        echo "✓ Topic already exists: ${TOPIC}"
+        continue
+    fi
 
-  echo "Creating topic: ${TOPIC}"
+    echo "Creating topic: ${TOPIC}"
 
-  docker exec ${CONTAINER_NAME} kafka-topics.sh \
-      --create \
-      --bootstrap-server ${BOOTSTRAP_SERVER} \
-      --topic ${TOPIC} \
-      --partitions ${PARTITIONS} \
-      --replication-factor ${REPLICATION_FACTOR}
+    sudo docker exec ${CONTAINER_NAME} \
+       /opt/kafka/bin/kafka-topics.sh \
+       --create \
+       --bootstrap-server ${BOOTSTRAP_SERVER} \
+       --topic ${TOPIC} \
+       --partitions ${PARTITIONS} \
+       --replication-factor ${REPLICATION_FACTOR}
 
-  echo "✓ Created: ${TOPIC}"
+    echo "✓ Created: ${TOPIC}"
 
 done
 
@@ -72,9 +76,10 @@ echo "=================================="
 echo "Available Topics"
 echo "=================================="
 
-docker exec ${CONTAINER_NAME} kafka-topics.sh \
-    --bootstrap-server ${BOOTSTRAP_SERVER} \
-    --list
+sudo docker exec ${CONTAINER_NAME} \
+   /opt/kafka/bin/kafka-topics.sh \
+   --bootstrap-server ${BOOTSTRAP_SERVER} \
+   --list
 
 echo ""
 echo "=================================="
@@ -83,13 +88,14 @@ echo "=================================="
 
 for TOPIC in "${TOPICS[@]}"
 do
-  echo ""
-  echo "Topic: ${TOPIC}"
+    echo ""
+    echo "Topic: ${TOPIC}"
 
-  docker exec ${CONTAINER_NAME} kafka-topics.sh \
-      --bootstrap-server ${BOOTSTRAP_SERVER} \
-      --describe \
-      --topic ${TOPIC}
+    sudo docker exec ${CONTAINER_NAME} \
+       /opt/kafka/bin/kafka-topics.sh \
+       --bootstrap-server ${BOOTSTRAP_SERVER} \
+       --describe \
+       --topic ${TOPIC}
 done
 
 echo ""
