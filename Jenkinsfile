@@ -97,17 +97,17 @@ pipeline {
                         ).trim()
                         
                         env.EC2_PRIVATE_IP = sh(
-                            script: 'terraform output -raw ec2_private_ip',
+                            script: 'terraform output -raw private_ip',
                             returnStdout: true
                         ).trim()
                         
                         env.EC2_INSTANCE_ID = sh(
-                            script: 'terraform output -raw ec2_instance_id',
+                            script: 'terraform output -raw instance_id',
                             returnStdout: true
                         ).trim()
                         
                         env.SSH_KEY_NAME = sh(
-                            script: 'terraform output -raw ssh_key_name',
+                            script: 'terraform output -raw ssh_command',
                             returnStdout: true
                         ).trim()
                         
