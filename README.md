@@ -315,6 +315,29 @@ docker exec kafka-1 kafka-topics.sh \
   --config min.insync.replicas=2
 ```
 
+### Jenkins Pipeline Fails at "Terraform Plan" Stage
+
+**Error**: `No value for required variable`
+
+**Cause**: Missing `terraform.tfvars` file in `terraform/environments/dev/`
+
+**Solution**:
+```bash
+# Copy the example file
+cd terraform/environments/dev
+cp terraform.tfvars.example terraform.tfvars
+
+# Customize values as needed
+vim terraform.tfvars
+```
+
+**Important**: Review and update these critical values:
+- `admin_cidr_blocks` - Restrict from `0.0.0.0/0` in production
+- `ssh_key_name` - Ensure key exists in AWS
+- `aws_region` - Match your target region
+
+📖 **Detailed Fix Guide**: See [docs/JENKINS_PIPELINE_FIX.md](docs/JENKINS_PIPELINE_FIX.md)
+
 ## Rollback Strategy
 
 ```bash
