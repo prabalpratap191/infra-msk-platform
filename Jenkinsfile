@@ -200,25 +200,25 @@ pipeline {
                         echo "=========================================="
                         
                         // Create summary file
-                        writeFile file: 'deployment-summary.md', text: """
-# Kafka Deployment Summary
+                        def summaryText = '''# Kafka Deployment Summary
 
-## Environment: ${params.ENVIRONMENT}
+## Environment: ''' + params.ENVIRONMENT + '''
 
 ## Connection Details
-- **Bootstrap Servers**: ${outputs.kafka_bootstrap_servers.value}
-- **Broker IPs**: ${outputs.kafka_private_ips.value.join(', ')}
-- **VPC ID**: ${outputs.vpc_id.value}
+- **Bootstrap Servers**: ''' + outputs.kafka_bootstrap_servers.value + '''
+- **Broker IPs**: ''' + outputs.kafka_private_ips.value.join(', ') + '''
+- **VPC ID**: ''' + outputs.vpc_id.value + '''
 
 ## Quick Start
 
-\`\`\`bash
-${outputs.quick_start_commands.value}
-\`\`\`
+```bash
+''' + outputs.quick_start_commands.value + '''
+```
 
 ## Deployment Time
-${new Date()}
-"""
+''' + new Date() + '''
+'''
+                        writeFile file: 'deployment-summary.md', text: summaryText
                         
                         archiveArtifacts artifacts: 'deployment-summary.md', fingerprint: true
                     }
