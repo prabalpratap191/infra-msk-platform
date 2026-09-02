@@ -115,9 +115,9 @@ version: '3.8'
 
 services:
   kafka:
-    image: bitnami/kafka:${KAFKA_VERSION}
-    container_name: kafka-${BROKER_ID}
-    hostname: kafka-${BROKER_ID}
+    image: bitnami/kafka:$${KAFKA_VERSION}
+    container_name: kafka-$${BROKER_ID}
+    hostname: kafka-$${BROKER_ID}
     restart: unless-stopped
     ports:
       - "9092:9092"
@@ -127,13 +127,13 @@ services:
       # KRaft settings
       KAFKA_ENABLE_KRAFT: "yes"
       KAFKA_CFG_PROCESS_ROLES: "broker,controller"
-      KAFKA_CFG_NODE_ID: "${BROKER_ID}"
-      KAFKA_KRAFT_CLUSTER_ID: "${CLUSTER_ID}"
+      KAFKA_CFG_NODE_ID: "$${BROKER_ID}"
+      KAFKA_KRAFT_CLUSTER_ID: "$${CLUSTER_ID}"
       KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "1@KAFKA_IP_1:9093,2@KAFKA_IP_2:9093,3@KAFKA_IP_3:9093"
       
       # Listeners
       KAFKA_CFG_LISTENERS: "PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094"
-      KAFKA_CFG_ADVERTISED_LISTENERS: "PLAINTEXT://${BROKER_PRIVATE_IP}:9092,EXTERNAL://${KAFKA_PUBLIC_DNS}:9094"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "PLAINTEXT://$${BROKER_PRIVATE_IP}:9092,EXTERNAL://$${KAFKA_PUBLIC_DNS}:9094"
       KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT"
       KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
       KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
@@ -160,7 +160,7 @@ services:
       KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "false"
       
       # JVM settings
-      KAFKA_HEAP_OPTS: "${KAFKA_HEAP_OPTS}"
+      KAFKA_HEAP_OPTS: "$${KAFKA_HEAP_OPTS}"
       KAFKA_JVM_PERFORMANCE_OPTS: "-XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:G1HeapRegionSize=16M -XX:MinMetaspaceFreeRatio=50 -XX:MaxMetaspaceFreeRatio=80"
       
       # Logging
@@ -168,7 +168,7 @@ services:
       
       # Monitoring
       KAFKA_JMX_PORT: "9999"
-      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=${BROKER_PRIVATE_IP}"
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=$${BROKER_PRIVATE_IP}"
       
     volumes:
       - /opt/kafka/data:/bitnami/kafka/data
@@ -191,15 +191,15 @@ COMPOSE_EOF
 KAFKA_IPS=$(echo "$KAFKA_PRIVATE_IPS" | jq -r '.[]')
 KAFKA_IP_ARRAY=($KAFKA_IPS)
 
-sed -i "s/KAFKA_IP_1/${KAFKA_IP_ARRAY[0]}/g" /opt/kafka/docker-compose.yml
-sed -i "s/KAFKA_IP_2/${KAFKA_IP_ARRAY[1]}/g" /opt/kafka/docker-compose.yml
-sed -i "s/KAFKA_IP_3/${KAFKA_IP_ARRAY[2]}/g" /opt/kafka/docker-compose.yml
-sed -i "s/\${BROKER_ID}/$BROKER_ID/g" /opt/kafka/docker-compose.yml
-sed -i "s/\${CLUSTER_ID}/$CLUSTER_ID/g" /opt/kafka/docker-compose.yml
-sed -i "s/\${BROKER_PRIVATE_IP}/$BROKER_PRIVATE_IP/g" /opt/kafka/docker-compose.yml
-sed -i "s/\${KAFKA_PUBLIC_DNS}/$KAFKA_PUBLIC_DNS/g" /opt/kafka/docker-compose.yml
-sed -i "s/\${KAFKA_HEAP_OPTS}/$KAFKA_HEAP_OPTS/g" /opt/kafka/docker-compose.yml
-sed -i "s/\${KAFKA_VERSION}/$KAFKA_VERSION/g" /opt/kafka/docker-compose.yml
+sed -i "s/KAFKA_IP_1/$${KAFKA_IP_ARRAY[0]}/g" /opt/kafka/docker-compose.yml
+sed -i "s/KAFKA_IP_2/$${KAFKA_IP_ARRAY[1]}/g" /opt/kafka/docker-compose.yml
+sed -i "s/KAFKA_IP_3/$${KAFKA_IP_ARRAY[2]}/g" /opt/kafka/docker-compose.yml
+sed -i "s/\$\$${BROKER_ID}/$BROKER_ID/g" /opt/kafka/docker-compose.yml
+sed -i "s/\$\$${CLUSTER_ID}/$CLUSTER_ID/g" /opt/kafka/docker-compose.yml
+sed -i "s/\$\$${BROKER_PRIVATE_IP}/$BROKER_PRIVATE_IP/g" /opt/kafka/docker-compose.yml
+sed -i "s/\$\$${KAFKA_PUBLIC_DNS}/$KAFKA_PUBLIC_DNS/g" /opt/kafka/docker-compose.yml
+sed -i "s/\$\$${KAFKA_HEAP_OPTS}/$KAFKA_HEAP_OPTS/g" /opt/kafka/docker-compose.yml
+sed -i "s/\$\$${KAFKA_VERSION}/$KAFKA_VERSION/g" /opt/kafka/docker-compose.yml
 
 # ============================================================================
 # Start Kafka
