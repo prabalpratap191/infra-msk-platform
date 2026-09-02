@@ -1,0 +1,73 @@
+# SSH Private Keys - NEVER commit these!
+*.pem
+kafka-ec2-private-key.pem
+terraform/kafka-ec2-private-key.pem
+
+# Terraform State Files
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfstate.backup
+terraform/tfplan
+terraform/.terraform.tfstate.lock.info
+
+# Terraform Variable Files with Sensitive Data
+terraform/terraform.tfvars
+terraform/*.auto.tfvars
+
+# Backup Files
+*.backup
+*.old
+Jenkinsfile.backup
+Jenkinsfile.old
+terraform.backup/
+
+# IDE and Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Log Files
+*.log
+/logs/
+
+# Temporary Files
+*.tmp
+*.temp
+/tmp/
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+deployment.env
+
+# Jenkins Workspace
+workspace/
+
+# AWS Credentials
+.aws/credentials
+*.credentials
+
+# OS Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Compiled Files
+*.class
+*.jar
+*.war
+*.ear
+target/
+build/

@@ -84,6 +84,12 @@ This project provides a complete infrastructure-as-code solution to deploy Apach
 
 ## ✨ Features
 
+✅ **Dynamic SSH Key Generation** 🆕
+- Automatic SSH key pair creation by Terraform
+- No manual key management required
+- Unique key per deployment for enhanced security
+- No Jenkins SSH credential configuration needed
+
 ✅ **Automated Infrastructure Provisioning**
 - Terraform manages all AWS resources
 - Version-controlled infrastructure
@@ -137,9 +143,9 @@ This project provides a complete infrastructure-as-code solution to deploy Apach
 - Security group for EKS workers (optional)
 
 ### Jenkins Requirements
-- SSH credentials for EC2 access
-- AWS credentials
+- **AWS credentials only** (`jenkins-user` credential ID)
 - Git repository access
+- ~~SSH credentials~~ - ❌ Not needed (auto-generated!)
 
 ## 📁 Project Structure
 
@@ -169,6 +175,12 @@ infra-kafka-ec2-platform/
 
 ## 🚀 Quick Start
 
+### **NEW: Dynamic SSH Key Generation** 🔑
+
+No manual SSH key management required! The pipeline automatically generates SSH keys.
+
+**See**: [DYNAMIC_SSH_QUICKSTART.md](DYNAMIC_SSH_QUICKSTART.md) for detailed guide.
+
 ### 1. Clone Repository
 
 ```bash
@@ -182,23 +194,25 @@ cd infra-kafka-ec2-platform
 cd terraform
 cp terraform.tfvars.example terraform.tfvars
 # Edit terraform.tfvars with your values
+# Note: key_name is NOT needed - auto-generated!
 ```
 
-### 3. Deploy with Terraform (Manual)
+### 3. Deploy with Jenkins (Recommended)
+
+1. Create Jenkins pipeline job
+2. Point to this repository
+3. Configure **only AWS credentials** (`jenkins-user`)
+4. Run the pipeline - SSH keys auto-generated!
+
+### 4. Deploy with Terraform (Manual)
 
 ```bash
 terraform init
 terraform validate
 terraform plan
 terraform apply
+# SSH key saved to: kafka-ec2-private-key.pem
 ```
-
-### 4. Deploy with Jenkins (Automated)
-
-1. Create Jenkins pipeline job
-2. Point to this repository
-3. Configure credentials (AWS, SSH key)
-4. Run the pipeline
 
 ## 🔧 Terraform Configuration
 
@@ -274,20 +288,30 @@ spring:
 2. **Terraform Init** - Initialize Terraform
 3. **Terraform Validate** - Validate configuration
 4. **Terraform Plan** - Plan infrastructure changes
-5. **Terraform Apply** - Provision infrastructure
-6. **Get EC2 Details** - Extract instance information
-7. **Wait for Initialization** - Wait for user data completion
-8. **Verify Docker** - Check Docker installation
-9. **Deploy Kafka** - Start Kafka containers
-10. **Create Topics** - Create all Kafka topics
-11. **Verify Kafka** - Test producer/consumer
-12. **Print Details** - Display connection information
-13. **Success** - Deployment summary
+5. **Terraform Apply** - Provision infrastructure + **Generate SSH key** 🆕
+6. **Get EC2 Details** - Extract instance info + SSH key
+7. **Wait for Initialization** - Wait for EC2 ready + Test SSH
+8. **Install Docker** - Install Docker via SSH (visible logs) 🆕
+9. **Verify Docker** - Check Docker installation
+10. **Setup Kafka** - Deploy Kafka via SSH (visible logs) 🆕
+11. **Wait for Kafka Startup** - Wait for Kafka container
+12. **Create Topics** - Create all Kafka topics
+13. **Verify Kafka** - Test producer/consumer
+14. **Print Details** - Display SSH command & connection info
+15. **Success** - Deployment summary
 
 ### Required Jenkins Credentials
 
-- `kafka-ec2-key`: SSH private key for EC2
-- `aws-credentials`: AWS access key and secret
+- `jenkins-user`: AWS access key and secret
+- ~~`kafka-ec2-key`~~: ❌ Not needed (auto-generated!)
+
+### Key Differences from Old Approach
+
+✅ **SSH keys auto-generated** by Terraform (no manual setup)  
+✅ **Docker installed via SSH** (visible in Jenkins console)  
+✅ **Kafka deployed via SSH** (real-time feedback)  
+✅ **Better debugging** (all installation logs visible)  
+✅ **One less credential** to manage in Jenkins
 
 ## 🛠️ Operations
 
@@ -345,6 +369,25 @@ docker logs -f kafka-server
 ```
 
 ## 🔍 Troubleshooting
+
+### Jenkins Pipeline Failure: "ERROR: kafka-ec2-key"
+
+**Problem**: Pipeline fails immediately with credential error
+
+**Solution**: Missing Jenkins credentials - follow the quick fix guide
+
+```bash
+# Quick verification
+./verify-jenkins-setup.sh
+```
+
+📚 **See**:
+- [QUICK_FIX_GUIDE.md](QUICK_FIX_GUIDE.md) - 5-minute fix
+- [JENKINS_CREDENTIALS_SETUP.md](JENKINS_CREDENTIALS_SETUP.md) - Detailed setup
+
+**Required Jenkins Credentials**:
+- `kafka-ec2-key` - SSH private key for EC2 (username: ec2-user)
+- `jenkins-user` - AWS access credentials
 
 ### Kafka Not Starting
 

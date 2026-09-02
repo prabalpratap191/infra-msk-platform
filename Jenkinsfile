@@ -5,9 +5,6 @@ pipeline {
         AWS_REGION = 'us-east-1'
         TF_DIR = 'terraform'
         SCRIPTS_DIR = 'scripts'
-        SSH_KEY_PATH = credentials('kafka-ec2-key')  // Jenkins credential ID for SSH key
-        AWS_CREDENTIALS = credentials('jenkins-user')  // Jenkins credential ID for AWS
-    
     }
     
     stages {
@@ -27,10 +24,13 @@ pipeline {
                 echo 'Stage 2: Terraform Initialization'
                 echo '=================================='
                 dir("${TF_DIR}") {
-                    sh '''
-                        terraform init
-                        echo "✓ Terraform initialized successfully"
-                    '''
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
+                                      credentialsId: 'jenkins-user']]) {
+                        sh '''
+                            terraform init
+                            echo "✓ Terraform initialized successfully"
+                        '''
+                    }
                 }
             }
         }
@@ -55,10 +55,13 @@ pipeline {
                 echo 'Stage 4: Terraform Plan'
                 echo '=================================='
                 dir("${TF_DIR}") {
-                    sh '''
-                        terraform plan -out=tfplan
-                        echo "✓ Terraform plan created successfully"
-                    '''
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
+                                      credentialsId: 'jenkins-user']]) {
+                        sh '''
+                            terraform plan -out=tfplan
+                            echo "✓ Terraform plan created successfully"
+                        '''
+                    }
                 }
             }
         }
@@ -69,10 +72,14 @@ pipeline {
                 echo 'Stage 5: Terraform Apply'
                 echo '=================================='
                 dir("${TF_DIR}") {
-                    sh '''
-                        terraform apply -auto-approve tfplan
-                        echo "✓ Infrastructure provisioned successfully"
-                    '''
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
+                                      credentialsId: 'jenkins-user']]) {
+                        sh '''
+                            terraform apply -auto-approve tfplan
+                            echo "✓ Infrastructure provisioned successfully"
+                            echo "✓ SSH key pair created dynamically"
+                        '''
+                    }
                 }
             }
         }
@@ -80,7 +87,7 @@ pipeline {
         stage('Get EC2 Instance Details') {
             steps {
                 echo '=================================='
-                echo 'Stage 6: Retrieve EC2 Details'
+                echo 'Stage 6: Retrieve EC2 Details & SSH Key'
                 echo '=================================='
                 dir("${TF_DIR}") {
                     script {
@@ -99,12 +106,18 @@ pipeline {
                             returnStdout: true
                         ).trim()
                         
+                        env.SSH_KEY_NAME = sh(
+                            script: 'terraform output -raw ssh_key_name',
+                            returnStdout: true
+                        ).trim()
+                        
                         echo "=================================="
                         echo "EC2 Instance Created Successfully"
                         echo "=================================="
                         echo "Instance ID: ${env.EC2_INSTANCE_ID}"
                         echo "Public IP: ${env.EC2_PUBLIC_IP}"
                         echo "Private IP: ${env.EC2_PRIVATE_IP}"
+                        echo "SSH Key: ${env.SSH_KEY_NAME}"
                         echo "=================================="
                     }
                 }
@@ -114,12 +127,54 @@ pipeline {
         stage('Wait for EC2 Initialization') {
             steps {
                 echo '=================================='
-                echo 'Waiting for EC2 User Data to Complete'
+                echo 'Waiting for EC2 to Complete Initialization'
                 echo '=================================='
                 script {
-                    // Wait for instance to be fully initialized
+                    echo "Waiting for instance to be fully ready..."
                     sleep time: 3, unit: 'MINUTES'
-                    echo "✓ EC2 initialization complete"
+                    
+                    // Wait for SSH to be available
+                    echo "Testing SSH connectivity..."
+                    dir("${TF_DIR}") {
+                        retry(10) {
+                            sh """
+                                ssh -o StrictHostKeyChecking=no \
+                                    -o ConnectTimeout=5 \
+                                    -i kafka-ec2-private-key.pem \
+                                    ec2-user@${env.EC2_PUBLIC_IP} 'echo "SSH connection successful"'
+                            """
+                            sleep 10
+                        }
+                    }
+                    echo "✓ EC2 instance is ready and SSH is available"
+                }
+            }
+        }
+        
+        stage('Install Docker') {
+            steps {
+                echo '=================================='
+                echo 'Stage 7: Install Docker & Docker Compose'
+                echo '=================================='
+                script {
+                    dir("${TF_DIR}") {
+                        // Copy installation script to EC2
+                        sh """
+                            scp -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ../install-docker.sh \
+                                ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
+                        """
+                        
+                        // Execute installation script
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'chmod +x /home/ec2-user/install-docker.sh && /home/ec2-user/install-docker.sh'
+                        """
+                        echo "✓ Docker installed successfully"
+                    }
                 }
             }
         }
@@ -127,46 +182,76 @@ pipeline {
         stage('Verify Docker Installation') {
             steps {
                 echo '=================================='
-                echo 'Stage 7: Verify Docker Installation'
+                echo 'Stage 8: Verify Docker Installation'
                 echo '=================================='
                 script {
-                    sh """
-                        ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ec2-user@${env.EC2_PUBLIC_IP} \
-                            'docker --version'
-                    """
-                    echo "✓ Docker installed successfully"
-                    
-                    sh """
-                        ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ec2-user@${env.EC2_PUBLIC_IP} \
-                            'docker compose version'
-                    """
-                    echo "✓ Docker Compose installed successfully"
+                    dir("${TF_DIR}") {
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'sudo docker --version'
+                        """
+                        echo "✓ Docker verified"
+                        
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'sudo docker compose version'
+                        """
+                        echo "✓ Docker Compose verified"
+                    }
                 }
             }
         }
         
-        stage('Deploy Kafka') {
+        stage('Setup Kafka') {
             steps {
                 echo '=================================='
-                echo 'Stage 8: Deploy Kafka'
+                echo 'Stage 9: Setup Kafka Configuration'
                 echo '=================================='
                 script {
-                    // Start Kafka using Docker Compose
-                    sh """
-                        ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ec2-user@${env.EC2_PUBLIC_IP} \
-                            'cd /opt/kafka && docker compose up -d'
-                    """
-                    echo "✓ Kafka deployment initiated"
-                    
-                    // Wait for Kafka to be ready
-                    echo "Waiting for Kafka to start..."
-                    sleep time: 1, unit: 'MINUTES'
+                    dir("${TF_DIR}") {
+                        // Copy Kafka setup script to EC2
+                        sh """
+                            scp -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ../setup-kafka.sh \
+                                ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
+                        """
+                        
+                        // Execute Kafka setup script with parameters
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'chmod +x /home/ec2-user/setup-kafka.sh && /home/ec2-user/setup-kafka.sh ${env.EC2_PRIVATE_IP} ${env.EC2_PUBLIC_IP} 1 kafka-cluster-dev'
+                        """
+                        echo "✓ Kafka configuration created"
+                    }
+                }
+            }
+        }
+        
+        stage('Wait for Kafka Startup') {
+            steps {
+                echo '=================================='
+                echo 'Waiting for Kafka to Start'
+                echo '=================================='
+                script {
+                    echo "Waiting for Kafka to initialize..."
+                    sleep time: 2, unit: 'MINUTES'
                     
                     // Verify Kafka container is running
-                    sh """
-                        ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ec2-user@${env.EC2_PUBLIC_IP} \
-                            'docker ps | grep kafka-server'
-                    """
+                    dir("${TF_DIR}") {
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'sudo docker ps | grep kafka-server'
+                        """
+                    }
                     echo "✓ Kafka container is running"
                 }
             }
@@ -175,22 +260,27 @@ pipeline {
         stage('Create Kafka Topics') {
             steps {
                 echo '=================================='
-                echo 'Stage 9: Create Kafka Topics'
+                echo 'Stage 10: Create Kafka Topics'
                 echo '=================================='
                 script {
-                    // Copy topics script to EC2
-                    sh """
-                        scp -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} \
-                            ${SCRIPTS_DIR}/create-topics.sh \
-                            ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
-                    """
-                    
-                    // Make script executable and run it
-                    sh """
-                        ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ec2-user@${env.EC2_PUBLIC_IP} \
-                            'chmod +x /home/ec2-user/create-topics.sh && /home/ec2-user/create-topics.sh'
-                    """
-                    echo "✓ All topics created successfully"
+                    dir("${TF_DIR}") {
+                        // Copy topics script to EC2
+                        sh """
+                            scp -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ../scripts/create-topics.sh \
+                                ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
+                        """
+                        
+                        // Make script executable and run it
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'chmod +x /home/ec2-user/create-topics.sh && /home/ec2-user/create-topics.sh'
+                        """
+                        echo "✓ All topics created successfully"
+                    }
                 }
             }
         }
@@ -198,22 +288,27 @@ pipeline {
         stage('Verify Kafka Installation') {
             steps {
                 echo '=================================='
-                echo 'Stage 10: Kafka Verification'
+                echo 'Stage 11: Kafka Verification'
                 echo '=================================='
                 script {
-                    // Copy verification script to EC2
-                    sh """
-                        scp -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} \
-                            ${SCRIPTS_DIR}/verify-kafka.sh \
-                            ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
-                    """
-                    
-                    // Run verification
-                    sh """
-                        ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ec2-user@${env.EC2_PUBLIC_IP} \
-                            'chmod +x /home/ec2-user/verify-kafka.sh && /home/ec2-user/verify-kafka.sh'
-                    """
-                    echo "✓ Kafka verification successful"
+                    dir("${TF_DIR}") {
+                        // Copy verification script to EC2
+                        sh """
+                            scp -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ../scripts/verify-kafka.sh \
+                                ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
+                        """
+                        
+                        // Run verification
+                        sh """
+                            ssh -o StrictHostKeyChecking=no \
+                                -i kafka-ec2-private-key.pem \
+                                ec2-user@${env.EC2_PUBLIC_IP} \
+                                'chmod +x /home/ec2-user/verify-kafka.sh && /home/ec2-user/verify-kafka.sh'
+                        """
+                        echo "✓ Kafka verification successful"
+                    }
                 }
             }
         }
@@ -221,11 +316,17 @@ pipeline {
         stage('Print Kafka Connection Details') {
             steps {
                 echo '=================================='
-                echo 'Stage 11: Kafka Connection Details'
+                echo 'Stage 12: Kafka Connection Details'
                 echo '=================================='
                 script {
-                    echo """
-=================================="
+                    dir("${TF_DIR}") {
+                        def sshCommand = sh(
+                            script: 'terraform output -raw ssh_connection_command',
+                            returnStdout: true
+                        ).trim()
+                        
+                        echo """
+==================================
 KAFKA DEPLOYMENT INFORMATION
 ==================================
 
@@ -233,6 +334,11 @@ EC2 Instance Details:
   Instance ID: ${env.EC2_INSTANCE_ID}
   Public IP: ${env.EC2_PUBLIC_IP}
   Private IP: ${env.EC2_PRIVATE_IP}
+  SSH Key: ${env.SSH_KEY_NAME}
+
+SSH Access:
+  cd terraform
+  ${sshCommand}
 
 Kafka Bootstrap Servers:
   Internal (VPC): ${env.EC2_PRIVATE_IP}:9092
@@ -266,7 +372,8 @@ Connection String:
   ${env.EC2_PRIVATE_IP}:9092
 
 ==================================
-                    """
+                        """
+                    }
                 }
             }
         }
@@ -280,6 +387,7 @@ Connection String:
                 echo ''
                 echo 'Kafka Status: ✓ RUNNING'
                 echo 'EC2 Status: ✓ RUNNING'
+                echo 'SSH Key: ✓ DYNAMICALLY GENERATED'
                 echo ''
                 echo 'Topics Created:'
                 echo '  • customer-events'
@@ -301,6 +409,9 @@ Connection String:
             echo ''
             echo '🎉 Pipeline executed successfully!'
             echo 'Kafka is now ready to use.'
+            echo ''
+            echo 'SSH Key Location: terraform/kafka-ec2-private-key.pem'
+            echo 'To connect: cd terraform && ssh -i kafka-ec2-private-key.pem ec2-user@' + env.EC2_PUBLIC_IP
         }
         failure {
             echo ''
