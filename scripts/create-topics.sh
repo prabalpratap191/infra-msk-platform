@@ -1,69 +1,98 @@
 #!/bin/bash
+
 set -e
 
 echo "=================================="
-echo "Creating Kafka Topics"
+echo "Kafka Topic Creation Script"
 echo "=================================="
 
-# Wait for Kafka to be ready
-echo "Waiting for Kafka to be ready..."
-sleep 30
-
-# Topic configuration
-PARTITIONS=3
-REPLICATION_FACTOR=1
+CONTAINER_NAME="kafka-server"
 BOOTSTRAP_SERVER="localhost:9092"
 
-# List of topics to create
+PARTITIONS=3
+REPLICATION_FACTOR=1
+
 TOPICS=(
-    "customer-events"
-    "order-events"
-    "catalog-events"
-    "payment-events"
-    "inventory-events"
-    "notification-events"
-    "dead-letter-events"
+  "customer-order-events"
+  "order-events"
+  "order-status-events"
+  "catalog-events"
+  "payment-events"
+  "dead-letter-events"
 )
 
-# Create topics
-for TOPIC in "${TOPICS[@]}"; do
-    echo "Creating topic: $TOPIC"
-    docker exec kafka-server kafka-topics.sh \
-        --create \
-        --bootstrap-server $BOOTSTRAP_SERVER \
-        --topic $TOPIC \
-        --partitions $PARTITIONS \
-        --replication-factor $REPLICATION_FACTOR \
-        --if-not-exists \
-        --config retention.ms=604800000 \
-        --config segment.ms=86400000 \
-        --config compression.type=lz4
-    
-    echo "✓ Topic '$TOPIC' created successfully"
+echo ""
+echo "Waiting for Kafka broker..."
+
+for i in {1..30}
+do
+  if docker exec ${CONTAINER_NAME} kafka-topics.sh \
+      --bootstrap-server ${BOOTSTRAP_SERVER} \
+      --list >/dev/null 2>&1
+  then
+      echo "✓ Kafka is ready"
+      break
+  fi
+
+  echo "Attempt $i/30 - Kafka not ready yet..."
+  sleep 10
 done
 
 echo ""
 echo "=================================="
-echo "Listing all topics:"
+echo "Creating Topics"
 echo "=================================="
-docker exec kafka-server kafka-topics.sh \
-    --list \
-    --bootstrap-server $BOOTSTRAP_SERVER
 
-echo ""
-echo "=================================="
-echo "Topic Details:"
-echo "=================================="
-for TOPIC in "${TOPICS[@]}"; do
-    echo ""
-    echo "Topic: $TOPIC"
-    docker exec kafka-server kafka-topics.sh \
-        --describe \
-        --bootstrap-server $BOOTSTRAP_SERVER \
-        --topic $TOPIC
+for TOPIC in "${TOPICS[@]}"
+do
+
+  if docker exec ${CONTAINER_NAME} kafka-topics.sh \
+      --bootstrap-server ${BOOTSTRAP_SERVER} \
+      --list | grep -w "${TOPIC}" >/dev/null
+  then
+      echo "✓ Topic already exists: ${TOPIC}"
+      continue
+  fi
+
+  echo "Creating topic: ${TOPIC}"
+
+  docker exec ${CONTAINER_NAME} kafka-topics.sh \
+      --create \
+      --bootstrap-server ${BOOTSTRAP_SERVER} \
+      --topic ${TOPIC} \
+      --partitions ${PARTITIONS} \
+      --replication-factor ${REPLICATION_FACTOR}
+
+  echo "✓ Created: ${TOPIC}"
+
 done
 
 echo ""
 echo "=================================="
-echo "All topics created successfully!"
+echo "Available Topics"
+echo "=================================="
+
+docker exec ${CONTAINER_NAME} kafka-topics.sh \
+    --bootstrap-server ${BOOTSTRAP_SERVER} \
+    --list
+
+echo ""
+echo "=================================="
+echo "Topic Details"
+echo "=================================="
+
+for TOPIC in "${TOPICS[@]}"
+do
+  echo ""
+  echo "Topic: ${TOPIC}"
+
+  docker exec ${CONTAINER_NAME} kafka-topics.sh \
+      --bootstrap-server ${BOOTSTRAP_SERVER} \
+      --describe \
+      --topic ${TOPIC}
+done
+
+echo ""
+echo "=================================="
+echo "Kafka Topic Creation Complete"
 echo "=================================="

@@ -131,7 +131,7 @@ pipeline {
                 echo '=================================='
                 script {
                     echo "Waiting for instance to be fully ready..."
-                    sleep time: 3, unit: 'MINUTES'
+                    sleep time: 1, unit: 'MINUTES'
                     
                     // Wait for SSH to be available
                     echo "Testing SSH connectivity..."
@@ -162,7 +162,7 @@ pipeline {
                         sh """
                             scp -o StrictHostKeyChecking=no \
                                 -i kafka-ec2-private-key.pem \
-                                ../install-docker.sh \
+                                ../scripts/install-docker.sh \
                                 ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
                         """
                         
@@ -217,7 +217,7 @@ pipeline {
                         sh """
                             scp -o StrictHostKeyChecking=no \
                                 -i kafka-ec2-private-key.pem \
-                                ../setup-kafka.sh \
+                                ../scripts/setup-kafka.sh \
                                 ec2-user@${env.EC2_PUBLIC_IP}:/home/ec2-user/
                         """
                         
@@ -241,7 +241,7 @@ pipeline {
                 echo '=================================='
                 script {
                     echo "Waiting for Kafka to initialize..."
-                    sleep time: 2, unit: 'MINUTES'
+                    sleep time: 1, unit: 'MINUTES'
                     
                     // Verify Kafka container is running
                     dir("${TF_DIR}") {
