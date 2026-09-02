@@ -4,7 +4,7 @@ environment = "dev"
 instance_type = "t3.medium"
 volume_size   = 40
 
-key_name = "kafka-ec2-key"
+key_name = "kafka-ec2-key-20260902095525"
 
 admin_ip_address = "54.91.126.56/32"
 
