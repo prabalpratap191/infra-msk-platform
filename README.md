@@ -59,6 +59,7 @@ This repository provisions a highly available Apache Kafka cluster on AWS EC2 in
 - Jenkins with AWS credentials configured
 - Existing EKS cluster: `meracommerce-dev-cluster`
 - AWS CLI configured
+- **SSH Key Pair** created in AWS EC2 (see [SSH_KEY_SETUP.md](docs/SSH_KEY_SETUP.md))
 
 ### 1. Clone Repository
 
