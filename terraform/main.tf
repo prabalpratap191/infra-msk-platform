@@ -162,8 +162,8 @@ resource "aws_instance" "kafka" {
     aws_security_group.kafka_sg.id
   ]
 
-  key_name = var.key_name
-
+  #key_name = var.key_name
+  key_name = aws_key_pair.kafka_key_pair.key_name
   root_block_device {
     volume_size = var.volume_size
     volume_type = "gp3"

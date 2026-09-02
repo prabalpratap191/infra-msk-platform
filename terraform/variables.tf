@@ -22,10 +22,6 @@ variable "volume_size" {
   default     = 40
 }
 
-variable "key_name" {
-  description = "AWS Key Pair Name"
-  type        = string
-}
 
 variable "admin_ip_address" {
   description = "54.91.126.56"
