@@ -6,7 +6,8 @@ pipeline {
         TF_DIR = 'terraform'
         SCRIPTS_DIR = 'scripts'
         SSH_KEY_PATH = credentials('kafka-ec2-key')  // Jenkins credential ID for SSH key
-        AWS_CREDENTIALS = credentials('jenkins-server')  // Jenkins credential ID for AWS
+        AWS_CREDENTIALS = credentials('jenkins-user')  // Jenkins credential ID for AWS
+    
     }
     
     stages {
