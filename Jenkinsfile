@@ -91,8 +91,8 @@ pipeline {
                 echo '=================================='
                 dir("${TF_DIR}") {
                     script {
-                        env.EC2_PUBLIC_IP = sh(
-                            script: 'terraform output -raw ec2_public_ip',
+                        EC2_PUBLIC_IP = sh(
+                            script: 'terraform output -raw public_ip',
                             returnStdout: true
                         ).trim()
                         
