@@ -92,21 +92,30 @@ pipeline {
                 }
             }
         }
-        
         stage('Terraform Plan') {
-            steps {
-                dir("${TERRAFORM_DIR}") {
-                    script {
-                        echo "Creating Terraform plan..."
-                        sh 'terraform plan -out=tfplan'
-                        sh 'terraform show -no-color tfplan > tfplan.txt'
-                        
-                        // Archive the plan
-                        archiveArtifacts artifacts: 'tfplan.txt', fingerprint: true
-                    }
-                }
+    steps {
+         dir("${TERRAFORM_DIR}") {
+            script {
+                echo "Creating Terraform plan..."
+                sh 'terraform plan -var-file="terraform.tfvars" -out=tfplan'
             }
         }
+    }
+}
+        // stage('Terraform Plan') {
+        //     steps {
+        //         dir("${TERRAFORM_DIR}") {
+        //             script {
+        //                 echo "Creating Terraform plan..."
+        //                 sh 'terraform plan -out=tfplan'
+        //                 sh 'terraform show -no-color tfplan > tfplan.txt'
+                        
+        //                 // Archive the plan
+        //                 archiveArtifacts artifacts: 'tfplan.txt', fingerprint: true
+        //             }
+        //         }
+        //     }
+        // }
         
         stage('Approval Gate') {
             when {
