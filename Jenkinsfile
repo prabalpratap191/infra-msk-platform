@@ -171,7 +171,7 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no \
                                 -i kafka-ec2-private-key.pem \
                                 ec2-user@${env.EC2_PUBLIC_IP} \
-                                'chmod +x /home/ec2-user/install-docker.sh && /home/ec2-user/install-docker.sh'
+                                'chmod +x /home/ec2-user/install-docker.sh && sudo /home/ec2-user/install-docker.sh'
                         """
                         echo "✓ Docker installed successfully"
                     }
@@ -226,7 +226,7 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no \
                                 -i kafka-ec2-private-key.pem \
                                 ec2-user@${env.EC2_PUBLIC_IP} \
-                                'chmod +x /home/ec2-user/setup-kafka.sh && /home/ec2-user/setup-kafka.sh ${env.EC2_PRIVATE_IP} ${env.EC2_PUBLIC_IP} 1 kafka-cluster-dev'
+                                'chmod +x /home/ec2-user/setup-kafka.sh && sudo /home/ec2-user/setup-kafka.sh ${env.EC2_PRIVATE_IP} ${env.EC2_PUBLIC_IP} 1 kafka-cluster-dev'
                         """
                         echo "✓ Kafka configuration created"
                     }
@@ -277,7 +277,7 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no \
                                 -i kafka-ec2-private-key.pem \
                                 ec2-user@${env.EC2_PUBLIC_IP} \
-                                'chmod +x /home/ec2-user/create-topics.sh && /home/ec2-user/create-topics.sh'
+                                'chmod +x /home/ec2-user/create-topics.sh && sudo /home/ec2-user/create-topics.sh'
                         """
                         echo "✓ All topics created successfully"
                     }
@@ -305,9 +305,9 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no \
                                 -i kafka-ec2-private-key.pem \
                                 ec2-user@${env.EC2_PUBLIC_IP} \
-                                'chmod +x /home/ec2-user/verify-kafka.sh && /home/ec2-user/verify-kafka.sh'
+                                'chmod +x /home/ec2-user/verify-kafka.sh && sudo /home/ec2-user/verify-kafka.sh'
                         """
-                        echo "✓ Kafka verification successful"
+                        echo "✓ Kafka verification successful" 
                     }
                 }
             }
