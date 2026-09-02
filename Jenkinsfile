@@ -58,7 +58,7 @@ pipeline {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
                                       credentialsId: 'jenkins-user']]) {
                         sh '''
-                            terraform plan -out=tfplan
+                            terraform plan -var-file=terraform.tfvars -out=tfplan
                             echo "✓ Terraform plan created successfully"
                         '''
                     }

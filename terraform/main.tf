@@ -1,83 +1,145 @@
-# Data source to get the latest Amazon Linux 2023 AMI
-data "aws_ami" "amazon_linux_2023" {
+########################################
+# AMI
+########################################
+
+data "aws_ami" "amazon_linux" {
   most_recent = true
-  owners      = ["amazon"]
+
+  owners = ["amazon"]
 
   filter {
     name   = "name"
     values = ["al2023-ami-*-x86_64"]
   }
+}
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
+########################################
+# VPC
+########################################
+
+resource "aws_vpc" "kafka_vpc" {
+
+  cidr_block           = var.vpc_cidr
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags = {
+    Name = "kafka-vpc"
   }
 }
 
-# Security Group for Kafka EC2
+########################################
+# Internet Gateway
+########################################
+
+resource "aws_internet_gateway" "igw" {
+
+  vpc_id = aws_vpc.kafka_vpc.id
+
+  tags = {
+    Name = "kafka-igw"
+  }
+}
+
+########################################
+# Public Subnet
+########################################
+
+resource "aws_subnet" "public_subnet" {
+
+  vpc_id                  = aws_vpc.kafka_vpc.id
+  cidr_block              = var.public_subnet_cidr
+  map_public_ip_on_launch = true
+
+  availability_zone = "us-east-1a"
+
+  tags = {
+    Name = "kafka-public-subnet"
+  }
+}
+
+########################################
+# Route Table
+########################################
+
+resource "aws_route_table" "public_rt" {
+
+  vpc_id = aws_vpc.kafka_vpc.id
+
+  tags = {
+    Name = "kafka-public-rt"
+  }
+}
+
+resource "aws_route" "internet_route" {
+
+  route_table_id         = aws_route_table.public_rt.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.igw.id
+}
+
+resource "aws_route_table_association" "public_assoc" {
+
+  subnet_id      = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.public_rt.id
+}
+
+########################################
+# Security Group
+########################################
+
 resource "aws_security_group" "kafka_sg" {
+
   name        = "kafka-sg"
-  description = "Security group for Kafka EC2 instance"
-  vpc_id      = var.vpc_id
+  description = "Kafka Security Group"
 
-  # SSH access from admin IP
+  vpc_id = aws_vpc.kafka_vpc.id
+
   ingress {
-    description = "SSH from admin"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["${var.admin_ip_address}/32"]
+    description = "SSH"
+
+    from_port = 22
+    to_port   = 22
+    protocol  = "tcp"
+
+    cidr_blocks = [
+      var.admin_ip_address
+    ]
   }
 
-  # Kafka internal port from VPC
   ingress {
-    description = "Kafka internal from VPC"
-    from_port   = 9092
-    to_port     = 9092
-    protocol    = "tcp"
-    cidr_blocks = [var.private_vpc_cidr]
+    description = "Kafka"
+
+    from_port = 9092
+    to_port   = 9092
+    protocol  = "tcp"
+
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
   }
 
-  # Kafka external port from VPC
   ingress {
-    description = "Kafka external from VPC"
-    from_port   = 9094
-    to_port     = 9094
-    protocol    = "tcp"
-    cidr_blocks = [var.private_vpc_cidr]
+    description = "Kafka Internal"
+
+    from_port = 9093
+    to_port   = 9093
+    protocol  = "tcp"
+
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
   }
 
-  # Kafka internal port from EKS worker nodes
-  dynamic "ingress" {
-    for_each = var.eks_worker_security_group_id != "" ? [1] : []
-    content {
-      description     = "Kafka internal from EKS workers"
-      from_port       = 9092
-      to_port         = 9092
-      protocol        = "tcp"
-      security_groups = [var.eks_worker_security_group_id]
-    }
-  }
-
-  # Kafka external port from EKS worker nodes
-  dynamic "ingress" {
-    for_each = var.eks_worker_security_group_id != "" ? [1] : []
-    content {
-      description     = "Kafka external from EKS workers"
-      from_port       = 9094
-      to_port         = 9094
-      protocol        = "tcp"
-      security_groups = [var.eks_worker_security_group_id]
-    }
-  }
-
-  # Allow all outbound traffic
   egress {
-    description = "Allow all outbound"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
   }
 
   tags = {
@@ -85,38 +147,30 @@ resource "aws_security_group" "kafka_sg" {
   }
 }
 
-# EC2 Instance for Kafka
-resource "aws_instance" "kafka_ec2" {
-  ami           = data.aws_ami.amazon_linux_2023.id
-  instance_type = var.instance_type
-  subnet_id     = var.subnet_id
-  key_name      = aws_key_pair.kafka_key_pair.key_name
+########################################
+# Kafka EC2
+########################################
 
-  vpc_security_group_ids = [aws_security_group.kafka_sg.id]
+resource "aws_instance" "kafka" {
+
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = var.instance_type
+
+  subnet_id = aws_subnet.public_subnet.id
+
+  vpc_security_group_ids = [
+    aws_security_group.kafka_sg.id
+  ]
+
+  key_name = var.key_name
 
   root_block_device {
-    volume_type           = "gp3"
-    volume_size           = var.volume_size
-    delete_on_termination = true
-    encrypted             = true
-
-    tags = {
-      Name = "kafka-ec2-root-volume"
-    }
-  }
-
-  user_data = templatefile("${path.module}/userdata.sh", {
-    kafka_cluster_name = var.kafka_cluster_name
-    kafka_broker_id    = var.kafka_broker_id
-  })
-
-  metadata_options {
-    http_endpoint               = "enabled"
-    http_tokens                 = "required"
-    http_put_response_hop_limit = 1
+    volume_size = var.volume_size
+    volume_type = "gp3"
   }
 
   tags = {
-    Name = "kafka-ec2-instance"
+    Name        = "kafka-ec2-instance"
+    Environment = var.environment
   }
 }
