@@ -1,0 +1,89 @@
+# Spring Boot Kafka Configuration
+# Replace <EC2_PRIVATE_IP> with actual Kafka EC2 private IP address
+
+spring:
+  kafka:
+    # Bootstrap servers - use private IP for VPC-internal communication
+    bootstrap-servers: <EC2_PRIVATE_IP>:9092
+    
+    # Producer Configuration
+    producer:
+      # Serializers
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      
+      # Producer properties
+      acks: all  # Wait for all replicas to acknowledge
+      retries: 3
+      batch-size: 16384
+      buffer-memory: 33554432
+      linger-ms: 10
+      compression-type: lz4
+      
+      # Idempotence for exactly-once semantics
+      enable-idempotence: true
+      
+      # Additional properties
+      properties:
+        max.in.flight.requests.per.connection: 5
+        spring.json.add.type.headers: false
+    
+    # Consumer Configuration
+    consumer:
+      # Consumer group ID
+      group-id: ${spring.application.name:default-consumer-group}
+      
+      # Deserializers
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      
+      # Consumer properties
+      auto-offset-reset: earliest  # Options: earliest, latest, none
+      enable-auto-commit: false  # Manual commit for better control
+      max-poll-records: 500
+      fetch-min-size: 1
+      fetch-max-wait: 500
+      heartbeat-interval: 3000
+      session-timeout: 30000
+      
+      # Additional properties
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+    
+    # Listener Configuration
+    listener:
+      # Acknowledgment mode: manual, manual_immediate, record, batch
+      ack-mode: manual
+      
+      # Concurrency (number of consumer threads per topic)
+      concurrency: 3
+      
+      # Error handling
+      missing-topics-fatal: false
+      
+      # Polling configuration
+      poll-timeout: 3000
+    
+    # Admin Configuration (for topic management)
+    admin:
+      properties:
+        bootstrap.servers: <EC2_PRIVATE_IP>:9092
+      auto-create: false
+
+# Logging Configuration for Kafka
+logging:
+  level:
+    org.apache.kafka: INFO
+    org.springframework.kafka: DEBUG
+
+# Application-specific Kafka Topics
+kafka:
+  topics:
+    customer-events: customer-events
+    order-events: order-events
+    catalog-events: catalog-events
+    payment-events: payment-events
+    inventory-events: inventory-events
+    notification-events: notification-events
+    dead-letter-events: dead-letter-events
