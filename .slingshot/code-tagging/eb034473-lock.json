@@ -1,0 +1,2305 @@
+{
+  "Jenkinsfile": {
+    "filename": "Jenkinsfile",
+    "path": "Jenkinsfile",
+    "version": "1.2",
+    "contextFile": "eb034473-context.json",
+    "chunks": {
+      "b795bc": {
+        "user": "Prabal Singh",
+        "model": "claude-sonnet-4-5@20250929",
+        "timestamp": 1788338009,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.2.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "705a5dfa"
+        },
+        "hash": "6242c58e",
+        "messageId": "system_4c0e05e0-a6a8-11f1-8596-0b9548f619f2",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: Prabal Singh\n- **model**: claude-sonnet-4-5@20250929\n- **timestamp**: 9/2/2026, 2:03:29 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "b795bc",
+        "hash": "537e87e7",
+        "encoded": "pipeline%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "b795bc",
+        "hash": "0c94b9ad",
+        "encoded": "agent%20any",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "b795bc",
+        "hash": "a9137bcd",
+        "encoded": "environment%20%7B",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "b795bc",
+        "hash": "79616e9b",
+        "encoded": "AWS_REGION%20=%20'us-east-1'",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "b795bc",
+        "hash": "56a02c97",
+        "encoded": "TF_DIR%20=%20'terraform'",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "b795bc",
+        "hash": "fd23b50b",
+        "encoded": "SCRIPTS_DIR%20=%20'scripts'",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "b795bc",
+        "hash": "102658a5",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "b795bc",
+        "hash": "e3e37cb5",
+        "encoded": "stages%20%7B",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "b795bc",
+        "hash": "9dd7ce1d",
+        "encoded": "stage('Checkout')%20%7B",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "b795bc",
+        "hash": "91161a94",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "b795bc",
+        "hash": "f25f705c",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "b795bc",
+        "hash": "7f82d274",
+        "encoded": "echo%20'Stage%201:%20Checkout%20Git%20Repository'",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "b795bc",
+        "hash": "aaa330ff",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "b795bc",
+        "hash": "fc45ac4d",
+        "encoded": "checkout%20scm",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "b795bc",
+        "hash": "bcc8c676",
+        "encoded": "sh%20'ls%20-la'",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "b795bc",
+        "hash": "76477189",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "b795bc",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "b795bc",
+        "hash": "0509b720",
+        "encoded": "stage('Terraform%20Init')%20%7B",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "b795bc",
+        "hash": "e2ab52fc",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "b795bc",
+        "hash": "b1f60120",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "b795bc",
+        "hash": "571a7e37",
+        "encoded": "echo%20'Stage%202:%20Terraform%20Initialization'",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "b795bc",
+        "hash": "97d1e13a",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "b795bc",
+        "hash": "d6d9ecef",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "b795bc",
+        "hash": "f3f93660",
+        "encoded": "withCredentials(%5B%5B$class:%20'AmazonWebServicesCredentialsBinding',",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "b795bc",
+        "hash": "e050a48c",
+        "encoded": "credentialsId:%20'jenkins-user'%5D%5D)%20%7B",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "b795bc",
+        "hash": "d301a9c0",
+        "encoded": "sh%20'''",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "b795bc",
+        "hash": "4e32dbe7",
+        "encoded": "terraform%20init",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "b795bc",
+        "hash": "06fc9baf",
+        "encoded": "echo%20%22%E2%9C%93%20Terraform%20initialized%20successfully%22",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "b795bc",
+        "hash": "42f65583",
+        "encoded": "'''",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "b795bc",
+        "hash": "699fd80f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "b795bc",
+        "hash": "0e2c0edc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "b795bc",
+        "hash": "b8d59d8e",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "b795bc",
+        "hash": "dfad4947",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "b795bc",
+        "hash": "a92e765b",
+        "encoded": "stage('Terraform%20Validate')%20%7B",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "b795bc",
+        "hash": "1913f917",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "b795bc",
+        "hash": "4f90c6e6",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "b795bc",
+        "hash": "15ba9d52",
+        "encoded": "echo%20'Stage%203:%20Terraform%20Validation'",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "b795bc",
+        "hash": "7a9f53bf",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "b795bc",
+        "hash": "bd18ea37",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "b795bc",
+        "hash": "4441df85",
+        "encoded": "sh%20'''",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "b795bc",
+        "hash": "ea4c5fd7",
+        "encoded": "terraform%20validate",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "b795bc",
+        "hash": "d27885e7",
+        "encoded": "echo%20%22%E2%9C%93%20Terraform%20configuration%20is%20valid%22",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "b795bc",
+        "hash": "8717bfbe",
+        "encoded": "'''",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "b795bc",
+        "hash": "57c5213d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "b795bc",
+        "hash": "d90811a0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "b795bc",
+        "hash": "0b4804f7",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "b795bc",
+        "hash": "4c861bf4",
+        "encoded": "stage('Terraform%20Plan')%20%7B",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "b795bc",
+        "hash": "9f9744a8",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "b795bc",
+        "hash": "772db524",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "b795bc",
+        "hash": "05a40b66",
+        "encoded": "echo%20'Stage%204:%20Terraform%20Plan'",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "b795bc",
+        "hash": "acfa1f4f",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "b795bc",
+        "hash": "81e62393",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "b795bc",
+        "hash": "7ba9472e",
+        "encoded": "withCredentials(%5B%5B$class:%20'AmazonWebServicesCredentialsBinding',",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "b795bc",
+        "hash": "7e061158",
+        "encoded": "credentialsId:%20'jenkins-user'%5D%5D)%20%7B",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "b795bc",
+        "hash": "8ec07289",
+        "encoded": "sh%20'''",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "b795bc",
+        "hash": "20b6964b",
+        "encoded": "echo%20%22%E2%9C%93%20Terraform%20plan%20created%20successfully%22",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "b795bc",
+        "hash": "2d983597",
+        "encoded": "'''",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "b795bc",
+        "hash": "78db855a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "b795bc",
+        "hash": "48dc6fe2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "b795bc",
+        "hash": "912d88e4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "b795bc",
+        "hash": "f706ff69",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "b795bc",
+        "hash": "81c568f2",
+        "encoded": "stage('Terraform%20Apply')%20%7B",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "b795bc",
+        "hash": "a5e4b01a",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "b795bc",
+        "hash": "48a3ac14",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "b795bc",
+        "hash": "c3ca7d2e",
+        "encoded": "echo%20'Stage%205:%20Terraform%20Apply'",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "b795bc",
+        "hash": "ad229918",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "b795bc",
+        "hash": "d5593fa6",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "b795bc",
+        "hash": "4e25cecb",
+        "encoded": "withCredentials(%5B%5B$class:%20'AmazonWebServicesCredentialsBinding',",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "b795bc",
+        "hash": "d67f7f95",
+        "encoded": "credentialsId:%20'jenkins-user'%5D%5D)%20%7B",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "b795bc",
+        "hash": "0d12349e",
+        "encoded": "sh%20'''",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "b795bc",
+        "hash": "a7be04ca",
+        "encoded": "terraform%20apply%20-auto-approve%20tfplan",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "b795bc",
+        "hash": "a4f06dc4",
+        "encoded": "echo%20%22%E2%9C%93%20Infrastructure%20provisioned%20successfully%22",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "b795bc",
+        "hash": "8927ff01",
+        "encoded": "echo%20%22%E2%9C%93%20SSH%20key%20pair%20created%20dynamically%22",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "b795bc",
+        "hash": "3f153d4a",
+        "encoded": "'''",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "b795bc",
+        "hash": "d6938858",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "b795bc",
+        "hash": "74977a35",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "b795bc",
+        "hash": "e4b921c6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "b795bc",
+        "hash": "d7cd7257",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "b795bc",
+        "hash": "cb7e0ba7",
+        "encoded": "stage('Get%20EC2%20Instance%20Details')%20%7B",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "b795bc",
+        "hash": "aab42979",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "b795bc",
+        "hash": "7ed4b747",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "b795bc",
+        "hash": "875a404e",
+        "encoded": "echo%20'Stage%206:%20Retrieve%20EC2%20Details%20&%20SSH%20Key'",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "b795bc",
+        "hash": "0a094876",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "b795bc",
+        "hash": "93322711",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "b795bc",
+        "hash": "3926c166",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "b795bc",
+        "hash": "90a10ab1",
+        "encoded": "env.EC2_PUBLIC_IP%20=%20sh(",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "b795bc",
+        "hash": "98b88260",
+        "encoded": "returnStdout:%20true",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "b795bc",
+        "hash": "e0a4c24c",
+        "encoded": ").trim()",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "b795bc",
+        "hash": "76260545",
+        "encoded": "env.EC2_PRIVATE_IP%20=%20sh(",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "b795bc",
+        "hash": "b8fb9d6c",
+        "encoded": "returnStdout:%20true",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "b795bc",
+        "hash": "11353624",
+        "encoded": ").trim()",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "b795bc",
+        "hash": "ffe84c17",
+        "encoded": "env.EC2_INSTANCE_ID%20=%20sh(",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "b795bc",
+        "hash": "d48f8a8a",
+        "encoded": "returnStdout:%20true",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "b795bc",
+        "hash": "b7e1f8df",
+        "encoded": ").trim()",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "b795bc",
+        "hash": "2032c5be",
+        "encoded": "env.SSH_KEY_NAME%20=%20sh(",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "b795bc",
+        "hash": "7c0e1439",
+        "encoded": "returnStdout:%20true",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "b795bc",
+        "hash": "4a77cb6e",
+        "encoded": ").trim()",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "b795bc",
+        "hash": "eb2e9a21",
+        "encoded": "echo%20%22==================================%22",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "b795bc",
+        "hash": "d5233637",
+        "encoded": "echo%20%22EC2%20Instance%20Created%20Successfully%22",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "b795bc",
+        "hash": "74642ccd",
+        "encoded": "echo%20%22==================================%22",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "b795bc",
+        "hash": "1a7b752f",
+        "encoded": "echo%20%22Instance%20ID:%20$%7Benv.EC2_INSTANCE_ID%7D%22",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "b795bc",
+        "hash": "0a63886a",
+        "encoded": "echo%20%22Public%20IP:%20$%7Benv.EC2_PUBLIC_IP%7D%22",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "b795bc",
+        "hash": "8ccbc3a3",
+        "encoded": "echo%20%22Private%20IP:%20$%7Benv.EC2_PRIVATE_IP%7D%22",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "b795bc",
+        "hash": "b9c085ed",
+        "encoded": "echo%20%22SSH%20Key:%20$%7Benv.SSH_KEY_NAME%7D%22",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "b795bc",
+        "hash": "fe6b3db5",
+        "encoded": "echo%20%22==================================%22",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "b795bc",
+        "hash": "7b145d98",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "b795bc",
+        "hash": "2d0864bf",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "b795bc",
+        "hash": "2bf02615",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "b795bc",
+        "hash": "331ddc52",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "b795bc",
+        "hash": "f4dca2a9",
+        "encoded": "stage('Wait%20for%20EC2%20Initialization')%20%7B",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "b795bc",
+        "hash": "ed02403c",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "b795bc",
+        "hash": "d16a8af1",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "b795bc",
+        "hash": "02f6221a",
+        "encoded": "echo%20'Waiting%20for%20EC2%20to%20Complete%20Initialization'",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "b795bc",
+        "hash": "11a99f19",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "b795bc",
+        "hash": "b287b4b4",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "b795bc",
+        "hash": "7cf1ecdb",
+        "encoded": "echo%20%22Waiting%20for%20instance%20to%20be%20fully%20ready...%22",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "b795bc",
+        "hash": "07dac18e",
+        "encoded": "//%20Wait%20for%20SSH%20to%20be%20available",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "b795bc",
+        "hash": "b0428122",
+        "encoded": "echo%20%22Testing%20SSH%20connectivity...%22",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "b795bc",
+        "hash": "019a6616",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "b795bc",
+        "hash": "5a34a422",
+        "encoded": "retry(10)%20%7B",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "b795bc",
+        "hash": "ed2f4120",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "b795bc",
+        "hash": "e833f63e",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "b795bc",
+        "hash": "70f7fa66",
+        "encoded": "-o%20ConnectTimeout=5%20%5C",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "b795bc",
+        "hash": "23fb9ace",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "b795bc",
+        "hash": "55e30898",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20'echo%20%22SSH%20connection%20successful%22'",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "b795bc",
+        "hash": "58ecd1bc",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "b795bc",
+        "hash": "9669fcc5",
+        "encoded": "sleep%2010",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "b795bc",
+        "hash": "2d25e64b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "b795bc",
+        "hash": "f787a6d1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "b795bc",
+        "hash": "cb32189d",
+        "encoded": "echo%20%22%E2%9C%93%20EC2%20instance%20is%20ready%20and%20SSH%20is%20available%22",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "b795bc",
+        "hash": "44e12b83",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "b795bc",
+        "hash": "e584d451",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "b795bc",
+        "hash": "5a35ac4c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "b795bc",
+        "hash": "15abb54e",
+        "encoded": "stage('Install%20Docker')%20%7B",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "b795bc",
+        "hash": "b3e53134",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "b795bc",
+        "hash": "31297372",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "b795bc",
+        "hash": "891c0cfa",
+        "encoded": "echo%20'Stage%207:%20Install%20Docker%20&%20Docker%20Compose'",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "b795bc",
+        "hash": "c8d7b18b",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "b795bc",
+        "hash": "86af9e1e",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "b795bc",
+        "hash": "8f2f03ec",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "b795bc",
+        "hash": "5653ff5f",
+        "encoded": "//%20Copy%20installation%20script%20to%20EC2",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "b795bc",
+        "hash": "3f365b12",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "b795bc",
+        "hash": "3a734624",
+        "encoded": "scp%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "b795bc",
+        "hash": "759f0502",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "b795bc",
+        "hash": "52df58b4",
+        "encoded": "../install-docker.sh%20%5C",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "b795bc",
+        "hash": "fd9394e3",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D:/home/ec2-user/",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "b795bc",
+        "hash": "b8e183a1",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "b795bc",
+        "hash": "b3798e04",
+        "encoded": "//%20Execute%20installation%20script",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "b795bc",
+        "hash": "a87ed93e",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "b795bc",
+        "hash": "6990d8a1",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "b795bc",
+        "hash": "c7384467",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "b795bc",
+        "hash": "3bac0ab8",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "b795bc",
+        "hash": "9ea7d2b9",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "b795bc",
+        "hash": "56b9a9b5",
+        "encoded": "echo%20%22%E2%9C%93%20Docker%20installed%20successfully%22",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "b795bc",
+        "hash": "9a3fe29c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "b795bc",
+        "hash": "5efbcd97",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "b795bc",
+        "hash": "e0563286",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "b795bc",
+        "hash": "dee02b44",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "b795bc",
+        "hash": "f8a13380",
+        "encoded": "stage('Verify%20Docker%20Installation')%20%7B",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "b795bc",
+        "hash": "b9e98bde",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "b795bc",
+        "hash": "7c5582b2",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "b795bc",
+        "hash": "015ab8d5",
+        "encoded": "echo%20'Stage%208:%20Verify%20Docker%20Installation'",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "b795bc",
+        "hash": "c3a21a2c",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "b795bc",
+        "hash": "ed8cdd53",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "b795bc",
+        "hash": "5818dc01",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "b795bc",
+        "hash": "92e1ab90",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "b795bc",
+        "hash": "de27f313",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "b795bc",
+        "hash": "a90aee16",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "b795bc",
+        "hash": "574a4c8d",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "b795bc",
+        "hash": "03d00535",
+        "encoded": "'sudo%20docker%20--version'",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "b795bc",
+        "hash": "7fd9c917",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "b795bc",
+        "hash": "3085620b",
+        "encoded": "echo%20%22%E2%9C%93%20Docker%20verified%22",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "b795bc",
+        "hash": "470d32f7",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "b795bc",
+        "hash": "c3d83312",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "b795bc",
+        "hash": "7beaa499",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "b795bc",
+        "hash": "ce7180e5",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "b795bc",
+        "hash": "04fd7ca1",
+        "encoded": "'sudo%20docker%20compose%20version'",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "b795bc",
+        "hash": "c57ff1d1",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "b795bc",
+        "hash": "63a8ea6c",
+        "encoded": "echo%20%22%E2%9C%93%20Docker%20Compose%20verified%22",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "b795bc",
+        "hash": "6f7f74d0",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "b795bc",
+        "hash": "bfce87e8",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "b795bc",
+        "hash": "699b62c2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "b795bc",
+        "hash": "b70b04fa",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "b795bc",
+        "hash": "b03b9abf",
+        "encoded": "stage('Setup%20Kafka')%20%7B",
+        "prevChunkIds": []
+      },
+      "209": {
+        "chunkId": "b795bc",
+        "hash": "23bb4f9e",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "b795bc",
+        "hash": "3b2c5de9",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "b795bc",
+        "hash": "09830a56",
+        "encoded": "echo%20'Stage%209:%20Setup%20Kafka%20Configuration'",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "b795bc",
+        "hash": "bc3ab78b",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "b795bc",
+        "hash": "ed19fed9",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "b795bc",
+        "hash": "bb97eac7",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "b795bc",
+        "hash": "3ce898f4",
+        "encoded": "//%20Copy%20Kafka%20setup%20script%20to%20EC2",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "b795bc",
+        "hash": "3eb15306",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "b795bc",
+        "hash": "0edc17f6",
+        "encoded": "scp%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "b795bc",
+        "hash": "4c0ce6e5",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "b795bc",
+        "hash": "0efd4ce2",
+        "encoded": "../setup-kafka.sh%20%5C",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "b795bc",
+        "hash": "2d7ca127",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D:/home/ec2-user/",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "b795bc",
+        "hash": "f2eeb7c3",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "b795bc",
+        "hash": "e9910ee5",
+        "encoded": "//%20Execute%20Kafka%20setup%20script%20with%20parameters",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "b795bc",
+        "hash": "9e1a8802",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "b795bc",
+        "hash": "39f8e543",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "b795bc",
+        "hash": "2d3ff05d",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "b795bc",
+        "hash": "b37ac578",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "b795bc",
+        "hash": "3b41a9ae",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "b795bc",
+        "hash": "c2e2255b",
+        "encoded": "echo%20%22%E2%9C%93%20Kafka%20configuration%20created%22",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "b795bc",
+        "hash": "9d1eb832",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "b795bc",
+        "hash": "156d2c96",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "b795bc",
+        "hash": "c9592549",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "b795bc",
+        "hash": "29109e1d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "b795bc",
+        "hash": "0a70d12c",
+        "encoded": "stage('Wait%20for%20Kafka%20Startup')%20%7B",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "b795bc",
+        "hash": "38a56616",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "b795bc",
+        "hash": "40aa8019",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "b795bc",
+        "hash": "b34a4507",
+        "encoded": "echo%20'Waiting%20for%20Kafka%20to%20Start'",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "b795bc",
+        "hash": "71950ffc",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "b795bc",
+        "hash": "bee6ad41",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "b795bc",
+        "hash": "47c8978b",
+        "encoded": "echo%20%22Waiting%20for%20Kafka%20to%20initialize...%22",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "b795bc",
+        "hash": "18e0ea20",
+        "encoded": "//%20Verify%20Kafka%20container%20is%20running",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "b795bc",
+        "hash": "655ec1d5",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "b795bc",
+        "hash": "f640197d",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "b795bc",
+        "hash": "b67719c4",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "b795bc",
+        "hash": "a8774d8f",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "b795bc",
+        "hash": "55ac0f80",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "b795bc",
+        "hash": "40730e35",
+        "encoded": "'sudo%20docker%20ps%20%7C%20grep%20kafka-server'",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "b795bc",
+        "hash": "59bae652",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "b795bc",
+        "hash": "c0a12feb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "254": {
+        "chunkId": "b795bc",
+        "hash": "a39a1160",
+        "encoded": "echo%20%22%E2%9C%93%20Kafka%20container%20is%20running%22",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "b795bc",
+        "hash": "108356aa",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "b795bc",
+        "hash": "9cd32fde",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "b795bc",
+        "hash": "f26791a2",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "b795bc",
+        "hash": "656f793e",
+        "encoded": "stage('Create%20Kafka%20Topics')%20%7B",
+        "prevChunkIds": []
+      },
+      "260": {
+        "chunkId": "b795bc",
+        "hash": "d3c66c5d",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "b795bc",
+        "hash": "17aa23da",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "b795bc",
+        "hash": "6f85184d",
+        "encoded": "echo%20'Stage%2010:%20Create%20Kafka%20Topics'",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "b795bc",
+        "hash": "7b0f6830",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "b795bc",
+        "hash": "8666458a",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "265": {
+        "chunkId": "b795bc",
+        "hash": "664e0b22",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "b795bc",
+        "hash": "283c3200",
+        "encoded": "//%20Copy%20topics%20script%20to%20EC2",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "b795bc",
+        "hash": "1bd32eca",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "b795bc",
+        "hash": "fd52e920",
+        "encoded": "scp%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "269": {
+        "chunkId": "b795bc",
+        "hash": "603f24e3",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "b795bc",
+        "hash": "6ba472d4",
+        "encoded": "../scripts/create-topics.sh%20%5C",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "b795bc",
+        "hash": "fc501dad",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D:/home/ec2-user/",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "b795bc",
+        "hash": "d5977316",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "b795bc",
+        "hash": "e5344ba3",
+        "encoded": "//%20Make%20script%20executable%20and%20run%20it",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "b795bc",
+        "hash": "639d50ff",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "b795bc",
+        "hash": "177c59dc",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "b795bc",
+        "hash": "50f99157",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "b795bc",
+        "hash": "fc0364cb",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "b795bc",
+        "hash": "570f68a8",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "b795bc",
+        "hash": "da5c7e83",
+        "encoded": "echo%20%22%E2%9C%93%20All%20topics%20created%20successfully%22",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "b795bc",
+        "hash": "4f3fb1c8",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "b795bc",
+        "hash": "36d31997",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "b795bc",
+        "hash": "74d94c65",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "b795bc",
+        "hash": "43651e39",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "b795bc",
+        "hash": "ab265a77",
+        "encoded": "stage('Verify%20Kafka%20Installation')%20%7B",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "b795bc",
+        "hash": "b8d56eba",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "b795bc",
+        "hash": "5d99f7ff",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "290": {
+        "chunkId": "b795bc",
+        "hash": "7ee57685",
+        "encoded": "echo%20'Stage%2011:%20Kafka%20Verification'",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "b795bc",
+        "hash": "2c2f4b40",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "b795bc",
+        "hash": "22d79239",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "b795bc",
+        "hash": "977521d0",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "b795bc",
+        "hash": "86871399",
+        "encoded": "//%20Copy%20verification%20script%20to%20EC2",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "b795bc",
+        "hash": "43fce4f1",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "b795bc",
+        "hash": "bab2b649",
+        "encoded": "scp%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "b795bc",
+        "hash": "3d138751",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "b795bc",
+        "hash": "750436a5",
+        "encoded": "../scripts/verify-kafka.sh%20%5C",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "b795bc",
+        "hash": "cdaccaf1",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D:/home/ec2-user/",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "b795bc",
+        "hash": "a2f97cef",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "b795bc",
+        "hash": "fb185596",
+        "encoded": "//%20Run%20verification",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "b795bc",
+        "hash": "4190e2ef",
+        "encoded": "sh%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "b795bc",
+        "hash": "25ae9030",
+        "encoded": "ssh%20-o%20StrictHostKeyChecking=no%20%5C",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "b795bc",
+        "hash": "28209479",
+        "encoded": "-i%20kafka-ec2-private-key.pem%20%5C",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "b795bc",
+        "hash": "2e91edfb",
+        "encoded": "ec2-user@$%7Benv.EC2_PUBLIC_IP%7D%20%5C",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "b795bc",
+        "hash": "8846f397",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "309": {
+        "chunkId": "b795bc",
+        "hash": "5fcc7fbe",
+        "encoded": "echo%20%22%E2%9C%93%20Kafka%20verification%20successful%22",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "b795bc",
+        "hash": "b19573d5",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "311": {
+        "chunkId": "b795bc",
+        "hash": "972a0b71",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "b795bc",
+        "hash": "290ef136",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "b795bc",
+        "hash": "7385c1c6",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "b795bc",
+        "hash": "41678af6",
+        "encoded": "stage('Print%20Kafka%20Connection%20Details')%20%7B",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "b795bc",
+        "hash": "0992032e",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "b795bc",
+        "hash": "88e706dd",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "b795bc",
+        "hash": "d60bf4cc",
+        "encoded": "echo%20'Stage%2012:%20Kafka%20Connection%20Details'",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "b795bc",
+        "hash": "27749959",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "b795bc",
+        "hash": "e79808d5",
+        "encoded": "script%20%7B",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "b795bc",
+        "hash": "0005355a",
+        "encoded": "dir(%22$%7BTF_DIR%7D%22)%20%7B",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "b795bc",
+        "hash": "4b5a4fbc",
+        "encoded": "def%20sshCommand%20=%20sh(",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "b795bc",
+        "hash": "07ca4996",
+        "encoded": "script:%20'terraform%20output%20-raw%20ssh_connection_command',",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "b795bc",
+        "hash": "33fe4ae7",
+        "encoded": "returnStdout:%20true",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "b795bc",
+        "hash": "ed8bbcbc",
+        "encoded": ").trim()",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "b795bc",
+        "hash": "1f680945",
+        "encoded": "echo%20%22%22%22",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "b795bc",
+        "hash": "d95bd57d",
+        "encoded": "==================================",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "b795bc",
+        "hash": "7182343b",
+        "encoded": "KAFKA%20DEPLOYMENT%20INFORMATION",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "b795bc",
+        "hash": "deed225b",
+        "encoded": "==================================",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "b795bc",
+        "hash": "93ebeda6",
+        "encoded": "EC2%20Instance%20Details:",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "b795bc",
+        "hash": "8a6c8033",
+        "encoded": "Instance%20ID:%20$%7Benv.EC2_INSTANCE_ID%7D",
+        "prevChunkIds": []
+      },
+      "334": {
+        "chunkId": "b795bc",
+        "hash": "665d8851",
+        "encoded": "Public%20IP:%20$%7Benv.EC2_PUBLIC_IP%7D",
+        "prevChunkIds": []
+      },
+      "335": {
+        "chunkId": "b795bc",
+        "hash": "f3791477",
+        "encoded": "Private%20IP:%20$%7Benv.EC2_PRIVATE_IP%7D",
+        "prevChunkIds": []
+      },
+      "336": {
+        "chunkId": "b795bc",
+        "hash": "727be1b6",
+        "encoded": "SSH%20Key:%20$%7Benv.SSH_KEY_NAME%7D",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "b795bc",
+        "hash": "3ab1a240",
+        "encoded": "SSH%20Access:",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "b795bc",
+        "hash": "67afc0b1",
+        "encoded": "cd%20terraform",
+        "prevChunkIds": []
+      },
+      "340": {
+        "chunkId": "b795bc",
+        "hash": "bbe696ad",
+        "encoded": "$%7BsshCommand%7D",
+        "prevChunkIds": []
+      },
+      "342": {
+        "chunkId": "b795bc",
+        "hash": "be27f04e",
+        "encoded": "Kafka%20Bootstrap%20Servers:",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "b795bc",
+        "hash": "942cf3f6",
+        "encoded": "Internal%20(VPC):%20$%7Benv.EC2_PRIVATE_IP%7D:9092",
+        "prevChunkIds": []
+      },
+      "344": {
+        "chunkId": "b795bc",
+        "hash": "971dacbc",
+        "encoded": "External:%20$%7Benv.EC2_PUBLIC_IP%7D:9094",
+        "prevChunkIds": []
+      },
+      "346": {
+        "chunkId": "b795bc",
+        "hash": "26e9ae6a",
+        "encoded": "Created%20Topics:",
+        "prevChunkIds": []
+      },
+      "347": {
+        "chunkId": "b795bc",
+        "hash": "e4b3ebef",
+        "encoded": "%E2%80%A2%20customer-events",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "b795bc",
+        "hash": "ce81831a",
+        "encoded": "%E2%80%A2%20order-events",
+        "prevChunkIds": []
+      },
+      "349": {
+        "chunkId": "b795bc",
+        "hash": "ffb80aad",
+        "encoded": "%E2%80%A2%20catalog-events",
+        "prevChunkIds": []
+      },
+      "350": {
+        "chunkId": "b795bc",
+        "hash": "0f6e8edb",
+        "encoded": "%E2%80%A2%20payment-events",
+        "prevChunkIds": []
+      },
+      "351": {
+        "chunkId": "b795bc",
+        "hash": "0d163f72",
+        "encoded": "%E2%80%A2%20inventory-events",
+        "prevChunkIds": []
+      },
+      "352": {
+        "chunkId": "b795bc",
+        "hash": "78faeb81",
+        "encoded": "%E2%80%A2%20notification-events",
+        "prevChunkIds": []
+      },
+      "353": {
+        "chunkId": "b795bc",
+        "hash": "1ef5349e",
+        "encoded": "%E2%80%A2%20dead-letter-events",
+        "prevChunkIds": []
+      },
+      "355": {
+        "chunkId": "b795bc",
+        "hash": "1987f630",
+        "encoded": "Spring%20Boot%20Configuration:",
+        "prevChunkIds": []
+      },
+      "356": {
+        "chunkId": "b795bc",
+        "hash": "8ca12cb5",
+        "encoded": "----------------------------------",
+        "prevChunkIds": []
+      },
+      "357": {
+        "chunkId": "b795bc",
+        "hash": "b804ae1a",
+        "encoded": "spring:",
+        "prevChunkIds": []
+      },
+      "358": {
+        "chunkId": "b795bc",
+        "hash": "75249c40",
+        "encoded": "kafka:",
+        "prevChunkIds": []
+      },
+      "359": {
+        "chunkId": "b795bc",
+        "hash": "0d3d7c82",
+        "encoded": "bootstrap-servers:%20$%7Benv.EC2_PRIVATE_IP%7D:9092",
+        "prevChunkIds": []
+      },
+      "360": {
+        "chunkId": "b795bc",
+        "hash": "b4295b86",
+        "encoded": "consumer:",
+        "prevChunkIds": []
+      },
+      "361": {
+        "chunkId": "b795bc",
+        "hash": "6fb20a5b",
+        "encoded": "group-id:%20my-consumer-group",
+        "prevChunkIds": []
+      },
+      "362": {
+        "chunkId": "b795bc",
+        "hash": "9f825cce",
+        "encoded": "auto-offset-reset:%20earliest",
+        "prevChunkIds": []
+      },
+      "363": {
+        "chunkId": "b795bc",
+        "hash": "bbcf6078",
+        "encoded": "key-deserializer:%20org.apache.kafka.common.serialization.StringDeserializer",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "b795bc",
+        "hash": "5b81f393",
+        "encoded": "value-deserializer:%20org.springframework.kafka.support.serializer.JsonDeserializer",
+        "prevChunkIds": []
+      },
+      "365": {
+        "chunkId": "b795bc",
+        "hash": "3dacf61f",
+        "encoded": "producer:",
+        "prevChunkIds": []
+      },
+      "366": {
+        "chunkId": "b795bc",
+        "hash": "5ca70b7c",
+        "encoded": "key-serializer:%20org.apache.kafka.common.serialization.StringSerializer",
+        "prevChunkIds": []
+      },
+      "367": {
+        "chunkId": "b795bc",
+        "hash": "c36f3021",
+        "encoded": "value-serializer:%20org.springframework.kafka.support.serializer.JsonSerializer",
+        "prevChunkIds": []
+      },
+      "368": {
+        "chunkId": "b795bc",
+        "hash": "a508eeda",
+        "encoded": "----------------------------------",
+        "prevChunkIds": []
+      },
+      "370": {
+        "chunkId": "b795bc",
+        "hash": "5bcc5f6c",
+        "encoded": "Connection%20String:",
+        "prevChunkIds": []
+      },
+      "371": {
+        "chunkId": "b795bc",
+        "hash": "af77f46b",
+        "encoded": "$%7Benv.EC2_PRIVATE_IP%7D:9092",
+        "prevChunkIds": []
+      },
+      "373": {
+        "chunkId": "b795bc",
+        "hash": "f9959b3b",
+        "encoded": "==================================",
+        "prevChunkIds": []
+      },
+      "374": {
+        "chunkId": "b795bc",
+        "hash": "8820556a",
+        "encoded": "%22%22%22",
+        "prevChunkIds": []
+      },
+      "375": {
+        "chunkId": "b795bc",
+        "hash": "62c8ff13",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "376": {
+        "chunkId": "b795bc",
+        "hash": "b3bd566b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "377": {
+        "chunkId": "b795bc",
+        "hash": "53e09fdc",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "378": {
+        "chunkId": "b795bc",
+        "hash": "749a6433",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "380": {
+        "chunkId": "b795bc",
+        "hash": "e5a95532",
+        "encoded": "stage('Deployment%20Success')%20%7B",
+        "prevChunkIds": []
+      },
+      "381": {
+        "chunkId": "b795bc",
+        "hash": "2196a8b9",
+        "encoded": "steps%20%7B",
+        "prevChunkIds": []
+      },
+      "382": {
+        "chunkId": "b795bc",
+        "hash": "b997648b",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "383": {
+        "chunkId": "b795bc",
+        "hash": "a8b5be16",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "384": {
+        "chunkId": "b795bc",
+        "hash": "8ba1bc21",
+        "encoded": "echo%20'%20%20%20KAFKA%20DEPLOYMENT%20SUCCESSFUL'",
+        "prevChunkIds": []
+      },
+      "385": {
+        "chunkId": "b795bc",
+        "hash": "794fcb4c",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "386": {
+        "chunkId": "b795bc",
+        "hash": "0a15f6a6",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "387": {
+        "chunkId": "b795bc",
+        "hash": "4b6ba94e",
+        "encoded": "echo%20'Kafka%20Status:%20%E2%9C%93%20RUNNING'",
+        "prevChunkIds": []
+      },
+      "388": {
+        "chunkId": "b795bc",
+        "hash": "a66a25ac",
+        "encoded": "echo%20'EC2%20Status:%20%E2%9C%93%20RUNNING'",
+        "prevChunkIds": []
+      },
+      "389": {
+        "chunkId": "b795bc",
+        "hash": "b10632af",
+        "encoded": "echo%20'SSH%20Key:%20%E2%9C%93%20DYNAMICALLY%20GENERATED'",
+        "prevChunkIds": []
+      },
+      "390": {
+        "chunkId": "b795bc",
+        "hash": "6973b958",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "391": {
+        "chunkId": "b795bc",
+        "hash": "6f392008",
+        "encoded": "echo%20'Topics%20Created:'",
+        "prevChunkIds": []
+      },
+      "392": {
+        "chunkId": "b795bc",
+        "hash": "52813790",
+        "encoded": "echo%20'%20%20%E2%80%A2%20customer-events'",
+        "prevChunkIds": []
+      },
+      "393": {
+        "chunkId": "b795bc",
+        "hash": "eddf5790",
+        "encoded": "echo%20'%20%20%E2%80%A2%20order-events'",
+        "prevChunkIds": []
+      },
+      "394": {
+        "chunkId": "b795bc",
+        "hash": "7118ef1f",
+        "encoded": "echo%20'%20%20%E2%80%A2%20catalog-events'",
+        "prevChunkIds": []
+      },
+      "395": {
+        "chunkId": "b795bc",
+        "hash": "75002dbf",
+        "encoded": "echo%20'%20%20%E2%80%A2%20payment-events'",
+        "prevChunkIds": []
+      },
+      "396": {
+        "chunkId": "b795bc",
+        "hash": "6ae23cc7",
+        "encoded": "echo%20'%20%20%E2%80%A2%20inventory-events'",
+        "prevChunkIds": []
+      },
+      "397": {
+        "chunkId": "b795bc",
+        "hash": "e2d4d239",
+        "encoded": "echo%20'%20%20%E2%80%A2%20notification-events'",
+        "prevChunkIds": []
+      },
+      "398": {
+        "chunkId": "b795bc",
+        "hash": "869baf28",
+        "encoded": "echo%20'%20%20%E2%80%A2%20dead-letter-events'",
+        "prevChunkIds": []
+      },
+      "399": {
+        "chunkId": "b795bc",
+        "hash": "7aa6b624",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "400": {
+        "chunkId": "b795bc",
+        "hash": "e2b55787",
+        "encoded": "echo%20'%E2%9C%93%20Ready%20for%20Spring%20Boot%20Integration'",
+        "prevChunkIds": []
+      },
+      "401": {
+        "chunkId": "b795bc",
+        "hash": "8bef22e6",
+        "encoded": "echo%20'=================================='",
+        "prevChunkIds": []
+      },
+      "402": {
+        "chunkId": "b795bc",
+        "hash": "5d60c9a8",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "403": {
+        "chunkId": "b795bc",
+        "hash": "a3f445bb",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "b795bc",
+        "hash": "b3c4a6f1",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "b795bc",
+        "hash": "432d708f",
+        "encoded": "post%20%7B",
+        "prevChunkIds": []
+      },
+      "407": {
+        "chunkId": "b795bc",
+        "hash": "e6f48803",
+        "encoded": "success%20%7B",
+        "prevChunkIds": []
+      },
+      "408": {
+        "chunkId": "b795bc",
+        "hash": "4454cfcc",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "b795bc",
+        "hash": "710f3fad",
+        "encoded": "echo%20'%F0%9F%8E%89%20Pipeline%20executed%20successfully!'",
+        "prevChunkIds": []
+      },
+      "410": {
+        "chunkId": "b795bc",
+        "hash": "6071629a",
+        "encoded": "echo%20'Kafka%20is%20now%20ready%20to%20use.'",
+        "prevChunkIds": []
+      },
+      "411": {
+        "chunkId": "b795bc",
+        "hash": "ade6b51a",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "412": {
+        "chunkId": "b795bc",
+        "hash": "ddd7b751",
+        "encoded": "echo%20'SSH%20Key%20Location:%20terraform/kafka-ec2-private-key.pem'",
+        "prevChunkIds": []
+      },
+      "413": {
+        "chunkId": "b795bc",
+        "hash": "9398ca41",
+        "encoded": "echo%20'To%20connect:%20cd%20terraform%20&&%20ssh%20-i%20kafka-ec2-private-key.pem%20ec2-user@'%20+%20env.EC2_PUBLIC_IP",
+        "prevChunkIds": []
+      },
+      "414": {
+        "chunkId": "b795bc",
+        "hash": "520cc2b9",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "415": {
+        "chunkId": "b795bc",
+        "hash": "29f499e0",
+        "encoded": "failure%20%7B",
+        "prevChunkIds": []
+      },
+      "416": {
+        "chunkId": "b795bc",
+        "hash": "21d3af6d",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "417": {
+        "chunkId": "b795bc",
+        "hash": "22ea676d",
+        "encoded": "echo%20'%E2%9D%8C%20Pipeline%20failed!'",
+        "prevChunkIds": []
+      },
+      "418": {
+        "chunkId": "b795bc",
+        "hash": "9b292fb2",
+        "encoded": "echo%20'Check%20the%20logs%20for%20details.'",
+        "prevChunkIds": []
+      },
+      "419": {
+        "chunkId": "b795bc",
+        "hash": "31390138",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "420": {
+        "chunkId": "b795bc",
+        "hash": "950b1dc0",
+        "encoded": "always%20%7B",
+        "prevChunkIds": []
+      },
+      "421": {
+        "chunkId": "b795bc",
+        "hash": "0424b649",
+        "encoded": "echo%20''",
+        "prevChunkIds": []
+      },
+      "422": {
+        "chunkId": "b795bc",
+        "hash": "fa98bd78",
+        "encoded": "echo%20'Pipeline%20execution%20completed.'",
+        "prevChunkIds": []
+      },
+      "423": {
+        "chunkId": "b795bc",
+        "hash": "6195f359",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "424": {
+        "chunkId": "b795bc",
+        "hash": "a8c40013",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "425": {
+        "chunkId": "b795bc",
+        "hash": "5d832fb4",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    },
+    "_prevLineCount": 427
+  }
+}
